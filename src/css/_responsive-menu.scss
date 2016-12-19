@@ -1,0 +1,137 @@
+/* General styles for all menus */
+.overlay-menu {
+	background: #000;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	min-height: 100%;
+	z-index: 999;
+	opacity: 0.94;
+	display: none
+}
+.cbp-spmenu-push-toleft {
+	.overlay-menu{
+		display: block;
+	}
+	.site-header-main {
+		#showRightPush {
+			&:before{
+				opacity: 0;
+			}
+		}
+	}
+}
+.cbp-spmenu {
+	background: #009fd4;
+	position: fixed;
+  ul {
+    margin: 0;
+  	padding: 0;
+    li {
+      list-style: none;
+      a {
+        display: block;
+      	color: #fff;
+      	font-size: 1.1em;
+      	font-weight: 300;
+      }
+    }
+  }
+  h3 {
+    color: #ffffff;
+    font-size: 1.9em;
+    padding: 20px;
+    margin: 0;
+    font-weight: 300;
+    background: #009fd4;
+  }
+}
+
+/* Orientation-dependent styles for the content of the menu */
+.cbp-spmenu-vertical {
+	width: 240px;
+	height: 100%;
+	top: 0;
+	z-index: 1000;
+  a {
+  	border-bottom: 1px solid #52bdec;
+  	padding: 1em;
+  }
+}
+
+/* Vertical menu that slides from the left or right */
+.cbp-spmenu-left {
+	left: -240px;
+  &.cbp-spmenu-open {
+  	left: 0px;
+  }
+}
+.cbp-spmenu-right {
+	right: -240px;
+  &.cbp-spmenu-open {
+  	right: 0px;
+  	overflow-y: auto;
+  	height: 100%;
+  	min-height: 100%
+  }
+}
+
+/* Push classes applied to the body */
+.cbp-spmenu-push {
+	overflow-x: hidden;
+	position: relative;
+	left: 0;
+}
+.cbp-spmenu-push-toright {
+	left: 240px;
+}
+.cbp-spmenu-push-toleft {
+	left: -240px;
+	overflow: hidden;
+	position: fixed;
+}
+
+/* Transitions */
+.cbp-spmenu,
+.cbp-spmenu-push {
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+
+/* Example media queries */
+
+@media screen and (max-width: 55.1875em){
+
+	.cbp-spmenu-horizontal {
+		font-size: 75%;
+		height: 110px;
+	}
+	.cbp-spmenu-top {
+		top: -110px;
+	}
+	.cbp-spmenu-bottom {
+		bottom: -110px;
+	}
+
+}
+
+@media screen and (max-height: 26.375em){
+
+	.cbp-spmenu-vertical {
+		font-size: 90%;
+		width: 190px;
+	}
+	.cbp-spmenu-left,
+	.cbp-spmenu-push-toleft {
+		left: -190px;
+	}
+	.cbp-spmenu-right {
+		right: -190px;
+	}
+	.cbp-spmenu-push-toright {
+		left: 190px;
+	}
+}
