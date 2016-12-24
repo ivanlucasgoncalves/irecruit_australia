@@ -1,0 +1,64 @@
+// =============================================================================
+// Pricing
+// =============================================================================
+.content-plans {
+  display: flex;
+  align-items: center;
+  min-height: 400px;
+  .blk-prices {
+    width: 25%;
+    .inside-div {
+      text-align: center;
+      h3 {
+        font-family: $whitney-sc;
+        text-transform: uppercase;
+        padding: $pad25;
+        font-weight: $font500;
+        font-size: $font20;
+        color: $white;
+      }
+      a {
+        padding: $pad20;
+        font-family: $whitney-sc;
+        text-transform: uppercase;
+        font-weight: $font500;
+        font-size: $font20;
+        display: block;
+      }
+    }
+    &.blks-count0 {
+      background: $white;
+      h3 {
+        background: $midlle_blue;
+      }
+      h4 {
+        font-size: $font40;
+        color: $midlle_blue;
+      }
+      span {
+        color: $midlle_blue;
+      }
+      p {
+        color: $midlle_blue;
+      }
+    }
+    &.blks-count1 {
+      background: $white;
+      h3 {
+        background: $midlle_blue;
+      }
+    }
+    &.blks-count2 {
+      background: $white;
+      h3 {
+        background: $midlle_blue;
+      }
+    }
+    &.blks-count3 {
+      background: $white;
+      h3 {
+        background: $midlle_blue;
+      }
+    }
+  }
+}

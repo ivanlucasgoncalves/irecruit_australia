@@ -106,15 +106,23 @@ get_header();  $img_logo = get_theme_mod( 'img_logo', esc_url( get_template_dire
 		<div class="rotate-line"></div><!-- .line.rotate.bottom.drag-drop -->
 	</section><!-- .drag.and.drop -->
 
-	<section class="blackSection">
-		<div>
-			<ul>
-				<li><a href="javascript:void(0)" id="AddCityA">Link1</a></li>
-				<li><a href="#">Link2</a></li>
-				<li><a href="#">Link3</a></li>
-			</ul>
+	<section class="phone-section">
+		<div class="line-top"></div>
+		<div class="back-phone"></div>
+		<div class="phone-menu-container">
+			<h2>Behavioural Analysis</h2>
+			<p>Proven personality profiling and behavioural analysis for powerful insights on who your candidates are, not just what they can do.</p>
+			<h3>Explore:</h3>
+			<nav>
+				<ul>
+					<li><a href="javascript:void(0)" id="AddCityA">personality profile</a></li>
+					<li><a href="#">personality summary</a></li>
+					<li><a href="#">workplace insights</a></li>
+					<li><a href="#">strenghts</a></li>
+				</ul>
+			</nav>
 		</div>
-		<div class="iphoneContainer">
+		<div class="iphone-container">
 			<div class="marvel-device iphone6plus gold">
 			    <div class="top-bar"></div>
 			    <div class="sleep"></div>
@@ -129,6 +137,15 @@ get_header();  $img_logo = get_theme_mod( 'img_logo', esc_url( get_template_dire
 			    <div class="home"></div>
 			    <div class="bottom-bar"></div>
 			</div>
+			<div class="description">
+				<div class="flag-dir"></div>
+				<h3>Workplace Insights</h3>
+				<p>What does your candidate think or expect from work environments, and how does he or she behaves on adverse situations.</p>
+			</div>
+		</div>
+		<div class="blk-button">
+			<a href="#">Get Started Now</a>
+			<span>Free trial, no credit card required :)</span>
 		</div>
 	</section>
 
@@ -136,6 +153,7 @@ get_header();  $img_logo = get_theme_mod( 'img_logo', esc_url( get_template_dire
 
 
 			<section class="blueVideo">
+				<div class="back-video"></div>
 				<div class="iconsContainer">
 					<div class="feature">
 						<div class="icon skills"></div>

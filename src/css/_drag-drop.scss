@@ -3,6 +3,7 @@
   width: 100%;
   margin: 30px auto;
   padding-top: $pad180;
+  padding-bottom: $pad100;
   position: relative;
   .laptop-container {
     width: 1000px;
@@ -227,14 +228,9 @@
     -moz-border-radius: 50%;
     border-radius: 50%;
     position: absolute;
-    -webkit-box-shadow: 0px 0px 25px 0px #cccccc;
-    -moz-box-shadow: 0px 0px 25px 0px #cccccc;
     box-shadow: 0px 0px 25px 0px #cccccc;
     behavior: url(../htc/pie.htc);
     zoom: 1;
-    -webkit-transition: all 0.1s ease-in-out;
-    -moz-transition: all 0.1s ease-in-out;
-    -o-transition: all 0.1s ease-in-out;
     transition: all 0.1s ease-in-out;
     line-height: 100px;
     text-align: center;
@@ -243,7 +239,7 @@
     background-size: 58%;
     background-repeat: no-repeat;
     color: #fff;
-    z-index: 9999;
+    z-index: 99;
     background-color: #52bdec;
     -webkit-transform: translate(0px, 0px);
     transform: translate(0px, 0px);
@@ -298,8 +294,8 @@
     }
   }
   .applicant1 {
-    top: 30%;
-    right: 250px;
+    top: 35%;
+    right: 240px;
     background-color: #e67e22;
     border: 4px solid #d35400;
     animation: bounce3 3.5s infinite;
@@ -308,7 +304,7 @@
     }
   }
   .applicant2 {
-    top: 40%;
+    top: 42%;
     left: 180px;
     background-color: #52bdec;
     border: 4px solid #41a1e2;
@@ -378,44 +374,38 @@
     zoom: 1;
     cursor: pointer;
     top: 0;
-    line-height: 45px;
     border: 1px solid #DDD;
     background: #F9F9F9;
     color: #FFF;
     overflow: hidden;
     margin: 0 auto;
     margin-top: 12px;
+    display: flex;
+    align-items: center;
+    padding: 12px;
     .profilePic {
       height: 58px;
       width: 58px;
       position: relative;
-      float: left;
       border-radius: 50%;
       zoom: 1;
       background: #CCC;
       border: 2px solid #DDD;
-      margin-top: 7px;
-      margin-left: 15px;
       background-size: cover;
       background-image: url(../img/profile.jpg);
     }
     .candidateName {
       height: auto;
-      width: 200px;
-      float: left;
+      width: 240px;
       position: relative;
-      margin-top: 15px;
-      margin-left: 25px;
       color: #666;
       font-size: 1.3em;
+      padding-left: $pad10;
     }
     .matchText {
       height: auto;
-      width: 100px;
-      float: left;
       position: relative;
       text-align: right;
-      margin-top: 15px;
       color: #666;
       font-size: 1em;
     }
@@ -423,13 +413,10 @@
       height: 56px;
       width: 56px;
       position: absolute;
-      -webkit-border-radius: 50%;
-      -moz-border-radius: 50%;
       border-radius: 50%;
       behavior: url(../htc/pie.htc);
       zoom: 1;
-      right: 15px;
-      top: 10px;
+      right: 12px;
       background-color: #52bdec;
       .centre {
         height: 44px;

@@ -8,7 +8,7 @@
 
 		</div><!-- .site-content -->
 
-		<footer>
+		<footer id="footer">
 			<div class="customersWrapper">
 				<div class="customersContainer">
 					<div class="lineCustomers">

@@ -172,12 +172,6 @@ th {
 li {
   list-style: none;
 }
-
-section.home-highlights:before,
-section.home-highlights:after {
-  content: " ";
-  display: table;
-}
-section.home-highlights:after {
-  clear: both;
+p {
+  line-height: 22px;
 }

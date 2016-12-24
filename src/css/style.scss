@@ -21,13 +21,16 @@
 @import "drag-drop";
 @import "slideshow";
 @import "phone";
+@import "pricing";
 
 // =============================================================================
 // 01. Header
 // =============================================================================
 #content {
   overflow: hidden;
+  position: relative;
 }
+
 
 #AddCity {
   display: none;
@@ -92,7 +95,7 @@ header#masthead {
       font-family: $whitney-sc;
       text-transform: uppercase;
       color: $midlle_blue;
-      margin-bottom: $pad25;
+      margin-bottom: $marg25;
       font-size: $font28;
       font-weight: $font500;
       &:after {
@@ -124,14 +127,362 @@ header#masthead {
 	}
 }
 
+// =============================================================================
+// 01. Phone Section
+// =============================================================================
+.back-phone {
+  transform: rotate(4deg) skew(4deg);
+  -webkit-transform: rotate(4deg) skew(4deg);
+  position: absolute;
+  width: 105%;
+  height: 100%;
+  left: -10px;
+  top: 0;
+  &:before {
+    content: "";
+    background-image: url(../img/patternBlackSection.png);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    z-index: -1;
+  }
+}
+.line-top {
+  position: absolute;
+  margin: 0 auto;
+  right: -25px;
+  top: -94px;
+  z-index: 1;
+  width: 135%;
+  height: 10%;
+  background: #52bdec;
+  -webkit-transform: rotate(5deg) skew(5deg);
+  -webkit-clip-path: polygon(100% 95%, 0 80%, 100% 40%);
+}
+.phone-section {
+  height: auto;
+  width: 100%;
+  padding: 160px 0 200px 0;
+  position: relative;
+  .phone-menu-container {
+    max-width: 440px;
+    width: 100%;
+    position: absolute;
+    left: 40px;
+    top: 170px;
+    h2 {
+      font-family: $whitney-sc;
+      font-size: $font28;
+      color: $white;
+      font-weight: $fontlighter;
+      text-transform: uppercase;
+      position: relative;
+      padding-bottom: $pad15;
+      padding-top: $pad50;
+      &:before {
+        width: 40px;
+        content: url(../img/titleicon-phone.svg);
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+      &:after {
+        width: 20%;
+        height: 2px;
+        background: $midlle_blue;
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+      }
+    }
+    p {
+      color: $white;
+      font-size: $font16;
+      font-weight: $fontlighter;
+    }
+    h3 {
+      font-family: $whitney;
+      font-size: $font16;
+      color: $white;
+      font-weight: $fontlighter;
+      padding: $pad20_0;
+    }
+    nav {
+      ul {
+        padding: 0;
+        margin: 0;
+        li {
+          margin: $marg15_0;
+          a {
+            font-family: $whitney-sc;
+            font-size: $font16;
+            color: $white;
+            font-weight: $fontlighter;
+            text-transform: uppercase;
+            border-left: 2px solid $midlle_blue;
+            padding: 7px 15px 7px 15px;
+            display: inline-block;
+          }
+        }
+      }
+    }
+  }
+  .iphone-container {
+    width: 278px;
+    margin: 0 auto;
+    border-radius: 46px;
+    box-shadow: 0 0 160px $dark_black;
+    .description {
+      position: absolute;
+      top: 20%;
+      right: 20%;
+      width: 260px;
+      h3 {
+        font-family: $whitney-sc;
+        font-size: $font18;
+        color: $white;
+        font-weight: $fontlighter;
+        text-transform: uppercase;
+        position: relative;
+        padding: $pad15_0;
+      }
+      p {
+        color: $white;
+        font-size: $font14;
+        font-weight: $fontlighter;
+        margin: 0;
+      }
+      .flag-dir {
+        background: $midlle_blue;
+        height: 2px;
+        width: 160px;
+        display: flex;
+        align-items: center;
+        position: absolute;
+        left: -175px;
+        top: 25px;
+        &:before {
+          content: "";
+          width: 14px;
+          height: 14px;
+          border-radius: 50%;
+          background: $midlle_blue;
+          display: block;
+        }
+        &:after {
+          content: "";
+          border-right: 2px solid $midlle_blue;
+          height: 18px;
+          width: 2px;
+          position: absolute;
+          right: 0;
+        }
+      }
+    }
+  }
+  .blk-button {
+    width: 278px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    a {
+      box-shadow: 2px 2px 50px $dark_black;
+      padding: $pad10;
+      font-weight: $font500;
+      font-size: $font17;
+      font-family: $whitney-sc;
+      text-transform: uppercase;
+      margin-top: $marg30;
+      border-radius: 5px;
+      transition: all 0.1s ease-in-out;
+      color: $white;
+      background-color: $midlle_blue;
+      display: inline-block;
+    }
+    span {
+      font-style: $fontitalic;
+      font-size: $font13;
+      display: block;
+      margin-top: 7px;
+      color: $quite_black;
+    }
+  }
+}
 
+// =============================================================================
+// 01. Blue.Video Section
+// =============================================================================
+.back-video {
+  background-image: url(../img/blueVideo.jpg);
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  transform: rotate(4deg) skew(4deg);
+  -webkit-transform: rotate(4deg) skew(4deg);
+  position: absolute;
+  width: 105%;
+  height: 130%;
+  left: -10px;
+  top: -80px;
+    &:before {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      -webkit-opacity: 0.95;
+      -khtml-opacity: 0.95;
+      -moz-opacity: 0.95;
+      opacity: 0.95;
+      -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=95);
+      filter: alpha(opacity=95);
+      z-index: 1;
+      left: 0;
+      content: '';
+      background-color: #52bdec;
+    }
+}
+.blueVideo {
+  padding: 0 0 80px 0;
+  width: 100%;
+  position: relative;
+}
 
+.blueVideo .iconsContainer {
+  height: 150px;
+  width: 100%;
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  top: 50px;
+  z-index: 9999;
+}
+.blueVideo .iconsContainer .feature {
+  float: left;
+  height: 200px;
+  width: 28%;
+  text-align: center;
+  color: #FFF;
+  font-size: 1.3em;
+  font-weight: lighter;
+}
+.blueVideo .iconsContainer .feature .icon {
+  height: 100px;
+  width: 100%;
+  background-size: 25%;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+.blueVideo .iconsContainer .feature .skills {
+  background-image: url(../img/skills.svg);
+}
+.blueVideo .iconsContainer .feature .ranked {
+  background-image: url(../img/ranked.svg);
+}
+.blueVideo .iconsContainer .feature .personality {
+  background-image: url(../img/personalityProfiling.svg);
+}
+.blueVideo .iconsContainer .feature .textFeature {
+  height: auto;
+  width: 62%;
+  margin: 0 auto;
+}
+.blueVideo .iconsContainer .plus {
+  height: 150px;
+  width: 8%;
+  float: left;
+  color: #FFF;
+  line-height: 150px;
+  font-size: 4em;
+  font-weight: lighter;
+  text-align: center;
+}
+.blueVideo .videoText {
+  height: auto;
+  width: 100%;
+  position: relative;
+  font-size: 1.1em;
+  text-align: center;
+  color: #FFF;
+  margin-top: 110px;
+  z-index: 9999;
+}
+.blueVideo .videoText .weAreIrecruit {
+  height: auto;
+  width: 100%;
+  font-size: 1.5em;
+}
+.blueVideo .videoText .playBtn {
+  height: 45px;
+  width: 45px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  behavior: url(../htc/pie.htc);
+  zoom: 1;
+  margin: 0 auto;
+  margin-top: 30px;
+  background-color: #FFF;
+}
+.blueVideo .videoText .theEngine {
+  height: auto;
+  width: 100%;
+  margin-top: 30px;
+  font-weight: lighter;
+}
 
+// =============================================================================
+// 01. Internal Pages
+// =============================================================================
+#primary {
+  padding: 0 40px 10px 40px;
+  .entry-header,
+  .entry-content {
+    max-width: 700px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    h1 {
+      font-family: $whitney-sc;
+      text-transform: uppercase;
+      color: $midlle_blue;
+      margin-bottom: $marg25;
+      font-weight: $font500;
+      font-size: $font28;
+    }
+    h2, h3, h4, h5, h6 {
+      font-family: $whitney;
+      color: $midlle_blue;
+      margin-bottom: $marg25;
+      font-weight: $font500;
+    }
+    h2 {
+      font-size: $font28;
+    }
+    p {
+      font-size: $font22;
+      color: $color_p;
+    }
+  }
+  .rotate-line-internal{
+    position: absolute;
+    margin: 0 auto;
+    left: -20px;
+    right: 0;
+    top: 360px;
+    z-index: -1;
+    width: 115%;
+    height: 15%;
+    background: #52bdec;
+    transform: rotate(5deg) skew(5deg);
+    clip-path: polygon(100% 95%, 0 80%, 0 30%);
+  }
+}
 
-
-
-
-
+// =============================================================================
+// 01. Customer Content Footer Section
+// =============================================================================
 .customersContent {
   height: auto;
   width: 100%;
@@ -160,7 +511,6 @@ header#masthead {
   color: #52bdec;
   font-weight: lighter;
   font-size: 1.5em;
-  letter-spacing: 1px;
   line-height: 2em;
 }
 .customersContent .customersText:after {
@@ -183,33 +533,18 @@ header#masthead {
   color: #444;
 }
 .customersContent .customersText .customersButton {
-  display: inline-block;
-  vertical-align: top;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-  -webkit-box-shadow: 0px 0px 15px #cccccc;
-  -moz-box-shadow: 0px 0px 15px #cccccc;
-  box-shadow: 0px 0px 15px #cccccc;
-  behavior: url(../htc/pie.htc);
-  zoom: 1;
-  -webkit-opacity: 0.85;
-  -khtml-opacity: 0.85;
-  -moz-opacity: 0.85;
-  opacity: 0.85;
-  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=85);
-  filter: alpha(opacity=85);
-  -webkit-transition: all 0.1s ease-in-out;
-  -moz-transition: all 0.1s ease-in-out;
-  -o-transition: all 0.1s ease-in-out;
+  padding: $pad12;
+  font-weight: $font500;
+  font-size: $font17;
+  font-family: $whitney-sc;
+  text-transform: uppercase;
+  margin-top: $marg15;
+  border-radius: 5px;
   transition: all 0.1s ease-in-out;
-  font-weight: bolder;
-  padding: 12px 15px;
-  font-size: 0.8em;
+  color: $white;
+  background-color: $midlle_blue;
+  display: inline-block;
   line-height: 0.9em;
-  color: #FFF;
-  background-color: #52bdec;
-  margin-top: 15px;
 }
 .customersContent .customersText .customersButton:hover,
 .customersContent .customersText .customersButton:active {
@@ -266,133 +601,8 @@ header#masthead {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00f9f9f9', endColorstr='#f9f9f9', GradientType=0);
   /* IE6-9 */
 }
-.blackSection {
-  height: auto;
-  width: 100%;
-  min-height: 1100px;
-  background-color: #333;
-  background-image: url(../img/patternBlackSection.png);
-}
-.blackSection .iphoneContainer {
-  height: 600px;
-  width: 400px;
-  margin: 0 auto;
-}
-.blueVideo {
-  height: 600px;
-  width: 100%;
-  position: relative;
-  -ms-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  padding: 0 20px;
-  background-image: url(../img/blueVideo.jpg);
-  background-size: cover;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-}
-.blueVideo:after {
-  content: " ";
-  display: block;
-  clear: both;
-}
-.blueVideo:before {
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  -webkit-opacity: 0.95;
-  -khtml-opacity: 0.95;
-  -moz-opacity: 0.95;
-  opacity: 0.95;
-  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=95);
-  filter: alpha(opacity=95);
-  z-index: 1;
-  left: 0;
-  content: '';
-  background-color: #52bdec;
-}
-.blueVideo .iconsContainer {
-  height: 150px;
-  width: 100%;
-  position: relative;
-  max-width: 900px;
-  margin: 0 auto;
-  top: 50px;
-  z-index: 9999;
-}
-.blueVideo .iconsContainer .feature {
-  float: left;
-  height: 200px;
-  width: 28%;
-  text-align: center;
-  color: #FFF;
-  font-size: 1.2em;
-  font-weight: lighter;
-}
-.blueVideo .iconsContainer .feature .icon {
-  height: 100px;
-  width: 100%;
-  background-size: 25%;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-}
-.blueVideo .iconsContainer .feature .skills {
-  background-image: url(../img/skills.svg);
-}
-.blueVideo .iconsContainer .feature .ranked {
-  background-image: url(../img/ranked.svg);
-}
-.blueVideo .iconsContainer .feature .personality {
-  background-image: url(../img/personalityProfiling.svg);
-}
-.blueVideo .iconsContainer .feature .textFeature {
-  height: auto;
-  width: 100%;
-}
-.blueVideo .iconsContainer .plus {
-  height: 150px;
-  width: 8%;
-  float: left;
-  color: #FFF;
-  line-height: 150px;
-  font-size: 4em;
-  font-weight: lighter;
-  text-align: center;
-}
-.blueVideo .videoText {
-  height: auto;
-  width: 100%;
-  position: relative;
-  font-size: 1.1em;
-  text-align: center;
-  color: #FFF;
-  margin-top: 110px;
-  z-index: 9999;
-}
-.blueVideo .videoText .weAreIrecruit {
-  height: auto;
-  width: 100%;
-  font-size: 1.5em;
-}
-.blueVideo .videoText .playBtn {
-  height: 45px;
-  width: 45px;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  border-radius: 50%;
-  behavior: url(../htc/pie.htc);
-  zoom: 1;
-  margin: 0 auto;
-  margin-top: 30px;
-  background-color: #FFF;
-}
-.blueVideo .videoText .theEngine {
-  height: auto;
-  width: 100%;
-  margin-top: 30px;
-  font-weight: lighter;
-}
+
+
 @media (min-width: 900px) {
   .blueVideo .videoText {
     margin-top: 200px;
