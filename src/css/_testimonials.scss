@@ -1,0 +1,107 @@
+// =============================================================================
+// Testimonials
+// =============================================================================
+.content-testimonials {
+  padding: 140px 0;
+  article {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    figure {
+      width: 30%;
+      img {
+        object-fit: cover;
+        height: auto;
+        width: 100%;
+      }
+    }
+    .blk-testimonials {
+      width: 60%;
+      h3 {
+        font-family: $whitney;
+        padding-top: $pad25;
+        padding-bottom: $pad25;
+        font-weight: $fontlighter;
+        font-size: $font26;
+        line-height: 40px;
+        position: relative;
+        &:before {
+          content:"";
+          position: absolute;
+          left: -15px;
+          top: 10px;
+          width: 18px;
+          height: 50px;
+          background: $light_grey;
+          opacity: 0.2;
+          -webkit-transform: rotate(180deg) skew(-20deg);
+          -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 30% 100%);
+        }
+        &:after {
+          content:"";
+          position: absolute;
+          left: 15px;
+          top: 10px;
+          width: 18px;
+          height: 50px;
+          background: $light_grey;
+          opacity: 0.2;
+          -webkit-transform: rotate(180deg) skew(-20deg);
+          -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 30% 100%);
+        }
+        span {
+          position: relative;
+          &:before {
+            content: open-quote;
+            position: absolute;
+            left: -12px;
+            top: -5px;
+          }
+          &:after {
+            content: close-quote;
+            position: relative;
+            right: 0;
+            top: 0;
+          }
+        }
+      }
+      p {
+        line-height: 32px;
+        color: $color_p;
+      }
+      .blk-find-out {
+        margin-top: $marg30;
+        padding-top: $pad20;
+        border-top: 1px solid $color_p;
+        h5 {
+          font-family: $whitney;
+          font-weight: $fontlighter;
+          font-size: $font16;
+          position: relative;
+          color: $midlle_blue;
+          padding-left: $pad30;
+          margin: $marg20_0;
+          &:before {
+            width: 26px;
+            content: url(../img/titleicon-phone.svg);
+            position: absolute;
+            left: 0;
+            top: -3px;
+          }
+        }
+        a {
+          box-shadow: 0px 0px 15px #cccccc;
+          padding: 15px 25px;
+          font-weight: $font500;
+          font-size: $font16;
+          margin-top: $marg20;
+          border-radius: 5px;
+          transition: all 0.1s ease-in-out;
+          color: $white;
+          background-color: $midlle_blue;
+          display: inline-block;
+        }
+      }
+    }
+  }
+}

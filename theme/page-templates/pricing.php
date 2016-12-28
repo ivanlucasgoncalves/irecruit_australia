@@ -23,37 +23,44 @@ get_header(); ?>
 							$category = get_sub_field('category');
 							$price = get_sub_field('price');
 							$content = get_sub_field('content'); ?>
-							<div class="blk-prices blks-count<?php echo $count; ?>">
-								<div class="inside-div">
-									<h3><?php echo $category; ?></h3>
-									<h4><sup>$</sup><?php echo $price; ?></h4>
-									<span>monthly</span>
-									<?php echo $content; ?>
-									<a href="javascript:void(0);" class="open-modal" id="<?php echo $category; ?>" data-value="<?php echo $category; ?>">Select</a>
+							<?php if( get_sub_field('recommended') ): ?><!-- .entry-recommended-if-yes -->
+								<div class="blk-plan recommended">
+									<div class="inside-div">
+										<div class="blk_title_recommend">
+											<span>Recommended</span>
+											<h3><?php echo $category; ?></h3>
+										</div>
+										<div class="blk-price">
+											<h4><sup>$</sup><?php echo $price; ?></h4>
+											<span>monthly</span>
+										</div>
+										<?php echo $content; ?>
+										<a href="javascript:void(0);" class="open-modal" id="<?php echo $category; ?>" data-value="<?php echo $category; ?>">Select</a>
+									</div>
 								</div>
-							</div>
+							<?php else: ?><!-- .entry-if-no-recommended -->
+								<div class="blk-plan blks-count<?php echo $count; ?>">
+									<div class="inside-div">
+										<h3><?php echo $category; ?></h3>
+										<div class="blk-price">
+											<h4><sup>$</sup><?php echo $price; ?></h4>
+											<span>monthly</span>
+										</div>
+										<?php echo $content; ?>
+										<a href="javascript:void(0);" class="open-modal" id="<?php echo $category; ?>" data-value="<?php echo $category; ?>">Select</a>
+									</div>
+								</div>
+							<?php endif; ?>
 					<?php
 						$count++;
 						endwhile; ?>
 					<?php endif; ?>
 			</div><!-- .entry-content-plans -->
-			<?php
-
-				$posts = get_field('client_testimonials');
-
+			<?php	$posts = get_field('client_testimonials');
 				if( $posts ): ?>
-				    <ul>
-				    <?php foreach( $posts as $post): // variable must be called $post (IMPORTANT) ?>
-				        <?php setup_postdata($post); ?>
-				        <li>
-				            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-										<?php	the_content(); ?>
-				            <span>Custom field from $post: <?php the_field('author'); ?></span>
-				        </li>
-				    <?php endforeach; ?>
-				    </ul>
-				    <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
-				<?php endif; ?>
+				<?php // Include the page content testimonials.
+				get_template_part( 'template-parts/content', 'testimonials' ); ?>
+			<?php endif; ?><!-- .entry-testimonials -->
     </article><!-- #post-## -->
 
   </main><!-- .site-main -->

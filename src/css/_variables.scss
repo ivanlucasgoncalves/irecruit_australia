@@ -31,6 +31,17 @@ $color_twitter:   #3598dc;
 $color_linkedin:  #007bb6;
 $color_google:    #e84c3d;
 
+//Pricing Colours
+$blk_colour_one:    	    #52bdec;
+$blk_colour_two:    	    #4db2de;
+$blk_colour_three:        #45a0c8;
+$blk_colour_four:    	    #295e74;
+$link_light_grey:    	    #ececec;
+$blk_colour_recommended:  linear-gradient(to bottom, rgba(80,184,229,1) 0%, rgba(80,184,229,1) 0%, rgba(50,114,144,1) 96%, rgba(50,114,144,1) 100%);
+$link_recommended:        #285e74;
+$back_grey:               #ececec;
+$link_dark_grey:          #e3e3e3;
+
 //Paddings
 $pad10:              10px;
 $pad10_0:            10px 0;
@@ -72,6 +83,7 @@ $marg40:              40px;
 $marg40_0:            40px 0;
 $marg60:              60px;
 $marg60_0:            60px 0;
+$marg90:              90px;
 
 //Font Size
 $font12:              12px;
@@ -95,6 +107,8 @@ $font40:              40px;
 $font46:              46px;
 $font48:              48px;
 $font50:              50px;
+$font52:              52px;
+$font54:              54px;
 
 //Type of font
 $whitney:             'Whitney SSm A', 'Whitney SSm B';

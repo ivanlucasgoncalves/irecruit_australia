@@ -5,7 +5,10 @@
   display: flex;
   align-items: center;
   min-height: 400px;
-  .blk-prices {
+  max-width: 95%;
+  margin: 0 auto;
+  margin-top: $marg90;
+  .blk-plan {
     width: 25%;
     .inside-div {
       text-align: center;
@@ -13,26 +16,83 @@
         font-family: $whitney-sc;
         text-transform: uppercase;
         padding: $pad25;
-        font-weight: $font500;
+        font-weight: $font600;
         font-size: $font20;
         color: $white;
       }
+      .blk-price {
+        margin: $marg40_0;
+        h4 {
+          font-size: $font46;
+          font-weight: $fontlighter;
+          sup {
+            top: -1.1em;
+            font-size: 40%;
+          }
+        }
+        span {
+          font-size: $font12;
+        }
+      }
+      p {
+        line-height: 36px;
+        margin: 0 0 20px 0;
+      }
       a {
-        padding: $pad20;
+        padding: $pad20_0;
         font-family: $whitney-sc;
         text-transform: uppercase;
-        font-weight: $font500;
+        font-weight: $font600;
         font-size: $font20;
         display: block;
+      }
+    }
+    &.recommended {
+      background: $blk_colour_recommended;
+      color: $white;
+      box-shadow: 0 0 40px rgba(51,51,51,0.3);
+      position: relative;
+      .blk_title_recommend {
+        padding: $pad25;
+        span {
+          font-family: $whitney-sc;
+          text-transform: uppercase;
+          font-weight: $fontlighter;
+          font-size: $font12;
+          display: block;
+          margin-bottom: $marg20;
+        }
+        h3 {
+          font-size: $font28;
+          padding: 0;
+        }
+      }
+      .blk-price {
+        margin: $marg25_0;
+        h4 {
+          font-size: $font54;
+          font-weight: $fontlighter;
+          sup {
+            top: -1.1em;
+            font-size: 40%;
+          }
+        }
+        span {
+          font-size: $font12;
+        }
+      }
+      a {
+        color: $white;
+        background: $link_recommended;
+        padding: $pad30_0;
       }
     }
     &.blks-count0 {
       background: $white;
       h3 {
-        background: $midlle_blue;
+        background: $blk_colour_one;
       }
       h4 {
-        font-size: $font40;
         color: $midlle_blue;
       }
       span {
@@ -41,23 +101,37 @@
       p {
         color: $midlle_blue;
       }
+      a {
+        background: $link_light_grey;
+        color: $midlle_blue;
+      }
     }
     &.blks-count1 {
       background: $white;
       h3 {
-        background: $midlle_blue;
+        background: $blk_colour_two;
       }
     }
     &.blks-count2 {
       background: $white;
+      color: $blk_colour_three;
       h3 {
-        background: $midlle_blue;
+        background: $blk_colour_three;
+      }
+      a{
+        background: $link_light_grey;
+        color: $midlle_blue;
       }
     }
     &.blks-count3 {
-      background: $white;
+      background: $back_grey;
+      color: $blk_colour_four;
       h3 {
-        background: $midlle_blue;
+        background: $blk_colour_four;
+      }
+      a {
+        color: $blk_colour_four;
+        background: $link_dark_grey;
       }
     }
   }

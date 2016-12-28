@@ -45,9 +45,9 @@ add_filter('wp_nav_menu_objects', 'rel_to_absolute');
  */
 function widgets_init() {
 	register_sidebar( array(
-		'name'          => __( 'Sidebar', 'twentysixteen' ),
+		'name'          => __( 'Sidebar' ),
 		'id'            => 'sidebar-1',
-		'description'   => __( 'Add widgets here to appear in your sidebar.', 'twentysixteen' ),
+		'description'   => __( 'Add widgets here to appear in your sidebar.' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
@@ -55,26 +55,37 @@ function widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => __( 'Content Bottom 1', 'twentysixteen' ),
+		'name'          => __( 'Content Menu Bottom' ),
 		'id'            => 'sidebar-2',
-		'description'   => __( 'Appears at the bottom of the content on posts and pages.', 'twentysixteen' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
+		'description'   => __( 'Appears menus at the bottom of the content on posts and pages.' ),
+		'before_widget' => '<nav id="%1$s" class="column %2$s">',
+		'after_widget'  => '</nav>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
 	) );
 
 	register_sidebar( array(
-		'name'          => __( 'Content Bottom 2', 'twentysixteen' ),
+		'name'          => __( 'Content Copyright and Address Bottom' ),
 		'id'            => 'sidebar-3',
-		'description'   => __( 'Appears at the bottom of the content on posts and pages.', 'twentysixteen' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
+		'description'   => __( 'Appears copyright and address at the bottom of the content on posts and pages.' ),
+		'before_widget' => '<div id="%1$s" class="column %2$s">',
+		'after_widget'  => '</div>',
 	) );
+
 }
 add_action( 'widgets_init', 'widgets_init' );
+
+/**
+ * Hiding a widget title if needed to.
+ */
+function flexible_widget_titles( $widget_title ) {
+// get rid of any leading and trailing spaces
+$title = trim( $widget_title );
+	// check the first and last character, if [ and ] set the title to empty
+	if ( $title[0] == '[' && $title[strlen($title) - 1] == ']' ) $title = '';
+	return $title;
+}
+add_filter( 'widget_title', 'flexible_widget_titles' );
 
 /**
 ** Handles JavaScript detection.

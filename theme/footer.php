@@ -56,49 +56,9 @@
 						</div>
 					</div>
 				</div>
-				<div class="border"></div>
-				<div class="infosNavWrapper">
-					<div class="left">
-						<a href="#" class="logoIrecruit"></a>
-						<div class="text">
-							<p class="copyright">2016 iRecruit Australia Pty Ltd</p>
-							<p class="address">Suite 2, Level 5 - 757 Ann St, Fortitude Valley <br/> Brisbane City, QLD 4006</p>
-						</div>
-					</div>
-					<div class="right">
-						<nav class="footerNav">
-							<div class="column">
-								<ul>
-									<li>
-										<a href="#" class="columnTitle">COMPANY</a>
-										<a href="#" class="columnLink">About</a>
-										<a href="#" class="columnLink">Blog</a>
-										<a href="#" class="columnLink">Pricing</a>
-										<a href="#" class="columnLink">Contact</a>
-									</li>
-								</ul>
-							</div>
-							<div class="column">
-								<ul>
-									<li>
-										<a href="#" class="columnTitle">SUPPORT</a>
-										<a href="#" class="columnLink">Contact Us</a>
-										<a href="#" class="columnLink">Feedback</a>
-									</li>
-								</ul>
-							</div>
-							<div class="column">
-								<ul>
-									<li>
-										<a href="#" class="columnTitle">RESOURCES</a>
-										<a href="#" class="columnLink">Press Kit</a>
-										<a href="#" class="columnLink">Privacy</a>
-										<a href="#" class="columnLink">Terms and Conditions</a>
-									</li>
-								</ul>
-							</div>
-						</nav>
-					</div>
+				<div class="info-nav-wrapper">
+					<?php // Widgets bottom - Menus and Copyright | Addresss
+					get_sidebar("content-bottom"); ?>
 				</div>
 			</div>
 		</footer>
