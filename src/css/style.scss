@@ -23,6 +23,7 @@
 @import "phone";
 @import "pricing";
 @import "testimonials";
+@import "contact";
 
 // =============================================================================
 // 01. Header
@@ -236,11 +237,13 @@ header#masthead {
     margin: 0 auto;
     border-radius: 46px;
     box-shadow: 0 0 160px $dark_black;
+    position: relative;
     .description {
       position: absolute;
       top: 20%;
-      right: 20%;
+      left: 360px;
       width: 260px;
+      z-index: 1;
       h3 {
         font-family: $whitney-sc;
         font-size: $font18;
@@ -435,7 +438,7 @@ header#masthead {
   padding: 0 40px 10px 40px;
   .entry-header,
   .entry-content {
-    max-width: 700px;
+    max-width: 1200px;
     width: 100%;
     margin: 0 auto;
     text-align: center;
@@ -444,22 +447,25 @@ header#masthead {
       text-transform: uppercase;
       color: $midlle_blue;
       margin-bottom: $marg25;
-      font-weight: $font500;
+      font-weight: $font600;
       font-size: $font28;
     }
     h2, h3, h4, h5, h6 {
       font-family: $whitney;
       color: $midlle_blue;
       margin-bottom: $marg25;
-      font-weight: $font500;
+      font-weight: $fontlighter;
     }
     h2 {
-      font-size: $font28;
+      font-size: $font32;
     }
     p {
       font-size: $font22;
       color: $color_p;
     }
+  }
+  .entry-content {
+    margin-bottom: $marg50;
   }
   .rotate-line-internal{
     position: absolute;
@@ -469,8 +475,8 @@ header#masthead {
     top: 360px;
     z-index: -1;
     width: 115%;
-    height: 15%;
-    background: #52bdec;
+    height: 180px;
+    background: $midlle_blue;
     transform: rotate(5deg) skew(5deg);
     clip-path: polygon(100% 95%, 0 80%, 0 30%);
   }
@@ -607,7 +613,8 @@ footer {
     justify-content: space-between;
     border-top: 3px solid #F7F7F7;
     margin-top: $marg60;
-    padding-top: $marg40;
+    padding-top: $pad40;
+    padding-bottom: $pad40;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -660,6 +667,90 @@ footer {
                 color: #666;
               }
             }
+          }
+        }
+      }
+    }
+  }
+  .common-footer-wrapper {
+    .three-buttons {
+      height: auto;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      margin-top: -80px;
+      display: flex;
+      justify-content: space-between;
+      .widget_categorieswidgets {
+        height: 160px;
+        width: 32%;
+        border-radius: 9px;
+        box-shadow: 0px 0px 15px rgba(241,241,241,0.4);
+        zoom: 1;
+        transition: all 0.2s ease-in-out;
+        position: relative;
+        cursor: pointer;
+        background-color: #fcfcfc;
+        overflow: hidden;
+        .button {
+          display: flex;
+          align-items: center;
+          width: 100%;
+          height: 100%;
+          .icon-button {
+            position: relative;
+            z-index: 1;
+            height: 100%;
+            width: 35%;
+            display: flex;
+            align-items: center;
+            img {
+              position: absolute;
+              right: 25%;
+            }
+          }
+          .text-container {
+            height: 100%;
+            width: 65%;
+            position: relative;
+            box-sizing: border-box;
+            z-index: 9;
+            font-weight: $fontlighter;
+            h2 {
+              font-weight: $fontbold;
+              color: $midlle_blue;
+              text-transform: uppercase;
+              margin-top: $marg30;
+              margin-bottom: $marg10;
+              font-size: $font16;
+            }
+            p {
+              padding-right: $pad25;
+              color: $quite_black;
+            }
+          }
+          &:before {
+            height: 160px;
+            width: 160px;
+            border-radius: 50%;
+            zoom: 1;
+            position: absolute;
+            transition: all 0.2s ease-in-out;
+            z-index: 1;
+            left: -75px;
+            content: '';
+            background-color: #F4F4F4;
+          }
+        }
+        &:hover {
+          transition: all 0.2s ease-in-out;
+          margin-top: -5px;
+          background-color: $white;
+          &:before {
+            opacity: 0.5;
+            -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=50);
+            filter: alpha(opacity=50);
+            transition: all 0.2s ease-in-out;
           }
         }
       }
@@ -742,147 +833,16 @@ footer {
     display: block;
     clear: both;
   }
-  footer .commonFooterWrapper {
-    height: auto;
-    width: 100%;
-    -ms-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    padding: 0px 20px;
-    min-height: 300px;
-    margin-bottom: 40px;
+
+
+  footer {
+
+
+
+
+
   }
-  footer .commonFooterWrapper:after {
-    content: " ";
-    display: block;
-    clear: both;
-  }
-  footer .commonFooterWrapper .threeButtons {
-    height: auto;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    margin-top: -80px;
-    background: none;
-  }
-  footer .commonFooterWrapper .threeButtons:after {
-    content: " ";
-    display: block;
-    clear: both;
-  }
-  footer .commonFooterWrapper .threeButtons .button {
-    height: 160px;
-    width: 32%;
-    -webkit-border-radius: 9px;
-    -moz-border-radius: 9px;
-    border-radius: 9px;
-    float: left;
-    -webkit-box-shadow: 0px 0px 15px #f1f1f1;
-    -moz-box-shadow: 0px 0px 15px #f1f1f1;
-    box-shadow: 0px 0px 15px #f1f1f1;
-    behavior: url(../htc/pie.htc);
-    zoom: 1;
-    -webkit-transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out;
-    position: relative;
-    cursor: pointer;
-    margin-right: 2%;
-    background-color: #fcfcfc;
-    overflow: hidden;
-  }
-  footer .commonFooterWrapper .threeButtons .button:before {
-    height: 160px;
-    width: 160px;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    border-radius: 50%;
-    behavior: url(../htc/pie.htc);
-    zoom: 1;
-    position: absolute;
-    -webkit-transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out;
-    z-index: 1;
-    margin-left: -75px;
-    content: '';
-    background-color: #F4F4F4;
-  }
-  footer .commonFooterWrapper .threeButtons .button .iconButton {
-    height: 160px;
-    width: 35%;
-    float: left;
-    position: relative;
-    z-index: 9999;
-    background-size: 60%;
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
-  }
-  footer .commonFooterWrapper .threeButtons .button .pricingModel {
-    background-image: url(../img/pricingIcon.svg);
-  }
-  footer .commonFooterWrapper .threeButtons .button .blog {
-    background-image: url(../img/blogIcon.svg);
-  }
-  footer .commonFooterWrapper .threeButtons .button .getInTouch {
-    background-size: 40%;
-    background-image: url(../img/contactIcon.svg);
-  }
-  footer .commonFooterWrapper .threeButtons .button .textContainer {
-    height: auto;
-    width: 65%;
-    float: left;
-    position: relative;
-    -ms-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    z-index: 9999;
-    font-weight: lighter;
-  }
-  footer .commonFooterWrapper .threeButtons .button .textContainer:after {
-    content: " ";
-    display: block;
-    clear: both;
-  }
-  footer .commonFooterWrapper .threeButtons .button .textContainer .title {
-    font-weight: bold;
-    color: #52bdec;
-    margin-top: 30px;
-    font-size: 1.1em;
-    margin-bottom: 10px;
-  }
-  footer .commonFooterWrapper .threeButtons .button .textContainer .text {
-    padding-right: 25px;
-    font-size: 1em;
-    color: #999;
-  }
-  footer .commonFooterWrapper .threeButtons .button:last-child {
-    margin-right: 0;
-  }
-  footer .commonFooterWrapper .threeButtons .button:hover {
-    -webkit-transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out;
-    margin-top: -5px;
-    background-color: #FFF;
-  }
-  footer .commonFooterWrapper .threeButtons .button:hover:before {
-    -webkit-opacity: 0.5;
-    -khtml-opacity: 0.5;
-    -moz-opacity: 0.5;
-    opacity: 0.5;
-    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=50);
-    filter: alpha(opacity=50);
-    -webkit-transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out;
-  }
+
 
 }
 @media (min-width: 600px) and (max-width: 899px) {

@@ -1,0 +1,84 @@
+// =============================================================================
+// Contact
+// =============================================================================
+.info-contact {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: $marg90;
+  margin-bottom: $marg90;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  .blk-info {
+    width: 32%;
+    text-align: center;
+    p {
+      font-size: $font18;
+    }
+  }
+}
+.content-form {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-bottom: $marg160;
+  padding-top: $pad90;
+  border-top: 1px solid $quite_white;
+  #form {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    .divform {
+      input,
+      textarea {
+        padding: $pad20_15;
+        margin-bottom: $marg10;
+        border: 0;
+        border-radius: 4px;
+        background: $light_white;
+        border: 1px solid $quite_white;
+        width: 100%;
+        line-height: 24px;
+        box-shadow: 0 0 10px rgba(241,241,241,0.3);
+      }
+      input::-webkit-input-placeholder,
+      textarea::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+        color: $light_grey;
+      }
+      input::-moz-placeholder,
+      textarea::-moz-placeholder { /* Firefox 19+ */
+        color: $light_grey;
+      }
+      input:-ms-input-placeholder,
+      textarea:-ms-input-placeholder { /* IE 10+ */
+        color: $light_grey;
+      }
+      input:-moz-placeholder,
+      textarea:-moz-placeholder,{ /* Firefox 18- */
+        color: $light_grey;
+      }
+      textarea {
+        resize: none;
+        height: 140px;
+      }
+    }
+    .submit-wrap {
+      text-align: right;
+      input {
+        padding: $pad15;
+        display: inline-block;
+        font-family: $whitney;
+        text-transform: uppercase;
+        color: $white;
+        font-weight: $font600;
+        font-size: $font16;
+        border: 0;
+        border-radius: 7px;
+        background: $midlle_blue;
+        cursor: pointer;
+        box-shadow: 1px 1px 10px rgba(51,51,51,0.2);
+      }
+    }
+  }
+}

@@ -148,39 +148,37 @@ get_header();  $img_logo = get_theme_mod( 'img_logo', esc_url( get_template_dire
 			<span>Free trial, no credit card required :)</span>
 		</div>
 	</section>
-
-
-
-
-			<section class="blueVideo">
-				<div class="back-video"></div>
-				<div class="iconsContainer">
-					<div class="feature">
-						<div class="icon skills"></div>
-						<div class="textFeature">
-							<p>SKILLS AND EXPERIENCE</p>
-						</div>
-					</div>
-					<div class="plus">+</div>
-					<div class="feature">
-						<div class="icon personality"></div>
-						<div class="textFeature">
-							<p>PERSONALITY PROFILING</p>
-						</div>
-					</div>
-					<div class="plus">+</div>
-					<div class="feature">
-						<div class="icon ranked"></div>
-						<div class="textFeature">
-							<p>RANKED & SORTED</p>
-						</div>
-					</div>
+	<section class="blueVideo">
+		<div class="back-video"></div>
+		<div class="iconsContainer">
+			<div class="feature">
+				<div class="icon skills"></div>
+				<div class="textFeature">
+					<p>SKILLS AND EXPERIENCE</p>
 				</div>
-				<div class="videoText">
-					<p class="weAreIrecruit">WE ARE IRECRUIT</p>
-					<div class="playBtn"></div>
-					<p class="theEngine">The most powerful Candidate Ranking Engine ever created.</p>
+			</div>
+			<div class="plus">+</div>
+			<div class="feature">
+				<div class="icon personality"></div>
+				<div class="textFeature">
+					<p>PERSONALITY PROFILING</p>
 				</div>
-			</section>
+			</div>
+			<div class="plus">+</div>
+			<div class="feature">
+				<div class="icon ranked"></div>
+				<div class="textFeature">
+					<p>RANKED & SORTED</p>
+				</div>
+			</div>
+		</div>
+		<div class="videoText">
+			<p class="weAreIrecruit">WE ARE IRECRUIT</p>
+			<div class="playBtn"></div>
+			<p class="theEngine">The most powerful Candidate Ranking Engine ever created.</p>
+		</div>
+	</section>
+	<?php // Include the content customers template.
+	get_template_part( 'template-parts/content', 'customers' ); ?>
 
 <?php get_footer(); ?>

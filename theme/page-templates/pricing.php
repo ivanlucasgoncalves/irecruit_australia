@@ -65,5 +65,34 @@ get_header(); ?>
 
   </main><!-- .site-main -->
 </div><!-- .content-area -->
-
+<section class="blueVideo">
+	<div class="back-video"></div>
+	<div class="iconsContainer">
+		<div class="feature">
+			<div class="icon skills"></div>
+			<div class="textFeature">
+				<p>SKILLS AND EXPERIENCE</p>
+			</div>
+		</div>
+		<div class="plus">+</div>
+		<div class="feature">
+			<div class="icon personality"></div>
+			<div class="textFeature">
+				<p>PERSONALITY PROFILING</p>
+			</div>
+		</div>
+		<div class="plus">+</div>
+		<div class="feature">
+			<div class="icon ranked"></div>
+			<div class="textFeature">
+				<p>RANKED & SORTED</p>
+			</div>
+		</div>
+	</div>
+	<div class="videoText">
+		<p class="weAreIrecruit">WE ARE IRECRUIT</p>
+		<div class="playBtn"></div>
+		<p class="theEngine">The most powerful Candidate Ranking Engine ever created.</p>
+	</div>
+</section>
 <?php get_footer(); ?>

@@ -45,11 +45,11 @@ add_filter('wp_nav_menu_objects', 'rel_to_absolute');
  */
 function widgets_init() {
 	register_sidebar( array(
-		'name'          => __( 'Sidebar' ),
+		'name'          => __( 'Content Button Categories' ),
 		'id'            => 'sidebar-1',
-		'description'   => __( 'Add widgets here to appear in your sidebar.' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
+		'description'   => __( 'Appears button at the bottom of the content on posts and pages.' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
@@ -122,6 +122,14 @@ function scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'scripts' );
 
+/*
+** Allow WP upload SVG **/
+function cc_mime_types($mimes) {
+  $mimes['svg'] = 'image/svg+xml';
+  return $mimes;
+}
+add_filter('upload_mimes', 'cc_mime_types');
+
 /** ACF options **/
 if( function_exists('acf_add_options_page') ) {
 
@@ -131,7 +139,6 @@ if( function_exists('acf_add_options_page') ) {
 		'icon_url'		=> 'dashicons-list-view',
 		'position' => 58
 	));
-
 }
 
 /**
@@ -194,3 +201,71 @@ function post_thumbnail_sizes_attr( $attr, $attachment, $size ) {
 	return $attr;
 }
 add_filter( 'wp_get_attachment_image_attributes', 'post_thumbnail_sizes_attr', 10 , 3 );
+
+/**
+** Register Widgets Buttons at the Bottom Pages **/
+class CategoriesWidgets extends WP_Widget {
+
+  function CategoriesWidgets() {
+    $widget_ops = array('description' => 'Add button at the footer of the pages' );
+    $this->WP_Widget('CategoriesWidgets', 'Button Categories', $widget_ops);
+  }
+
+  function form($instance) {
+    $instance = wp_parse_args( (array) $instance, array( 'title' => '', 'image_uri' => '', 'text' => '' ) );
+    $title = $instance['title'];
+		$image_uri = $instance['image_uri'];
+		$text = $instance['text'];
+
+?>
+  <p><label for="<?php echo $this->get_field_id('title'); ?>">Title: <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo attribute_escape($title); ?>" /></label></p>
+	<p>
+      <label for="<?php echo $this->get_field_id('image_uri'); ?>">Image</label><br />
+      <?php if ( $instance['image_uri'] != '' ) :
+              echo '<img class="custom_media_image" src="' . $instance['image_uri'] . '" style="margin:0;padding:0;max-width:100px;float:left;display:inline-block" /><br />';
+          endif; ?>
+      <input type="text" class="widefat custom_media_url" name="<?php echo $this->get_field_name('image_uri'); ?>" id="<?php echo $this->get_field_id('image_uri'); ?>" value="<?php echo $instance['image_uri']; ?>" style="margin-top:5px;">
+      <input type="button" class="button button-primary custom_media_button" id="custom_media_button" name="<?php echo $this->get_field_name('image_uri'); ?>" value="Upload Image" style="margin-top:5px;" />
+    </p>
+		<p><label for="<?php echo $this->get_field_id( 'text' ); ?>"><?php _e( 'Content:' ); ?></label>
+		<textarea class="widefat" rows="16" cols="20" id="<?php echo $this->get_field_id('text'); ?>" name="<?php echo $this->get_field_name('text'); ?>"><?php echo esc_textarea( $instance['text'] ); ?></textarea></p>
+<?php
+  }
+
+  function update($new_instance, $old_instance) {
+    $instance = $old_instance;
+    $instance['title'] = $new_instance['title'];
+		$instance['image_uri'] = strip_tags( $new_instance['image_uri'] );
+		$instance['text'] = $new_instance['text'];
+    return $instance;
+  }
+
+  function widget($args, $instance) {
+    extract($args, EXTR_SKIP);
+
+    echo $before_widget;
+
+    $title = empty($instance['title']) ? ' ' : apply_filters('widget_title', $instance['title']);
+		$image_uri = "<figure class='icon-button'><img src='".esc_url($instance['image_uri'])."' height='80px' alt='".esc_html($instance['title'])."' /></figure>";
+		$text = esc_html($instance['text']);
+		$link = get_field('widget_link', 'widget_' . $widget_id);
+
+		echo "<a href='".esc_url($link)."' class='button' title='$title | $text'>";
+		echo $image_uri;
+		echo "<div class='text-container'>";
+		echo $before_title . $title . $after_title;
+		echo "<p>".$text."</p>";
+		echo "</div>";
+		echo "</a>";
+
+    echo $after_widget;
+  }
+}
+add_action( 'widgets_init', create_function('', 'return register_widget("CategoriesWidgets");') );
+
+// Add Admin Scripts for Widgets
+add_action('admin_enqueue_scripts', 'wdscript');
+function wdscript() {
+    wp_enqueue_media();
+    wp_enqueue_script('ads_script', get_template_directory_uri() . '/inc/js/widget.js', false, '1.0', true);
+}

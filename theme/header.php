@@ -10,6 +10,7 @@
   <title><?php if (is_front_page()) { bloginfo('name'); echo ' | ';  bloginfo('description'); } else { wp_title(''); } ?></title><!-- .put title -->
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1a76ab"><!-- Chrome, Firefox OS and Opera -->
   <link rel="icon" href="https://web-cdn.irecruit.com.au/web-v4.1.5/favicon.ico" type="image/x-icon">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<?php if ( is_singular() && pings_open( get_queried_object() ) ) : ?>

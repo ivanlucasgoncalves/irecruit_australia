@@ -89,4 +89,10 @@ jQuery( document ).ready( function($) {
 		animaSlider(qual);
 	}, 5000);
 
+	var textAreas = document.getElementsByTagName('textarea');
+
+	Array.prototype.forEach.call(textAreas, function(elem) {
+	    elem.placeholder = elem.placeholder.replace(/\\n/g, '\n');
+	});
+
 }); /* Close Document Ready */
