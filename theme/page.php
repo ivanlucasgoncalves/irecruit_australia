@@ -28,10 +28,12 @@ get_header(); ?>
 		?>
 
 	</main><!-- .site-main -->
-
-	<?php get_sidebar( 'content-bottom' ); ?>
-
 </div><!-- .content-area -->
 
-<?php get_sidebar(); ?>
+<?php // Include the content video template.
+get_template_part( 'template-parts/content', 'video' ); ?>
+
+<?php // Include the content customers template.
+get_template_part( 'template-parts/content', 'customers' ); ?>
+
 <?php get_footer(); ?>

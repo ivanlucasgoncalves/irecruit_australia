@@ -1,0 +1,58 @@
+// =============================================================================
+// Privacy Policy
+// =============================================================================
+.page-id-105 {
+	.entry-content {
+		p {
+			font-size: inherit !important;
+			line-height: 24px !important;
+		}
+		.iub_header {
+			p {
+				font-size: $font20 !important;
+			}
+		}
+		h2 {
+			font-weight: $font600 !important;
+		}
+		h3 {
+			font-size: $font20 !important;
+			color: $midlle_black !important;
+			margin-bottom: 10px !important;
+		}
+		h4 {
+			font-size: $font16 !important;
+			color: $midlle_black !important;
+			margin-bottom: 10px !important;
+		}
+		.one_line_col {
+			border: 0 !important;
+			text-align: left;
+		}
+		.for_boxes {
+			text-align: left;
+			.expand-click {
+				margin: 0 !important;
+				padding: 8px 0 0 45px !important;
+			}
+		}
+		.simple_pp {
+			.for_boxes {
+				text-align: left;
+			}
+		}
+		.one_line_col {
+			.definitions {
+				padding-top: 0 !important;
+				h3 {
+					margin: 0 !important;
+					padding: 5px 0 7px 40px !important;
+					text-align: left !important;
+				}
+			}
+		}
+		.iub_footer {
+			font-size: $font12 !important;
+		}
+	}
+}

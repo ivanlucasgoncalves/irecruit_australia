@@ -24,6 +24,10 @@
 @import "pricing";
 @import "testimonials";
 @import "contact";
+@import "privacy-policy";
+@import "modal-trialform";
+@import "customers";
+@import "video-section";
 
 // =============================================================================
 // 01. Header
@@ -88,6 +92,7 @@ header#masthead {
 // =============================================================================
 #darg_drop {
   margin-bottom: $marg40;
+  padding-top: $pad60;
   position: relative;
   .content-drag_drop {
     width: 38%;
@@ -317,293 +322,103 @@ header#masthead {
 }
 
 // =============================================================================
-// 01. Blue.Video Section
+// 01. Content.Video Section
 // =============================================================================
-.back-video {
-  background-image: url(../img/blueVideo.jpg);
-  background-size: cover;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  transform: rotate(4deg) skew(4deg);
-  -webkit-transform: rotate(4deg) skew(4deg);
-  position: absolute;
-  width: 105%;
-  height: 130%;
-  left: -10px;
-  top: -80px;
-    &:before {
-      height: 100%;
-      width: 100%;
-      position: absolute;
-      opacity: 0.95;
-      -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=95);
-      filter: alpha(opacity=95);
-      z-index: 1;
-      left: 0;
-      content: '';
-      background-color: $midlle_blue;
-    }
-}
-.blueVideo {
-  padding: 0 0 80px 0;
-  width: 100%;
-  position: relative;
-}
 
-.blueVideo .iconsContainer {
-  height: 150px;
-  width: 100%;
-  position: relative;
-  max-width: 900px;
-  margin: 0 auto;
-  top: 50px;
-  z-index: 9999;
-}
-.blueVideo .iconsContainer .feature {
-  float: left;
-  height: 200px;
-  width: 28%;
-  text-align: center;
-  color: #FFF;
-  font-size: 1.3em;
-  font-weight: lighter;
-}
-.blueVideo .iconsContainer .feature .icon {
-  height: 100px;
-  width: 100%;
-  background-size: 25%;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-}
-.blueVideo .iconsContainer .feature .skills {
-  background-image: url(../img/skills.svg);
-}
-.blueVideo .iconsContainer .feature .ranked {
-  background-image: url(../img/ranked.svg);
-}
-.blueVideo .iconsContainer .feature .personality {
-  background-image: url(../img/personalityProfiling.svg);
-}
-.blueVideo .iconsContainer .feature .textFeature {
-  height: auto;
-  width: 62%;
-  margin: 0 auto;
-}
-.blueVideo .iconsContainer .plus {
-  height: 150px;
-  width: 8%;
-  float: left;
-  color: #FFF;
-  line-height: 150px;
-  font-size: 4em;
-  font-weight: lighter;
-  text-align: center;
-}
-.blueVideo .videoText {
-  height: auto;
-  width: 100%;
-  position: relative;
-  font-size: 1.1em;
-  text-align: center;
-  color: #FFF;
-  margin-top: 110px;
-  z-index: 9999;
-}
-.blueVideo .videoText .weAreIrecruit {
-  height: auto;
-  width: 100%;
-  font-size: 1.5em;
-}
-.blueVideo .videoText .playBtn {
-  height: 45px;
-  width: 45px;
-  border-radius: 50%;
-  behavior: url(../htc/pie.htc);
-  zoom: 1;
-  margin: 0 auto;
-  margin-top: 30px;
-  background-color: #FFF;
-}
-.blueVideo .videoText .theEngine {
-  height: auto;
-  width: 100%;
-  margin-top: 30px;
-  font-weight: lighter;
-}
 
 // =============================================================================
 // 01. Internal Pages
 // =============================================================================
 #primary {
-  padding: 0 40px 10px 40px;
-  .entry-header,
-  .entry-content {
-    max-width: 1200px;
-    width: 100%;
-    margin: 0 auto;
-    text-align: center;
-    h1 {
-      font-family: $whitney-sc;
-      text-transform: uppercase;
-      color: $midlle_blue;
-      margin-bottom: $marg25;
-      font-weight: $font600;
-      font-size: $font28;
+  #main {
+    article.page {
+      padding: $pad10_40;
+      .entry-header,
+      .entry-content {
+        max-width: 1200px;
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+        h1 {
+          font-family: $whitney-sc;
+          text-transform: uppercase;
+          color: $midlle_blue;
+          margin-bottom: $marg25;
+          font-weight: $font600;
+          font-size: $font30;
+        }
+        h2, h3, h4, h5, h6 {
+          font-family: $whitney;
+          color: $midlle_blue;
+          margin-bottom: $marg25;
+          font-weight: $fontlighter;
+          line-height: 32px;
+        }
+        h2 {
+          font-size: $font32;
+        }
+        h3 {
+          font-size: $font28;
+        }
+        h4 {
+          font-size: $font24;
+        }
+        h5 {
+          font-size: $font20;
+        }
+        h6 {
+          font-size: $font16;
+        }
+        p {
+          font-size: $font22;
+          color: $color_p;
+        }
+      }
+      .entry-content {
+        margin-bottom: $marg100;
+        min-height: 80px;
+      }
     }
-    h2, h3, h4, h5, h6 {
-      font-family: $whitney;
-      color: $midlle_blue;
-      margin-bottom: $marg25;
-      font-weight: $fontlighter;
-    }
-    h2 {
-      font-size: $font32;
-    }
-    p {
-      font-size: $font22;
-      color: $color_p;
+    .rotate-line-internal {
+      position: absolute;
+      margin: 0 auto;
+      left: -20px;
+      right: 0;
+      top: 400px;
+      z-index: -1;
+      width: 115%;
+      height: 100px;
+      background: $midlle_blue;
+      transform: rotate(5deg) skew(5deg);
+      clip-path: polygon(100% 95%, 0 80%, 0 30%);
     }
   }
-  .entry-content {
-    margin-bottom: $marg50;
-  }
-  .rotate-line-internal{
-    position: absolute;
-    margin: 0 auto;
-    left: -20px;
-    right: 0;
-    top: 360px;
-    z-index: -1;
-    width: 115%;
-    height: 180px;
-    background: $midlle_blue;
-    transform: rotate(5deg) skew(5deg);
-    clip-path: polygon(100% 95%, 0 80%, 0 30%);
+}
+.page-template-customers {
+  #primary {
+    #main {
+      article {
+        .entry-header {
+          h1 {
+            font-size: $font54;
+            font-weight: $font700;
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
   }
 }
 
 // =============================================================================
 // 01. Customer Content Footer Section
 // =============================================================================
-.customersContent {
-  height: auto;
-  width: 100%;
-  position: absolute;
-  -ms-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  margin-left: 0;
-  top: 160px;
-  left: 0;
-  z-index: 9999;
-  text-align: center;
-}
-.customersContent:after {
-  content: " ";
-  display: block;
-  clear: both;
-}
-.customersContent .customersText {
-  height: auto;
-  width: 100%;
-  position: relative;
-  max-width: 1200px;
-  margin: 0 auto;
-  color: #52bdec;
-  font-weight: lighter;
-  font-size: 1.5em;
-  line-height: 2em;
-}
-.customersContent .customersText:after {
-  content: " ";
-  display: block;
-  clear: both;
-}
-.customersContent .customersText .hundredPlus {
-  height: auto;
-  width: 100%;
-  font-weight: bolder;
-  font-size: 2.8em;
-  letter-spacing: -1px;
-}
-.customersContent .customersText .better {
-  font-size: 0.8em;
-  line-height: 1.4em;
-  margin-top: 15px;
-  margin-bottom: 15px;
-  color: #444;
-}
-.customersContent .customersText .customersButton {
-  padding: $pad12;
-  font-weight: $font500;
-  font-size: $font17;
-  font-family: $whitney-sc;
-  text-transform: uppercase;
-  margin-top: $marg15;
-  border-radius: 5px;
-  transition: all 0.1s ease-in-out;
-  color: $white;
-  background-color: $midlle_blue;
-  display: inline-block;
-  line-height: 0.9em;
-}
-.customersContent .customersText .customersButton:hover,
-.customersContent .customersText .customersButton:active {
-  -webkit-transition: all 0.1s ease-in-out;
-  -moz-transition: all 0.1s ease-in-out;
-  -o-transition: all 0.1s ease-in-out;
-  transition: all 0.1s ease-in-out;
-  -webkit-opacity: 1;
-  -khtml-opacity: 1;
-  -moz-opacity: 1;
-  opacity: 1;
-  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=100);
-  filter: alpha(opacity=100);
-}
-.customersContent .customersText .customersButton:hover .hundredPlus,
-.customersContent .customersText .customersButton:active .hundredPlus {
-  -webkit-transform: scale(1.1);
-  -moz-transform: scale(1.1);
-  -o-transform: scale(1.1);
-  -ms-transform: scale(1.1);
-  transform: scale(1.1);
-}
-.customersContainer {
-  height: 500px;
-  width: 100%;
-  position: relative;
-  max-width: 1200px;
-  margin: 0 auto;
-  overflow: hidden;
-}
-.customersContainer:after {
-  content: " ";
-  display: block;
-  clear: both;
-}
-.customersContainer:before {
-  height: 500px;
-  width: 100%;
-  -webkit-opacity: 1;
-  -khtml-opacity: 1;
-  -moz-opacity: 1;
-  opacity: 1;
-  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=100);
-  filter: alpha(opacity=100);
-  position: absolute;
-  content: '';
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f9f9f9+0,f9f9f9+100,f9f9f9+100&0+-1,0.96+46,1+55,1+100 */
-  background: -moz-linear-gradient(top, rgba(249, 249, 249, 0) -1%, rgba(249, 249, 249, 0.02) 0%, rgba(249, 249, 249, 0.96) 46%, #f9f9f9 55%, #f9f9f9 100%);
-  /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, rgba(249, 249, 249, 0) -1%, rgba(249, 249, 249, 0.02) 0%, rgba(249, 249, 249, 0.96) 46%, #f9f9f9 55%, #f9f9f9 100%);
-  /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, rgba(249, 249, 249, 0) -1%, rgba(249, 249, 249, 0.02) 0%, rgba(249, 249, 249, 0.96) 46%, #f9f9f9 55%, #f9f9f9 100%);
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00f9f9f9', endColorstr='#f9f9f9', GradientType=0);
-  /* IE6-9 */
-}
 
+
+
+// =============================================================================
+// 01. Footer
+// =============================================================================
 footer {
   .info-nav-wrapper {
     width: 100%;
@@ -705,8 +520,7 @@ footer {
             display: flex;
             align-items: center;
             img {
-              position: absolute;
-              right: 25%;
+              margin: 0 auto;
             }
           }
           .text-container {
@@ -760,607 +574,11 @@ footer {
 
 
 @media (min-width: 900px) {
-  .blueVideo .videoText {
-    margin-top: 200px;
-  }
-  footer {
-    height: auto;
-    width: 100%;
-    min-height: 500px;
-  }
-  footer:after {
-    content: " ";
-    display: block;
-    clear: both;
-  }
-  footer .customersWrapper {
-    height: 500px;
-    width: 100%;
-    -ms-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    position: relative;
-    overflow: hidden;
-    padding: 0px 20px;
-    background-color: #F9F9F9;
-  }
-  footer .customersWrapper:after {
-    content: " ";
-    display: block;
-    clear: both;
-  }
-  footer .customersWrapper .customersContainer .lineCustomers {
-    height: auto;
-    width: 100%;
-  }
-  footer .customersWrapper .customersContainer .lineCustomers:after {
-    content: " ";
-    display: block;
-    clear: both;
-  }
-  footer .customersWrapper .customersContainer .lineCustomers .customer {
-    height: 150px;
-    width: 25%;
-    float: left;
-    background-image: url(../img/logo_irecruit.svg);
-    background-size: 40%;
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-  }
-  footer .customersWrapper .customersContainer .lineCustomers .customer:nth-of-type(odd) {
-    background-image: url(../img/logo.png);
-    background-size: 60%;
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-  }
-  footer .customersWrapper .customersContent {
-    height: auto;
-    width: 100%;
-    position: absolute;
-    -ms-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    margin-left: 0;
-    top: 160px;
-    left: 0;
-    z-index: 9999;
-    text-align: center;
-  }
-  footer .customersWrapper .customersContent:after {
-    content: " ";
-    display: block;
-    clear: both;
-  }
-
-
-  footer {
-
-
-
-
-
-  }
-
 
 }
 @media (min-width: 600px) and (max-width: 899px) {
-  .blueVideo .iconsContainer {
-    height: auto;
-  }
-  .blueVideo .iconsContainer:after {
-    content: " ";
-    display: block;
-    clear: both;
-  }
-  .blueVideo .iconsContainer .plus {
-    font-size: 2.8em;
-  }
-  .blueVideo .videoText {
-    margin-top: 170px;
-  }
-  footer {
-    height: auto;
-    width: 100%;
-    min-height: 600px;
-  }
-  footer:after {
-    content: " ";
-    display: block;
-    clear: both;
-  }
-  footer .customersWrapper {
-    height: 500px;
-    width: 100%;
-    -ms-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    position: relative;
-    padding: 0px 20px;
-    background-color: #F9F9F9;
-  }
-  footer .customersWrapper:after {
-    content: " ";
-    display: block;
-    clear: both;
-  }
-  footer .customersWrapper .customersContainer .lineCustomers {
-    height: auto;
-    width: 100%;
-  }
-  footer .customersWrapper .customersContainer .lineCustomers:after {
-    content: " ";
-    display: block;
-    clear: both;
-  }
-  footer .customersWrapper .customersContainer .lineCustomers .customer {
-    height: 150px;
-    width: 33.3%;
-    float: left;
-    background-image: url(../img/logo_irecruit.svg);
-    background-size: 50%;
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-  }
-  footer .customersWrapper .customersContainer .lineCustomers .customer:nth-of-type(4) {
-    display: none;
-  }
-  footer .customersWrapper .customersContent {
-    height: auto;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    position: absolute;
-    top: 160px;
-    z-index: 9999;
-    text-align: center;
-  }
-  footer .customersWrapper .customersContent:after {
-    content: " ";
-    display: block;
-    clear: both;
-  }
-  footer .commonFooterWrapper {
-    height: auto;
-    width: 100%;
-    -ms-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    padding: 0px 20px;
-    min-height: 300px;
-    margin-bottom: 40px;
-  }
-  footer .commonFooterWrapper:after {
-    content: " ";
-    display: block;
-    clear: both;
-  }
-  footer .commonFooterWrapper .threeButtons {
-    height: auto;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    margin-top: -80px;
-    background: none;
-  }
-  footer .commonFooterWrapper .threeButtons:after {
-    content: " ";
-    display: block;
-    clear: both;
-  }
-  footer .commonFooterWrapper .threeButtons .button {
-    height: 160px;
-    width: 100%;
-    -webkit-border-radius: 9px;
-    -moz-border-radius: 9px;
-    border-radius: 9px;
-    -webkit-box-shadow: 0px 0px 15px #f1f1f1;
-    -moz-box-shadow: 0px 0px 15px #f1f1f1;
-    box-shadow: 0px 0px 15px #f1f1f1;
-    behavior: url(../htc/pie.htc);
-    zoom: 1;
-    position: relative;
-    margin-top: 25px;
-    float: none;
-    background-color: #fcfcfc;
-    overflow: hidden;
-  }
-  footer .commonFooterWrapper .threeButtons .button:before {
-    height: 160px;
-    width: 160px;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    border-radius: 50%;
-    behavior: url(../htc/pie.htc);
-    zoom: 1;
-    position: absolute;
-    -webkit-transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out;
-    z-index: 1;
-    margin-left: -75px;
-    content: '';
-    background-color: #F4F4F4;
-  }
-  footer .commonFooterWrapper .threeButtons .button .iconButton {
-    height: 160px;
-    width: 35%;
-    float: left;
-    position: relative;
-    z-index: 9999;
-    background-size: 30%;
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
-  }
-  footer .commonFooterWrapper .threeButtons .button .pricingModel {
-    background-image: url(../img/pricingIcon.svg);
-  }
-  footer .commonFooterWrapper .threeButtons .button .blog {
-    background-image: url(../img/blogIcon.svg);
-  }
-  footer .commonFooterWrapper .threeButtons .button .getInTouch {
-    background-size: 25%;
-    background-image: url(../img/contactIcon.svg);
-  }
-  footer .commonFooterWrapper .threeButtons .button .textContainer {
-    height: auto;
-    width: 65%;
-    float: left;
-    position: relative;
-    -ms-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    z-index: 9999;
-    font-weight: lighter;
-  }
-  footer .commonFooterWrapper .threeButtons .button .textContainer:after {
-    content: " ";
-    display: block;
-    clear: both;
-  }
-  footer .commonFooterWrapper .threeButtons .button .textContainer .title {
-    font-weight: bold;
-    color: #52bdec;
-    margin-top: 30px;
-    font-size: 1.5em;
-    margin-bottom: 10px;
-  }
-  footer .commonFooterWrapper .threeButtons .button .textContainer .text {
-    padding-right: 25px;
-    font-size: 1.1em;
-    color: #999;
-  }
-  footer .commonFooterWrapper .border {
-    height: 3px;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    background-color: #F7F7F7;
-    margin-top: 40px;
-    margin-bottom: 30px;
-  }
-  footer .commonFooterWrapper .infosNavWrapper {
-    height: auto;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  footer .commonFooterWrapper .infosNavWrapper .left {
-    height: auto;
-    width: 100%;
-    text-align: center;
-  }
-  footer .commonFooterWrapper .infosNavWrapper .left .logoIrecruit {
-    height: 60px;
-    width: 60px;
-    display: inline-block;
-    vertical-align: top;
-    -webkit-opacity: 0.2;
-    -khtml-opacity: 0.2;
-    -moz-opacity: 0.2;
-    opacity: 0.2;
-    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=20);
-    filter: alpha(opacity=20);
-    background-size: 60%;
-    background-position: 50% 50%;
-    background-image: url(../img/logoIrecruit.svg);
-    background-repeat: no-repeat;
-  }
-  footer .commonFooterWrapper .infosNavWrapper .left .text {
-    font-weight: lighter;
-  }
-  footer .commonFooterWrapper .infosNavWrapper .left .text .copyright {
-    color: #666;
-    margin-bottom: 10px;
-  }
-  footer .commonFooterWrapper .infosNavWrapper .left .text .address {
-    color: #999;
-  }
-  footer .commonFooterWrapper .infosNavWrapper .right {
-    display: none;
-  }
+
 }
 @media (min-width: 300px) and (max-width: 599px) {
-  .blueVideo {
-    height: 900px;
-    width: 100%;
-  }
-  .blueVideo .iconsContainer {
-    width: 100%;
-    position: relative;
-    height: auto;
-    margin: 0 auto;
-    top: 50px;
-  }
-  .blueVideo .iconsContainer:after {
-    content: " ";
-    display: block;
-    clear: both;
-  }
-  .blueVideo .iconsContainer .feature {
-    height: 150px;
-    width: 100%;
-    float: none;
-    text-align: center;
-    color: #FFF;
-    font-size: 1.2em;
-    font-weight: lighter;
-  }
-  .blueVideo .iconsContainer .feature .icon {
-    height: 100px;
-    width: 100%;
-    float: left;
-    background-size: 15%;
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
-  }
-  .blueVideo .iconsContainer .plus {
-    height: 45px;
-    width: 100%;
-    position: relative;
-    font-size: 3em;
-    line-height: 45px;
-    float: none;
-    text-align: center;
-  }
-  footer {
-    height: auto;
-    width: 100%;
-    -ms-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    overflow: hidden;
-    min-height: 500px;
-  }
-  footer:after {
-    content: " ";
-    display: block;
-    clear: both;
-  }
-  footer .customersWrapper {
-    height: 500px;
-    width: 100%;
-    -ms-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    position: relative;
-    padding: 0px 20px;
-    background-color: #F9F9F9;
-  }
-  footer .customersWrapper:after {
-    content: " ";
-    display: block;
-    clear: both;
-  }
-  footer .customersWrapper .customersContainer .lineCustomers {
-    height: auto;
-    width: 100%;
-  }
-  footer .customersWrapper .customersContainer .lineCustomers:after {
-    content: " ";
-    display: block;
-    clear: both;
-  }
-  footer .customersWrapper .customersContainer .lineCustomers .customer {
-    height: 150px;
-    width: 50%;
-    float: left;
-    background-image: url(../img/logo_irecruit.svg);
-    background-size: 65%;
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-  }
-  footer .customersWrapper .customersContainer .lineCustomers .customer:nth-of-type(3),
-  footer .customersWrapper .customersContainer .lineCustomers .customer:nth-of-type(4) {
-    display: none;
-  }
-  footer .customersWrapper .customersContent {
-    height: auto;
-    width: 100%;
-    position: absolute;
-    -ms-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    padding: 0 20px;
-    left: 0;
-    top: 150px;
-    z-index: 9999;
-    text-align: center;
-  }
-  footer .customersWrapper .customersContent:after {
-    content: " ";
-    display: block;
-    clear: both;
-  }
-  footer .commonFooterWrapper {
-    height: auto;
-    width: 100%;
-    -ms-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    padding: 0px 20px;
-    min-height: 300px;
-    margin-bottom: 40px;
-  }
-  footer .commonFooterWrapper:after {
-    content: " ";
-    display: block;
-    clear: both;
-  }
-  footer .commonFooterWrapper .threeButtons {
-    height: auto;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    margin-top: -80px;
-    background: none;
-  }
-  footer .commonFooterWrapper .threeButtons:after {
-    content: " ";
-    display: block;
-    clear: both;
-  }
-  footer .commonFooterWrapper .threeButtons .button {
-    height: 160px;
-    width: 100%;
-    -webkit-border-radius: 9px;
-    -moz-border-radius: 9px;
-    border-radius: 9px;
-    -webkit-box-shadow: 0px 0px 15px #f1f1f1;
-    -moz-box-shadow: 0px 0px 15px #f1f1f1;
-    box-shadow: 0px 0px 15px #f1f1f1;
-    behavior: url(../htc/pie.htc);
-    zoom: 1;
-    position: relative;
-    margin-top: 25px;
-    margin-right: 0;
-    float: none;
-    background-color: #fcfcfc;
-    overflow: hidden;
-  }
-  footer .commonFooterWrapper .threeButtons .button:before {
-    height: 160px;
-    width: 160px;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    border-radius: 50%;
-    behavior: url(../htc/pie.htc);
-    zoom: 1;
-    position: absolute;
-    -webkit-transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out;
-    z-index: 1;
-    margin-left: -75px;
-    content: '';
-    background-color: #F4F4F4;
-  }
-  footer .commonFooterWrapper .threeButtons .button .iconButton {
-    height: 160px;
-    width: 35%;
-    float: left;
-    position: relative;
-    z-index: 9999;
-    background-size: 50%;
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
-  }
-  footer .commonFooterWrapper .threeButtons .button .pricingModel {
-    background-image: url(../img/pricingIcon.svg);
-  }
-  footer .commonFooterWrapper .threeButtons .button .blog {
-    background-image: url(../img/blogIcon.svg);
-  }
-  footer .commonFooterWrapper .threeButtons .button .getInTouch {
-    background-size: 35%;
-    background-image: url(../img/contactIcon.svg);
-  }
-  footer .commonFooterWrapper .threeButtons .button .textContainer {
-    height: auto;
-    width: 65%;
-    float: left;
-    position: relative;
-    -ms-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    z-index: 9999;
-    font-weight: lighter;
-  }
-  footer .commonFooterWrapper .threeButtons .button .textContainer:after {
-    content: " ";
-    display: block;
-    clear: both;
-  }
-  footer .commonFooterWrapper .threeButtons .button .textContainer .title {
-    font-weight: bold;
-    color: #52bdec;
-    margin-top: 30px;
-    font-size: 1.1em;
-    margin-bottom: 10px;
-  }
-  footer .commonFooterWrapper .threeButtons .button .textContainer .text {
-    padding-right: 25px;
-    font-size: 1em;
-    color: #999;
-  }
-  footer .commonFooterWrapper .border {
-    height: 3px;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    background-color: #F7F7F7;
-    margin-top: 40px;
-    margin-bottom: 30px;
-  }
-  footer .commonFooterWrapper .infosNavWrapper {
-    height: auto;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  footer .commonFooterWrapper .infosNavWrapper .left {
-    height: auto;
-    width: 100%;
-    text-align: center;
-  }
-  footer .commonFooterWrapper .infosNavWrapper .left .logoIrecruit {
-    height: 60px;
-    width: 60px;
-    display: inline-block;
-    vertical-align: top;
-    -webkit-opacity: 0.2;
-    -khtml-opacity: 0.2;
-    -moz-opacity: 0.2;
-    opacity: 0.2;
-    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=20);
-    filter: alpha(opacity=20);
-    background-size: 60%;
-    background-position: 50% 50%;
-    background-image: url(../img/logoIrecruit.svg);
-    background-repeat: no-repeat;
-  }
-  footer .commonFooterWrapper .infosNavWrapper .left .text {
-    font-weight: lighter;
-  }
-  footer .commonFooterWrapper .infosNavWrapper .left .text .copyright {
-    color: #666;
-    margin-bottom: 10px;
-  }
-  footer .commonFooterWrapper .infosNavWrapper .left .text .address {
-    color: #999;
-  }
-  footer .commonFooterWrapper .infosNavWrapper .right {
-    display: none;
-  }
+
 }

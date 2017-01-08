@@ -130,13 +130,27 @@ function cc_mime_types($mimes) {
 }
 add_filter('upload_mimes', 'cc_mime_types');
 
+function custom_admin_head() {
+  $css = '';
+  $css = '#set-post-thumbnail img[src$=".svg"] { width: 100% !important; height: auto !important; }';
+  echo '<style type="text/css">'.$css.'</style>';
+}
+add_action('admin_head', 'custom_admin_head');
+
 /** ACF options **/
 if( function_exists('acf_add_options_page') ) {
 
 	acf_add_options_page(array(
 		'menu_title'	=> 'How it works',
-		'menu_slug' 	=> 'theme-general-settings',
+		'menu_slug' 	=> 'theme-howitworks-settings',
 		'icon_url'		=> 'dashicons-list-view',
+		'position' => 57
+	));
+
+	acf_add_options_page(array(
+		'menu_title'	=> 'Video Features',
+		'menu_slug' 	=> 'theme-videofeatures-settings',
+		'icon_url'		=> 'dashicons-format-video',
 		'position' => 58
 	));
 }
@@ -212,30 +226,20 @@ class CategoriesWidgets extends WP_Widget {
   }
 
   function form($instance) {
-    $instance = wp_parse_args( (array) $instance, array( 'title' => '', 'image_uri' => '', 'text' => '' ) );
+    $instance = wp_parse_args( (array) $instance, array( 'title' => '', 'text' => '' ) );
     $title = $instance['title'];
-		$image_uri = $instance['image_uri'];
 		$text = $instance['text'];
 
 ?>
   <p><label for="<?php echo $this->get_field_id('title'); ?>">Title: <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo attribute_escape($title); ?>" /></label></p>
-	<p>
-      <label for="<?php echo $this->get_field_id('image_uri'); ?>">Image</label><br />
-      <?php if ( $instance['image_uri'] != '' ) :
-              echo '<img class="custom_media_image" src="' . $instance['image_uri'] . '" style="margin:0;padding:0;max-width:100px;float:left;display:inline-block" /><br />';
-          endif; ?>
-      <input type="text" class="widefat custom_media_url" name="<?php echo $this->get_field_name('image_uri'); ?>" id="<?php echo $this->get_field_id('image_uri'); ?>" value="<?php echo $instance['image_uri']; ?>" style="margin-top:5px;">
-      <input type="button" class="button button-primary custom_media_button" id="custom_media_button" name="<?php echo $this->get_field_name('image_uri'); ?>" value="Upload Image" style="margin-top:5px;" />
-    </p>
-		<p><label for="<?php echo $this->get_field_id( 'text' ); ?>"><?php _e( 'Content:' ); ?></label>
-		<textarea class="widefat" rows="16" cols="20" id="<?php echo $this->get_field_id('text'); ?>" name="<?php echo $this->get_field_name('text'); ?>"><?php echo esc_textarea( $instance['text'] ); ?></textarea></p>
+	<p><label for="<?php echo $this->get_field_id( 'text' ); ?>"><?php _e( 'Content:' ); ?></label>
+	<textarea class="widefat" rows="16" cols="20" id="<?php echo $this->get_field_id('text'); ?>" name="<?php echo $this->get_field_name('text'); ?>"><?php echo esc_textarea( $instance['text'] ); ?></textarea></p>
 <?php
   }
 
   function update($new_instance, $old_instance) {
     $instance = $old_instance;
     $instance['title'] = $new_instance['title'];
-		$instance['image_uri'] = strip_tags( $new_instance['image_uri'] );
 		$instance['text'] = $new_instance['text'];
     return $instance;
   }
@@ -246,12 +250,12 @@ class CategoriesWidgets extends WP_Widget {
     echo $before_widget;
 
     $title = empty($instance['title']) ? ' ' : apply_filters('widget_title', $instance['title']);
-		$image_uri = "<figure class='icon-button'><img src='".esc_url($instance['image_uri'])."' height='80px' alt='".esc_html($instance['title'])."' /></figure>";
+		$image = get_field('widget_image', 'widget_' . $widget_id);
 		$text = esc_html($instance['text']);
 		$link = get_field('widget_link', 'widget_' . $widget_id);
 
 		echo "<a href='".esc_url($link)."' class='button' title='$title | $text'>";
-		echo $image_uri;
+		echo "<figure class='icon-button'><img src='".$image."' height='80px' alt='".esc_html($instance['title'])."' /></figure>";
 		echo "<div class='text-container'>";
 		echo $before_title . $title . $after_title;
 		echo "<p>".$text."</p>";

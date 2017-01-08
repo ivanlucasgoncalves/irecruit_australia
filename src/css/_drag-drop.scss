@@ -1,3 +1,6 @@
+// =============================================================================
+// Drag and Drop
+// =============================================================================
 
 .dragdrop_container {
   width: 100%;
@@ -176,6 +179,7 @@
       color: $white;
       background-color: $midlle_blue;
       display: inline-block;
+      text-transform: uppercase;
       &:hover, &:active {
         transition: all 0.1s ease-in-out;
       }

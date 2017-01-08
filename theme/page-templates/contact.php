@@ -28,61 +28,26 @@ get_header(); ?>
 				<?php endif; ?>
 			</div><!-- .entry-section.add.info.contact -->
 			<div class="content-form">
-				<form id="form" method="post">
-						<div class="divform">
-							<input type="text" id="yourname" name="yourname" placeholder="Your name">
-						</div>
-						<div class="divform">
-							<input type="text" id="email" name="email" placeholder="Email">
-						</div>
-						<div class="divform">
-							<input type="text" id="phone" name="phone" placeholder="Phone">
-						</div>
-						<div class="divform">
-							<textarea type="text" id="yourmessage" name="yourmessage" placeholder="Your message\nTell us more about your business - what are your needs?"></textarea>
-						</div>
-						<div class="submit-wrap">
-							<input id="submit" type="submit" value="Send Message">
-						</div>
-						<div class="message-ok" style="display:none">
-							<p><b> Thank you!</b> Your place has been secured. Keep an eye on your inbox for your confirmation!</p>
-						</div>
-				</form>
+				<!--[if lte IE 8]>
+				<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
+				<![endif]-->
+				<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
+				<script>
+					hbspt.forms.create({
+						css: '',
+						portalId: '2223430',
+						formId: '998f1772-5de1-46fd-b401-1c4dd6b2f202'
+					});
+				</script><!-- .Contact HubSpot Form. -->
 			</div>
     </article><!-- #post-## -->
 
   </main><!-- .site-main -->
 </div><!-- .content-area -->
-<section class="blueVideo">
-	<div class="back-video"></div>
-	<div class="iconsContainer">
-		<div class="feature">
-			<div class="icon skills"></div>
-			<div class="textFeature">
-				<p>SKILLS AND EXPERIENCE</p>
-			</div>
-		</div>
-		<div class="plus">+</div>
-		<div class="feature">
-			<div class="icon personality"></div>
-			<div class="textFeature">
-				<p>PERSONALITY PROFILING</p>
-			</div>
-		</div>
-		<div class="plus">+</div>
-		<div class="feature">
-			<div class="icon ranked"></div>
-			<div class="textFeature">
-				<p>RANKED & SORTED</p>
-			</div>
-		</div>
-	</div>
-	<div class="videoText">
-		<p class="weAreIrecruit">WE ARE IRECRUIT</p>
-		<div class="playBtn"></div>
-		<p class="theEngine">The most powerful Candidate Ranking Engine ever created.</p>
-	</div>
-</section>
+
+<?php // Include the content video template.
+get_template_part( 'template-parts/content', 'video' ); ?>
+
 <?php // Include the content customers template.
 get_template_part( 'template-parts/content', 'customers' ); ?>
 

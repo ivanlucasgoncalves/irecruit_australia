@@ -1,5 +1,5 @@
 // =============================================================================
-// Variables
+// Slideshow
 // =============================================================================
 
 section#slider {
@@ -8,7 +8,7 @@ section#slider {
 	height: auto;
 	color: $white;
 	padding: 0 40px 10px 40px;
-	margin-bottom: 150px;
+	margin-bottom: $marg100;
 	.wrapper{
 		position: relative;
 		width: 100%;

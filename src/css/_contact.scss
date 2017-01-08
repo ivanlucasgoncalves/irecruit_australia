@@ -25,11 +25,11 @@
   margin-bottom: $marg160;
   padding-top: $pad90;
   border-top: 1px solid $quite_white;
-  #form {
+  .hs-form {
     width: 100%;
     max-width: 600px;
     margin: 0 auto;
-    .divform {
+    .hs-form-field {
       input,
       textarea {
         padding: $pad20_15;
@@ -62,8 +62,11 @@
         resize: none;
         height: 140px;
       }
+      &>label {
+        display: none;
+      }
     }
-    .submit-wrap {
+    .hs_submit {
       text-align: right;
       input {
         padding: $pad15;
@@ -78,6 +81,18 @@
         background: $midlle_blue;
         cursor: pointer;
         box-shadow: 1px 1px 10px rgba(51,51,51,0.2);
+      }
+    }
+    .hs-error-msgs {
+      margin: 0 0 10px 0;
+      padding: 0;
+      li{
+        label {
+          color: red;
+          font-size: $font12;
+          font-style: italic;
+          margin-bottom: $marg10;
+        }
       }
     }
   }
