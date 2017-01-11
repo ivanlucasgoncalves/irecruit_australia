@@ -4,12 +4,12 @@
 
 jQuery( document ).ready( function($) {
 
-	$('#AddCityA').click(function () {
-    $('#AddCity').slideToggle("slow");
-  });
 
 	/** AddClass for every single img for avoiding mistakes **/
 	$("img").addClass("img-fluid");
+
+	/** For now add display none into hide customers container - I will change to make it better later. **/
+	jQuery('.lineCustomers:contains("hide")').remove();
 
 	/** Transformicons **/
 	transformicons.add('.tcon');
@@ -40,6 +40,18 @@ jQuery( document ).ready( function($) {
   $('.close').on('click', function() {
     $('#myModal').fadeOut();
 		window.localStorage.clear();
+  });
+
+	/** Modal Video **/
+	$('.play_btn').on('click', function() {
+    $('#myModal_Video').fadeIn(function(){
+			$("#video")[0].src += "&autoplay=1";
+		});
+  });
+  $('.x_modal_video').on('click', function() {
+    $('#myModal_Video').fadeOut(function(){
+			$('#video')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
+		});
   });
 
 	/** Smooth Scroll Anchors **/
@@ -112,8 +124,8 @@ jQuery( document ).ready( function($) {
 		animaSlider(qual);
 	}, 5000);
 
+	/** Wrap Line into Textarea **/
 	var textAreas = document.getElementsByTagName('textarea');
-
 	Array.prototype.forEach.call(textAreas, function(elem) {
 	    elem.placeholder = elem.placeholder.replace(/\\n/g, '\n');
 	});
@@ -163,5 +175,13 @@ jQuery( document ).ready( function($) {
       $('.modal-form .emailtest, .modal-form h4, .modal-form .first-p').hide();
     });
   }, 1100);
+
+	/** Phone front page area **/
+	$("#personalityprofile").click(function (){
+
+		$("#personalityprofile_content img").animate({top:"410px"}, 400, "linear");
+
+	});
+
 
 }); /* Close Document Ready */

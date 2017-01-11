@@ -38,12 +38,28 @@
 }
 
 
-#AddCity {
-  display: none;
+#personalityprofile_content {
+  //display: none;
   img {
     width: 100%;
+    height: 410px;
+    position: absolute;
+    left: 0;
   }
 }
+
+.page {
+  .site-menutop-button {
+    nav{
+      ul{
+        li.how-it-works {
+          display: none !important;
+        }
+      }
+    }
+  }
+}
+
 
 // =============================================================================
 // 01. Header
@@ -245,10 +261,8 @@ header#masthead {
     position: relative;
     .description {
       position: absolute;
-      top: 20%;
-      left: 360px;
       width: 260px;
-      z-index: 1;
+      z-index: 2;
       h3 {
         font-family: $whitney-sc;
         font-size: $font18;
@@ -290,6 +304,14 @@ header#masthead {
           right: 0;
         }
       }
+    }
+    .personality_profile {
+      top: 183px;
+      left: 390px;
+    }
+    .strenghts {
+      top: 355px;
+      left: 340px;
     }
   }
   .blk-button {
@@ -400,8 +422,8 @@ header#masthead {
       article {
         .entry-header {
           h1 {
-            font-size: $font54;
-            font-weight: $font700;
+            font-size: $font64;
+            font-weight: $font600;
             margin-bottom: 0;
           }
         }

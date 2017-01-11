@@ -15,10 +15,7 @@
     .screenContainer {
       height: 319px;
       width: 560px;
-      -webkit-border-radius: 20px 20px 0px 0px;
-      -moz-border-radius: 20px 20px 0px 0px;
       border-radius: 20px 20px 0px 0px;
-      behavior: url(../htc/pie.htc);
       zoom: 1;
       position: relative;
       left: 50%;
@@ -27,10 +24,7 @@
       .frontCam {
         height: 14px;
         width: 14px;
-        -webkit-border-radius: 50%;
-        -moz-border-radius: 50%;
         border-radius: 50%;
-        behavior: url(../htc/pie.htc);
         zoom: 1;
         position: absolute;
         left: 50%;
@@ -44,10 +38,7 @@
         height: 22px;
         width: 688px;
         position: relative;
-        -webkit-border-radius: 2px 2px 0px 0px;
-        -moz-border-radius: 2px 2px 0px 0px;
         border-radius: 2px 2px 0px 0px;
-        behavior: url(../htc/pie.htc);
         zoom: 1;
         margin-left: 156px;
         background-color: #DDD;
@@ -55,10 +46,7 @@
           height: 10px;
           width: 150px;
           position: relative;
-          -webkit-border-radius: 0 0 4px 4px;
-          -moz-border-radius: 0 0 4px 4px;
           border-radius: 0 0 4px 4px;
-          behavior: url(../htc/pie.htc);
           zoom: 1;
           left: 50%;
           margin-left: -75px;
@@ -69,10 +57,7 @@
         height: 15px;
         width: 688px;
         position: relative;
-        -webkit-border-radius: 0px 0px 3px 3px;
-        -moz-border-radius: 0px 0px 3px 3px;
         border-radius: 0px 0px 3px 3px;
-        behavior: url(../htc/pie.htc);
         zoom: 1;
         z-index: 9;
         margin-left: 156px;
@@ -233,7 +218,6 @@
     border-radius: 50%;
     position: absolute;
     box-shadow: 0px 0px 25px 0px #cccccc;
-    behavior: url(../htc/pie.htc);
     zoom: 1;
     transition: all 0.1s ease-in-out;
     line-height: 100px;
@@ -255,10 +239,7 @@
       -webkit-border-radius: 6px;
       -moz-border-radius: 6px;
       border-radius: 6px;
-      -webkit-box-shadow: 0px 0px 25px 0px #bbbbbb;
-      -moz-box-shadow: 0px 0px 25px 0px #bbbbbb;
       box-shadow: 0px 0px 25px 0px #bbbbbb;
-      behavior: url(../htc/pie.htc);
       zoom: 1;
       color: #999;
       left: -30px;
@@ -277,16 +258,9 @@
         content: '';
         height: 12px;
         width: 12px;
-        -webkit-border-radius: 0px 0px 3px 0px;
-        -moz-border-radius: 0px 0px 3px 0px;
         border-radius: 0px 0px 3px 0px;
-        behavior: url(../htc/pie.htc);
         zoom: 1;
         position: absolute;
-        -webkit-transform: rotateZ(45deg);
-        -moz-transform: rotateZ(45deg);
-        -o-transform: rotateZ(45deg);
-        -ms-transform: rotateZ(45deg);
         transform: rotateZ(45deg);
         z-index: 9;
         bottom: -8px;
@@ -376,7 +350,6 @@
     position: absolute;
     box-shadow: 0px 0px 25px 0px #333333;
     zoom: 1;
-    cursor: pointer;
     top: 0;
     border: 1px solid #DDD;
     background: #F9F9F9;
@@ -418,7 +391,6 @@
       width: 56px;
       position: absolute;
       border-radius: 50%;
-      behavior: url(../htc/pie.htc);
       zoom: 1;
       right: 12px;
       background-color: #52bdec;
@@ -426,10 +398,7 @@
         height: 44px;
         width: 44px;
         position: absolute;
-        -webkit-border-radius: 50%;
-        -moz-border-radius: 50%;
         border-radius: 50%;
-        behavior: url(../htc/pie.htc);
         zoom: 1;
         color: #666;
         right: 6px;
@@ -449,21 +418,11 @@
   .full-width {
     height: 40px;
     width: 100%;
-    -webkit-transition: all 0.5s ease-in-out;
-    -moz-transition: all 0.5s ease-in-out;
-    -o-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
     display: block;
   }
   .shrinkDown {
-    -webkit-transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
-    -webkit-transform: scale(0.5) !important;
-    -moz-transform: scale(0.5) !important;
-    -o-transform: scale(0.5) !important;
-    -ms-transform: scale(0.5) !important;
     transform: scale(0.5) !important;
   }
 }

@@ -111,7 +111,7 @@ function scripts() {
 		wp_enqueue_script('livereload', 'http://'.getenv('DEV_IP').':35731/livereload.js?snipver=1', null, false, true);
 	}
 
-	wp_enqueue_script( 'twentysixteen-html5', get_template_directory_uri() . '/js/html5.js', array(), '3.7.3' );
+	wp_enqueue_script( 'html5', get_template_directory_uri() . '/js/html5.js', array(), '3.7.3' );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

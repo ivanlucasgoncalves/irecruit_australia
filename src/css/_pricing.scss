@@ -136,3 +136,27 @@
     }
   }
 }
+.phrase-pricing {
+  max-width: 95%;
+  margin: 0 auto;
+  margin-top: $marg90;
+  margin-bottom: $marg20;
+  text-align: center;
+  h3 {
+    font-size: $font22;
+    color: $color_p;
+    font-weight: normal;
+  }
+  a {
+    box-shadow: 0px 0px 15px #cccccc;
+    padding: 15px 25px;
+    font-weight: $font500;
+    font-size: $font16;
+    margin-top: $marg20;
+    border-radius: 5px;
+    transition: all 0.1s ease-in-out;
+    color: $white;
+    background-color: $midlle_blue;
+    display: inline-block;
+  }
+}

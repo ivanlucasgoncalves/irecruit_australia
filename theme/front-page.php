@@ -105,7 +105,7 @@ get_header();  $img_logo = get_theme_mod( 'img_logo', esc_url( get_template_dire
 		</section>
 		<div class="rotate-line"></div><!-- .line.rotate.bottom.drag-drop -->
 	</section><!-- .drag.and.drop -->
-
+	
 	<section class="phone-section">
 		<div class="line-top"></div>
 		<div class="back-phone"></div>
@@ -115,10 +115,10 @@ get_header();  $img_logo = get_theme_mod( 'img_logo', esc_url( get_template_dire
 			<h3>Explore:</h3>
 			<nav>
 				<ul>
-					<li><a href="javascript:void(0)" id="AddCityA">personality profile</a></li>
-					<li><a href="#">personality summary</a></li>
-					<li><a href="#">workplace insights</a></li>
-					<li><a href="#">strenghts</a></li>
+					<li><a href="javascript:void(0)" id="personalityprofile">personality profile</a></li>
+					<li><a href="javascript:void(0)" id="personalitysummary">personality summary</a></li>
+					<li><a href="javascript:void(0)" id="workplace">workplace insights</a></li>
+					<li><a href="javascript:void(0)" id="strenghts">strenghts</a></li>
 				</ul>
 			</nav>
 		</div>
@@ -132,15 +132,20 @@ get_header();  $img_logo = get_theme_mod( 'img_logo', esc_url( get_template_dire
 			    <div class="speaker"></div>
 			    <div class="screen">
 			        <!-- Content goes here -->
-							<div id="AddCity"><img src="<?php echo esc_url( $img_logo ); ?>"></div>
+							<div id="personalityprofile_content"><img src="<?php echo esc_url( $img_logo ); ?>"></div>
 			    </div>
 			    <div class="home"></div>
 			    <div class="bottom-bar"></div>
 			</div>
-			<div class="description">
+			<div class="description personality_profile">
 				<div class="flag-dir"></div>
 				<h3>Workplace Insights</h3>
 				<p>What does your candidate think or expect from work environments, and how does he or she behaves on adverse situations.</p>
+			</div>
+			<div class="description strenghts">
+				<div class="flag-dir"></div>
+				<h3>Strenghts</h3>
+				<p>Complete analysis of talent's strenghts which would contribute improving the team's culture and performance.</p>
 			</div>
 		</div>
 		<div class="blk-button">

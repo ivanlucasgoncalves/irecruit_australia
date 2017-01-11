@@ -1,4 +1,4 @@
-// =============================================================================
+  // =============================================================================
 // Video Section
 // =============================================================================
 .back-video {
@@ -94,10 +94,58 @@
       text-transform: uppercase;
       font-weight: $font500;
     }
+    .play_btn {
+      background: $white;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: inline-block;
+      text-indent: -99999px;
+      margin-top: $marg30;
+      position: relative;
+      opacity: 0.8;
+      transition: all 0.3s;
+      &:before {
+        content: "";
+        display: block;
+        width: 0;
+        height: 0;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+        border-left: 16px solid $quite_black;
+        position: absolute;
+        z-index: 1;
+        left: 19px;
+        top: 16px;
+      }
+      &:hover {
+        opacity: 1;
+        transition: all 0.3s;
+      }
+    }
     p {
       margin-top: $marg30;
       font-weight: $fontlighter;
       font-size: $font20;
+    }
+  }
+}
+
+
+.video_modal {
+  overflow: hidden;
+  .videoWrapper {
+    position: relative;
+  	padding-bottom: 56.25%; /* 16:9 */
+  	padding-top: 25px;
+  	height: 0;
+    margin-top: 60px;
+    iframe {
+    	position: absolute;
+    	top: 0;
+    	left: 0;
+    	width: 100%;
+    	height: 100%;
     }
   }
 }

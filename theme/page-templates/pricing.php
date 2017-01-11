@@ -35,7 +35,7 @@ get_header(); ?>
 											<span>monthly</span>
 										</div>
 										<?php echo $content; ?>
-										<a href="javascript:void(0);" class="open-modal" id="<?php echo $category; ?>" data-value="<?php echo $category; ?>">Select</a>
+										<a href="javascript:void(0);" class="starttrial-link" id="<?php echo $category; ?>" data-value="<?php echo $category; ?>">Select</a>
 									</div>
 								</div>
 							<?php else: ?><!-- .entry-if-no-recommended -->
@@ -47,7 +47,7 @@ get_header(); ?>
 											<span>monthly</span>
 										</div>
 										<?php echo $content; ?>
-										<a href="javascript:void(0);" class="open-modal" id="<?php echo $category; ?>" data-value="<?php echo $category; ?>">Select</a>
+										<a href="javascript:void(0);" class="starttrial-link" id="<?php echo $category; ?>" data-value="<?php echo $category; ?>">Select</a>
 									</div>
 								</div>
 							<?php endif; ?>
@@ -56,6 +56,10 @@ get_header(); ?>
 						endwhile; ?>
 					<?php endif; ?>
 			</div><!-- .entry-content-plans -->
+			<div class="phrase-pricing">
+				<h3>Start your 14 day free trial now, no credit card or downloads required.</h3>
+				<a href="javascript:void(0);" class="starttrial-link" title="Try iRecruit for free">Try iRecruit for free</a>
+			</div>
     </article><!-- #post-## -->
 		<?php	$posts = get_field('client_testimonials');
 			if( $posts ): ?>

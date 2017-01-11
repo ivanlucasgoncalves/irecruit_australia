@@ -4,12 +4,22 @@
 .content-testimonials {
   padding: $pad60_40_140;
   margin-bottom: $marg90;
+  h2.main_title {
+    font-family: $whitney;
+    padding-top: $pad20;
+    padding-bottom: $pad70;
+    font-weight: $font500;
+    font-size: $font40;
+    line-height: 40px;
+    position: relative;
+    text-align: center;
+  }
   article {
     display: flex;
     justify-content: space-between;
     align-items: center;
     figure {
-      width: 30%;
+      width: 33%;
       img {
         object-fit: cover;
         height: auto;

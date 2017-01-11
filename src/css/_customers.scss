@@ -162,7 +162,7 @@
       justify-content: space-between;
       align-items: flex-start;
       figure {
-        width: 41%;
+        width: 42%;
         img {
           object-fit: cover;
           height: auto;
@@ -226,7 +226,7 @@
         }
       }
       .rotate-line-internal {
-        bottom: 113px;
+        bottom: 115px;
         top: inherit !important;
       }
     }
@@ -250,7 +250,7 @@
         width: 100%;
         margin: 0 auto;
         .customer {
-          width: 10%;
+          width: 9%;
           height: auto;
           padding: $pad30_0;
           img {
@@ -264,7 +264,7 @@
           }
         }
         .customer:nth-of-type(odd) {
-          width: 14%;
+          width: 13%;
           height: auto;
         }
       }

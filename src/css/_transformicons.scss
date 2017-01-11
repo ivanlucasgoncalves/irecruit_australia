@@ -21,21 +21,10 @@
   appearance: none;
   border: none;
   cursor: pointer;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
   display: flex;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
   align-items: center;
   transition: 0.3s;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
   width: 35px;
   background: transparent;
@@ -53,7 +42,8 @@
   }
 }
 .tcon-menu__lines {
-  display: inline-block;
+  display: flex;
+  align-items: center;
   height: 5.71429px;
   width: 35px;
   border-radius: 2.85714px;
@@ -61,7 +51,8 @@
   background: #333333;
   position: relative;
   &::before, &::after {
-    display: inline-block;
+    display: flex;
+    align-items: center;
     height: 5.71429px;
     width: 35px;
     border-radius: 2.85714px;
