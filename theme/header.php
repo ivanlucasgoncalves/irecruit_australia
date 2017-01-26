@@ -6,7 +6,7 @@
  $img_logo_white = get_theme_mod( 'img_logo_white', esc_url( get_template_directory_uri() . '/img/logo_irecruit_white.svg' ) ); // Logo White ?>
 
 <!DOCTYPE html>
-<html <?php language_attributes(); ?> class="no-js">
+<html <?php language_attributes(); ?>>
 <head>
   <title><?php if (is_front_page()) { bloginfo('name'); echo ' | ';  bloginfo('description'); } else { wp_title(''); } ?></title><!-- .put title -->
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
@@ -23,6 +23,45 @@
 </head>
 
 <body <?php body_class(); ?>>
+  <div class="overlay-menu"></div> <!-- .overlay menu. -->
+	<?php if ( has_nav_menu( 'primary' ) ) : ?>
+		<nav id="cbp-spmenu-s2" class="main_navigation cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" role="navigation" aria-label="<?php esc_attr_e( 'Primary Menu' ); ?>">
+			<img class="logo-menu" src="<?php echo esc_url( $img_logo ); ?>" alt="Logo iRecruit" width="160px">
+			<?php
+				wp_nav_menu( array(
+					'theme_location' => 'primary',
+					'menu_class'     => 'primary-menu',
+				 ));	?>
+         <div id="info-site" role="complementary">
+         	<?php if ( is_active_sidebar( 'sidebar-3' ) ) : ?>
+         		<?php dynamic_sidebar( 'sidebar-3' ); ?><!-- .widget-area.copyright.and.address -->
+         	<?php endif; ?>
+         </div>
+		</nav><!-- .main-navigation -->
+	<?php endif; ?><!--/.end responsive-menu-->
+  <header id="masthead" class="site-header" role="banner">
+		<div class="site-header-main">
+			<div class="site-branding">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" title="iRecruit | People who fit better, perform better."><img src="<?php echo esc_url( $img_logo ); ?>" alt="Logo iRecruit" width="140px"></a>
+			</div><!-- .site-branding -->
+      <div class="site-menutop-button">
+        <?php if ( has_nav_menu( 'menu-top' ) ) : ?>
+      		<nav class="main_top" role="navigation" aria-label="<?php esc_attr_e( 'Menu Top' ); ?>">
+      			<?php	wp_nav_menu( array(
+    					'theme_location' => 'menu-top'
+    				 ));	?>
+      		</nav><!-- .main-navigation -->
+      	<?php endif; ?><!--/.end menu-top -->
+        <div class="div-button">
+          <button id="showRightPush" class="tcon tcon-menu--xcross" aria-label="toggle menu">
+            <span class="tcon-menu__lines" aria-hidden="true"></span>
+            <span class="tcon-visuallyhidden">Show Menu</span>
+          </button><!-- .button.main.menu -->
+        </div>
+      </div><!-- .site-blk navigation.button-main-nav -->
+		</div><!-- .site-header-main -->
+	</header><!-- .site-header -->
+  <div id="mainsite"><!-- .main site -->
   <div id="myModal" class="modal">
   	<div class="modal-content">
   		<span class="close">x</span>
@@ -52,39 +91,4 @@
     	</div>
   	</div>
   </div> <!-- .modal form trial. -->
-	<div class="overlay-menu"></div> <!-- .overlay menu. -->
-	<?php if ( has_nav_menu( 'primary' ) ) : ?>
-		<nav id="cbp-spmenu-s2" class="main_navigation cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" role="navigation" aria-label="<?php esc_attr_e( 'Primary Menu' ); ?>">
-			<h3>Menu</h3>
-			<?php
-				wp_nav_menu( array(
-					'theme_location' => 'primary',
-					'menu_class'     => 'primary-menu',
-				 ));	?>
-			<div id="gutter"><!-- .used to fix menu in mobile devices. -->
-				<span id="highlight"></span>
-			</div>
-		</nav><!-- .main-navigation -->
-	<?php endif; ?><!--/.end responsive-menu-->
-	<header id="masthead" class="site-header" role="banner">
-		<div class="site-header-main">
-			<div class="site-branding">
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" title="iRecruit | People who fit better, perform better."><img src="<?php echo esc_url( $img_logo ); ?>" alt="Logo iRecruit" width="140px"></a>
-			</div><!-- .site-branding -->
-      <div class="site-menutop-button">
-        <?php if ( has_nav_menu( 'menu-top' ) ) : ?>
-      		<nav class="main_top" role="navigation" aria-label="<?php esc_attr_e( 'Menu Top' ); ?>">
-      			<?php	wp_nav_menu( array(
-    					'theme_location' => 'menu-top'
-    				 ));	?>
-      		</nav><!-- .main-navigation -->
-      	<?php endif; ?><!--/.end menu-top -->
-  			<button id="showRightPush" class="tcon tcon-menu--xcross" aria-label="toggle menu">
-          <span class="tcon-menu__lines" aria-hidden="true"></span>
-          <span class="tcon-visuallyhidden">Show Menu</span>
-        </button><!-- .button.main.menu -->
-      </div><!-- .site-blk navigation.button-main-nav -->
-		</div><!-- .site-header-main -->
-	</header><!-- .site-header -->
-
 	<div id="content" class="site-content">

@@ -21,6 +21,7 @@
 @import "drag-drop";
 @import "slideshow";
 @import "phone";
+@import "phone-section";
 @import "pricing";
 @import "testimonials";
 @import "contact";
@@ -29,27 +30,26 @@
 @import "customers";
 @import "video-section";
 
+
 // =============================================================================
-// 01. Header
+// 01. General Style
 // =============================================================================
+#mainsite {
+  padding-top: 75px;
+}
 #content {
   overflow: hidden;
   position: relative;
+  max-width: 1920px;
+  margin: auto;
 }
-
-
-#personalityprofile_content {
-  //display: none;
-  img {
-    width: 100%;
-    height: 410px;
-    position: absolute;
-    left: 0;
-  }
+.site-main {
+  padding-bottom: $pad90;
 }
-
+/*Display None how it owrks link at the internal pages*/
 .page {
   .site-menutop-button {
+    position: relative;
     nav{
       ul{
         li.how-it-works {
@@ -60,13 +60,22 @@
   }
 }
 
-
 // =============================================================================
 // 01. Header
 // =============================================================================
 header#masthead {
-  padding: 20px 20px 20px 40px;
+  padding: 10px 20px 10px 40px;
+  background: $white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 75px;
   font-family: $whitney-sc;
+  z-index: 9999;
+  max-width: 1920px;
+  margin: auto;
   .site-header-main {
     display: flex;
     justify-content: space-between;
@@ -74,6 +83,7 @@ header#masthead {
     .site-menutop-button {
       display: flex;
       align-items: center;
+      position: relative;
       .main_top {
         ul {
           padding: 0;
@@ -106,242 +116,11 @@ header#masthead {
 // =============================================================================
 // 01. Drag and Drop
 // =============================================================================
-#darg_drop {
-  margin-bottom: $marg40;
-  padding-top: $pad60;
-  position: relative;
-  .content-drag_drop {
-    width: 38%;
-    margin: 0 auto;
-    text-align: center;
-    h2 {
-      font-family: $whitney-sc;
-      text-transform: uppercase;
-      color: $midlle_blue;
-      margin-bottom: $marg25;
-      font-size: $font28;
-      font-weight: $font500;
-      &:after {
-        content: "";
-        background: $midlle_blue;
-        width: 70px;
-        height: 2px;
-        margin: 0 auto;
-        margin-top: $marg20;
-        display: block;
-      }
-    }
-    p {
-      font-family: $whitney;
-      font-size: $font16;
-    }
-  }
-  .rotate-line {
-    position: absolute;
-    margin: 0 auto;
-    left: 0;
-    right: 0;
-    top: 45%;
-    z-index: -1;
-    width: 100%;
-    height: 15%;
-    background: $midlle_blue;
-    -webkit-clip-path: polygon(0 90%, 0 95%, 100% 30%);
-	}
-}
+
 
 // =============================================================================
 // 01. Phone Section
 // =============================================================================
-.back-phone {
-  transform: rotate(4deg) skew(4deg);
-  -webkit-transform: rotate(4deg) skew(4deg);
-  position: absolute;
-  width: 105%;
-  height: 100%;
-  left: -10px;
-  top: 0;
-  &:before {
-    content: "";
-    background-image: url(../img/patternBlackSection.png);
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    right: 0;
-    z-index: -1;
-  }
-}
-.line-top {
-  position: absolute;
-  margin: 0 auto;
-  right: -25px;
-  top: -94px;
-  z-index: 1;
-  width: 135%;
-  height: 10%;
-  background: $midlle_blue;
-  transform: rotate(5deg) skew(5deg);
-  clip-path: polygon(100% 95%, 0 80%, 100% 40%);
-}
-.phone-section {
-  height: auto;
-  width: 100%;
-  padding: 160px 0 200px 0;
-  position: relative;
-  .phone-menu-container {
-    max-width: 440px;
-    width: 100%;
-    position: absolute;
-    left: 40px;
-    top: 170px;
-    h2 {
-      font-family: $whitney-sc;
-      font-size: $font28;
-      color: $white;
-      font-weight: $fontlighter;
-      text-transform: uppercase;
-      position: relative;
-      padding-bottom: $pad15;
-      padding-top: $pad50;
-      &:before {
-        width: 40px;
-        content: url(../img/titleicon-phone.svg);
-        position: absolute;
-        left: 0;
-        top: 0;
-      }
-      &:after {
-        width: 20%;
-        height: 2px;
-        background: $midlle_blue;
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: 0;
-      }
-    }
-    p {
-      color: $white;
-      font-size: $font16;
-      font-weight: $fontlighter;
-    }
-    h3 {
-      font-family: $whitney;
-      font-size: $font16;
-      color: $white;
-      font-weight: $fontlighter;
-      padding: $pad20_0;
-    }
-    nav {
-      ul {
-        padding: 0;
-        margin: 0;
-        li {
-          margin: $marg15_0;
-          a {
-            font-family: $whitney-sc;
-            font-size: $font16;
-            color: $white;
-            font-weight: $fontlighter;
-            text-transform: uppercase;
-            border-left: 2px solid $midlle_blue;
-            padding: 7px 15px 7px 15px;
-            display: inline-block;
-          }
-        }
-      }
-    }
-  }
-  .iphone-container {
-    width: 278px;
-    margin: 0 auto;
-    border-radius: 46px;
-    box-shadow: 0 0 160px $dark_black;
-    position: relative;
-    .description {
-      position: absolute;
-      width: 260px;
-      z-index: 2;
-      h3 {
-        font-family: $whitney-sc;
-        font-size: $font18;
-        color: $white;
-        font-weight: $fontlighter;
-        text-transform: uppercase;
-        position: relative;
-        padding: $pad15_0;
-      }
-      p {
-        color: $white;
-        font-size: $font14;
-        font-weight: $fontlighter;
-        margin: 0;
-      }
-      .flag-dir {
-        background: $midlle_blue;
-        height: 2px;
-        width: 160px;
-        display: flex;
-        align-items: center;
-        position: absolute;
-        left: -175px;
-        top: 25px;
-        &:before {
-          content: "";
-          width: 14px;
-          height: 14px;
-          border-radius: 50%;
-          background: $midlle_blue;
-          display: block;
-        }
-        &:after {
-          content: "";
-          border-right: 2px solid $midlle_blue;
-          height: 18px;
-          width: 2px;
-          position: absolute;
-          right: 0;
-        }
-      }
-    }
-    .personality_profile {
-      top: 183px;
-      left: 390px;
-    }
-    .strenghts {
-      top: 355px;
-      left: 340px;
-    }
-  }
-  .blk-button {
-    width: 278px;
-    margin: 0 auto;
-    text-align: center;
-    position: relative;
-    a {
-      box-shadow: 2px 2px 50px $dark_black;
-      padding: $pad10;
-      font-weight: $font500;
-      font-size: $font17;
-      font-family: $whitney-sc;
-      text-transform: uppercase;
-      margin-top: $marg30;
-      border-radius: 5px;
-      transition: all 0.1s ease-in-out;
-      color: $white;
-      background-color: $midlle_blue;
-      display: inline-block;
-    }
-    span {
-      font-style: $fontitalic;
-      font-size: $font13;
-      display: block;
-      margin-top: 7px;
-      color: $quite_black;
-    }
-  }
-}
 
 // =============================================================================
 // 01. Content.Video Section
@@ -444,7 +223,8 @@ header#masthead {
 footer {
   .info-nav-wrapper {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1240px;
+    padding: 0 20px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -513,7 +293,8 @@ footer {
     .three-buttons {
       height: auto;
       width: 100%;
-      max-width: 1200px;
+      max-width: 1240px;
+      padding: 0 20px;
       margin: 0 auto;
       margin-top: -80px;
       display: flex;
@@ -594,6 +375,316 @@ footer {
   }
 }
 
+// =============================================================================
+// Responsive
+// =============================================================================
+@media only screen and (max-width: 992px) {
+  // =============================================================================
+  // Modal Form
+  // =============================================================================
+  .modal{
+    .modal-content {
+      .modal-form {
+        width: 100%;
+      }
+      .icons-container {
+        .block-2 {
+          width: 40% !important;
+        }
+        .feature {
+          width: 33%;
+        }
+      }
+    }
+  }
+
+}
+
+@media (max-width: 767px) {
+  // =============================================================================
+  // General Style
+  // =============================================================================
+
+  // =============================================================================
+  // Modal Form
+  // =============================================================================
+  .modal{
+    .modal-content {
+      width: 100%;
+      .modal-form {
+        width: 100%;
+        padding: $pad20_25;
+      }
+      .icons-container {
+        .feature {
+          width: 30%;
+          font-size: 10px;
+          .text-feature {
+            width: 80%;
+            font-size: 11px;
+            line-height: 18px;
+          }
+          img {
+            height: 43px;
+          }
+        }
+      }
+    }
+  }
+  // =============================================================================
+  // Slideshow
+  // =============================================================================
+  section#slider {
+    padding: 0;
+    .wrapper {
+      .item {
+        .data {
+          padding: $pad60_0;
+          width: 90%;
+          h2 {
+            font-size: $font26;
+          }
+          h3 {
+            font-size: $font16;
+          }
+          p{
+            font-size: $font14;
+          }
+        }
+      }
+    }
+    ul.bullets {
+      bottom: 5px;
+      li {
+        width: 16px;
+        height: 12px;
+        margin: 5px 0;
+        span {
+  				width: 4px;
+  				height: 12px;
+  			}
+  			&.ativo {
+  				span {
+  					width: 16px;
+  				}
+  			}
+      }
+    }
+    .arrow {
+      bottom: -59px;
+      &:after {
+        height: 70px;
+      }
+    }
+    .rotate-line {
+      bottom: -80px;
+      height: 60%;
+    }
+    .lines-left,
+    .lines-right {
+      display: none;
+    }
+  }
+  // =============================================================================
+  // 01. Header
+  // =============================================================================
+  header#masthead {
+    padding: 10px 20px;
+      .site-header-main {
+        .site-menutop-button{
+        .main_top {
+          display: none;
+        }
+      }
+    }
+  }
+  // =============================================================================
+  // Drag and Drop
+  // =============================================================================
+  #darg_drop {
+    margin-bottom: $marg20;
+    padding-top: $pad20;
+    .content-drag_drop {
+      width: 90%;
+      h2 {
+        font-size: 24px;
+      }
+      p {
+        font-size: 15px;
+      }
+    }
+    .dragdrop_container {
+      padding-top: 0;
+      padding-bottom: $pad60;
+      width: 90%;
+      .quality {
+        h2 {
+          font-size: 1.8em;
+          letter-spacing: -1px;
+        }
+        .textQuality {
+          font-size: 15px;
+        }
+      }
+      .draggable,
+      .laptop-container {
+        display: none;
+      }
+    }
+    .rotate-line {
+      display: none;
+    }
+  }
+  // =============================================================================
+  // 01. Internal Pages
+  // =============================================================================
+  #primary {
+    #main {
+      article.page {
+        padding: 10px 25px;
+        .entry-header,
+        .entry-content {
+          margin-bottom: $marg30;
+          h1 {
+            font-size: $font28;
+          }
+          h2, h3, h4, h5, h6 {
+          }
+          h2 {
+            font-size: $font30;
+          }
+          h3 {
+            font-size: $font24;
+          }
+          h4 {
+            font-size: $font20;
+          }
+          h5 {
+            font-size: $font16;
+          }
+          h6 {
+            font-size: $font14;
+          }
+          p {
+            font-size: $font20;
+          }
+        }
+      }
+    }
+  }
+  // =============================================================================
+  // Video Section
+  // =============================================================================
+  .content-video {
+    padding: 0 0 50px 0;
+    .iconsContainer{
+      flex-direction: column;
+      .feature {
+        width: 100%;
+        .text-feature {
+          font-size: $font18;
+          padding-top: $pad10;
+          line-height: 22px;
+          width: 100%;
+        }
+      }
+      .block-2 {
+        padding: 60px 0;
+        margin: 10px 0;
+        &:before {
+          font-size: 2.8em;
+          right: 0;
+          top: 0;
+        }
+        &:after {
+          font-size: 2.8em;
+          left: 0;
+          bottom: 0;
+          top: inherit;
+        }
+      }
+    }
+    .video-text {
+      padding: $pad0_20;
+      margin-top: $marg70;
+      h2 {
+        font-size: $font26;
+      }
+      p {
+        font-size: $font16;
+      }
+    }
+  }
+  // =============================================================================
+  // Customers
+  // =============================================================================
+  .customersWrapper {
+    .customersContainer {
+      .lineCustomers {
+        .customer {
+          width: 36%;
+          height: auto;
+        }
+        .customer:nth-of-type(odd) {
+          width: 42%;
+          height: auto;
+        }
+        .customer:nth-of-type(3),
+        .customer:nth-of-type(4){
+          display: none;
+        }
+      }
+    }
+    .customersContent{
+      top: 170px;
+      .customersText {
+        .better{
+          padding: $pad0_20;
+        }
+      }
+    }
+  }
+  // =============================================================================
+  // 01. Footer
+  // =============================================================================
+  footer {
+    .info-nav-wrapper {
+      flex-direction: column-reverse;
+      padding: $pad20;
+      margin-top: $marg10;
+      #info-site,
+      #content-bottom-menus {
+        width: 100%;
+      }
+      #info-site {
+        text-align: center;
+        margin-top: $marg20;
+        &:before {
+          right: 0;
+          margin: 0 auto;
+        }
+      }
+    }
+    .common-footer-wrapper {
+      .three-buttons {
+        flex-direction: column;
+        .widget_categorieswidgets {
+          width: 100%;
+          margin-bottom: $marg20;
+          .button {
+            .icon-button {
+              img {
+                height: 70px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+}
 
 @media (min-width: 900px) {
 

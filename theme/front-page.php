@@ -1,7 +1,11 @@
 <?php
 /**
 ** The main template file **/
-get_header();  $img_logo = get_theme_mod( 'img_logo', esc_url( get_template_directory_uri() . '/img/img01.jpg' ) ); // Logo ?>
+get_header();
+$profileimg = get_theme_mod( 'profileimg', esc_url( get_template_directory_uri() . '/img/per_profile.jpg' ) ); // Phone - Img Profile
+//$summaryimg = get_theme_mod( 'summaryimg', esc_url( get_template_directory_uri() . '/img/per_summary.jpg' ) ); // Phone - Img Summary
+$insightsimg = get_theme_mod( 'insightsimg', esc_url( get_template_directory_uri() . '/img/insights.jpg' ) ); // Phone - Img Insights
+$strengthsimg = get_theme_mod( 'strengthsimg', esc_url( get_template_directory_uri() . '/img/strengths.jpg' ) ); // Phone - Img Strenghts ?>
 
 	<section id="slider">
 		<div class="wrapper">
@@ -12,7 +16,8 @@ get_header();  $img_logo = get_theme_mod( 'img_logo', esc_url( get_template_dire
 					$thumb_id = get_post_thumbnail_id();
 					$thumb_url_array = wp_get_attachment_image_src($thumb_id, 'full', true);
 					$thumb_url = $thumb_url_array[0]; ?>
-					<div class="item" style="background-image:url(<?php echo $thumb_url ?>)">
+					<div class="item">
+						<div class="blur" style="background-image:url(<?php echo $thumb_url ?>)"></div>
 						<div class="data">
 							<h3>Talent<span>rank<sup>tm</sup></span></h3>
 							<h2><?php echo the_field( 'title', false, false ); ?></h2>
@@ -36,19 +41,25 @@ get_header();  $img_logo = get_theme_mod( 'img_logo', esc_url( get_template_dire
 			<?php the_field('content', 'option'); ?>
 		</article><!-- .article.top.drag.and.drop -->
 		<section class="dragdrop_container">
-			<div id="yes-drop" class="draggable drag-drop applicant1 1">
-				<div class="dragMe">
-					<p>DRAG ME!</p>
+			<div class="blk-drag blk-applione">
+				<div id="yes-drop" class="draggable drag-drop applicant1 1">
+					<div class="dragMe">
+						<p>DRAG ME!</p>
+					</div>
 				</div>
 			</div><!-- .drag.me.balls -->
-			<div id="yes-drop" class="draggable drag-drop applicant2 2">
-				<div class="dragMe">
-					<p>DRAG ME!</p>
+			<div class="blk-drag blk-applitwo">
+				<div id="yes-drop" class="draggable drag-drop applicant2 2">
+					<div class="dragMe">
+						<p>DRAG ME!</p>
+					</div>
 				</div>
 			</div><!-- .drag.me.balls -->
-			<div id="yes-drop" class="draggable drag-drop applicant3 3">
-				<div class="dragMe">
-					<p>DRAG ME!</p>
+			<div class="blk-drag blk-applithree">
+				<div id="yes-drop" class="draggable drag-drop applicant3 3">
+					<div class="dragMe">
+						<p>DRAG ME!</p>
+					</div>
 				</div>
 			</div><!-- .drag.me.balls -->
 			<div class="laptop-container">
@@ -105,7 +116,7 @@ get_header();  $img_logo = get_theme_mod( 'img_logo', esc_url( get_template_dire
 		</section>
 		<div class="rotate-line"></div><!-- .line.rotate.bottom.drag-drop -->
 	</section><!-- .drag.and.drop -->
-	
+
 	<section class="phone-section">
 		<div class="line-top"></div>
 		<div class="back-phone"></div>
@@ -114,11 +125,11 @@ get_header();  $img_logo = get_theme_mod( 'img_logo', esc_url( get_template_dire
 			<p>Proven personality profiling and behavioural analysis for powerful insights on who your candidates are, not just what they can do.</p>
 			<h3>Explore:</h3>
 			<nav>
-				<ul>
-					<li><a href="javascript:void(0)" id="personalityprofile">personality profile</a></li>
-					<li><a href="javascript:void(0)" id="personalitysummary">personality summary</a></li>
-					<li><a href="javascript:void(0)" id="workplace">workplace insights</a></li>
-					<li><a href="javascript:void(0)" id="strenghts">strenghts</a></li>
+				<ul class="phonelinks">
+					<li data-target="personality_profile"><a href="javascript:void(0)" title="Personality Profile">personality profile</a></li>
+					<li data-target="personality_summary"><a href="javascript:void(0)" title="Personality Summary">personality summary</a></li>
+					<li data-target="workplace"><a href="javascript:void(0)" title="Workplace Insights">workplace insights</a></li>
+					<li data-target="strenghts"><a href="javascript:void(0)" title="Strenghts">strenghts</a></li>
 				</ul>
 			</nav>
 		</div>
@@ -132,7 +143,14 @@ get_header();  $img_logo = get_theme_mod( 'img_logo', esc_url( get_template_dire
 			    <div class="speaker"></div>
 			    <div class="screen">
 			        <!-- Content goes here -->
-							<div id="personalityprofile_content"><img src="<?php echo esc_url( $img_logo ); ?>"></div>
+							<div id="phonessel">
+								<div class="wrapper_phone">
+									<div class="item" id="personality_profile"><img src="<?php echo esc_url( $profileimg ); ?>"></div>
+									<div class="item" id="personality_summary"><img src="<?php echo esc_url( $strengthsimg ); ?>"></div>
+									<div class="item" id="workplace"><img src="<?php echo esc_url( $insightsimg ); ?>"></div>
+									<div class="item" id="strenghts"><img src="<?php echo esc_url( $strengthsimg ); ?>"></div>
+								</div>
+							</div>
 			    </div>
 			    <div class="home"></div>
 			    <div class="bottom-bar"></div>
@@ -149,7 +167,7 @@ get_header();  $img_logo = get_theme_mod( 'img_logo', esc_url( get_template_dire
 			</div>
 		</div>
 		<div class="blk-button">
-			<a href="#">Get Started Now</a>
+			<a href="javascript:void(0);" class="starttrial-link" title="Get Started Now | Free trial, no credit card required :)">Get Started Now</a>
 			<span>Free trial, no credit card required :)</span>
 		</div>
 	</section>

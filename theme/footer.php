@@ -2,13 +2,11 @@
 /**
  * The template for displaying the footer
  *
- * Contains the closing of the #content div and all content after
- */
-?>
+ * Contains the closing of the #content div and all content after */ ?>
 
 		</div><!-- .site-content -->
 
-		<footer id="footer">			
+		<footer id="footer">
 			<section class="common-footer-wrapper">
 				<div class="three-buttons">
 					<?php // Widgets bottom - Buttons Pages
@@ -20,12 +18,9 @@
 				</div>
 			</section><!-- .section.buttons.and.menus-copyright.address -->
 		</footer>
-
-
-
-	</div><!-- .site-inner -->
-</div><!-- .site -->
-
-<?php wp_footer(); ?>
+		</div><!-- .site-inner -->
+	</div><!-- .site -->
+	<?php wp_footer(); ?>
+	</div><!-- .main site -->
 </body>
 </html>

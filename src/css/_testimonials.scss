@@ -4,6 +4,8 @@
 .content-testimonials {
   padding: $pad60_40_140;
   margin-bottom: $marg90;
+  width: 90%;
+  margin: auto;
   h2.main_title {
     font-family: $whitney;
     padding-top: $pad20;
@@ -19,7 +21,7 @@
     justify-content: space-between;
     align-items: center;
     figure {
-      width: 33%;
+      width: 43%;
       img {
         object-fit: cover;
         height: auto;
@@ -27,7 +29,7 @@
       }
     }
     .blk-testimonials {
-      width: 60%;
+      width: 50%;
       h3 {
         font-family: $whitney;
         padding-top: $pad25;
@@ -112,6 +114,25 @@
           background-color: $midlle_blue;
           display: inline-block;
         }
+      }
+    }
+  }
+}
+
+// =============================================================================
+// Responsive
+// =============================================================================
+@media (max-width: 767px) {
+  .content-testimonials {
+    padding: 0;
+    article {
+      flex-direction: column;
+      figure {
+        width: 100%;
+      }
+      .blk-testimonials {
+        width: 95%;
+        padding: $pad25;
       }
     }
   }

@@ -4,7 +4,6 @@
 
 jQuery( document ).ready( function($) {
 
-
 	/** AddClass for every single img for avoiding mistakes **/
 	$("img").addClass("img-fluid");
 
@@ -18,19 +17,22 @@ jQuery( document ).ready( function($) {
 	var menuRight = document.getElementById( 'cbp-spmenu-s2' ),
 	showRight = document.getElementById( 'showRight' ),
 	showRightPush = document.getElementById( 'showRightPush' ),
-	body = document.body;
+	//body = document.body,
+	mainsite = document.getElementById( 'mainsite' );
+	masthead = document.getElementById( 'masthead' );
 
 	showRightPush.onclick = function() {
 		classie.toggle( this, 'active' );
-		classie.toggle( body, 'cbp-spmenu-push-toleft' );
+		classie.toggle( masthead, 'cbp-spmenu-push-toleft' );
+		classie.toggle( mainsite, 'cbp-spmenu-push-toleft' );
 		classie.toggle( menuRight, 'cbp-spmenu-open' );
 	};
 
 	/** Main Menu **/
 	$( "#showRightPush" ).click(function() {
 	  $( '.overlay-contentscale' ).toggleClass( "open" );
-		$( 'body' ).toggleClass( "pos-fixed" );
-		$("#masthead").toggleClass("whiteBg");
+		$( 'body' ).toggleClass( "pos-over" );
+		$(".overlay-menu").toggleClass("appear-overlay");
 	});
 
 	/** Modal **/
@@ -41,6 +43,12 @@ jQuery( document ).ready( function($) {
     $('#myModal').fadeOut();
 		window.localStorage.clear();
   });
+
+	$(window).on('scroll', function () {
+    var pixs = $(document).scrollTop()
+    pixs = pixs / 50;
+    $(".blur").css({"transform": "translate(0px,"+pixs+"px)","filter": "blur("+pixs+"px)" })
+	});
 
 	/** Modal Video **/
 	$('.play_btn').on('click', function() {
@@ -61,7 +69,7 @@ jQuery( document ).ready( function($) {
 			target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
 			if (target.length) {
 				$('html,body').animate({
-					scrollTop: target.offset().top
+					scrollTop: target.offset().top-20
 				}, 1000);
 				return false;
 			}
@@ -90,10 +98,10 @@ jQuery( document ).ready( function($) {
 
 	function animaSlider(qual){
 		window.botaoSlider = false;
-		$('section#slider .wrapper .item.ativo').animate({opacity: 0}, 600, function(){
+		$('section#slider .wrapper .item.ativo').animate({opacity: 0}, function(){
 			$(this).removeClass('ativo');
 		});
-		$('section#slider .wrapper .item:eq('+qual+')').show().animate({opacity: 1}, 600, function(){
+		$('section#slider .wrapper .item:eq('+qual+')').show().animate({opacity: 1}, function(){
 			$(this).addClass('ativo');
 			window.botaoSlider = true;
 		});
@@ -177,11 +185,39 @@ jQuery( document ).ready( function($) {
   }, 1100);
 
 	/** Phone front page area **/
-	$("#personalityprofile").click(function (){
+	$('.phonelinks li a').first().addClass('actived'); // Add highlight to the first menu link
 
-		$("#personalityprofile_content img").animate({top:"410px"}, 400, "linear");
+	$('.phonelinks li a').click(function(event) {
+		event.preventDefault();
 
-	});
+		var item = $(this).parent().attr('data-target');
+		var ordemItem = $('.item#'+item).index();
 
+		var posicaoAtual =  parseFloat($('.wrapper_phone').css('top'),10);
+		var quantoMover = $('#phonessel').outerHeight() * ordemItem;
+
+		$('.wrapper_phone').animate({top: -quantoMover}, function(){
+			// Reaching position to appear the description for each element
+			var position = $(this).css('top');
+			if ( position == "-415px" ) {
+				$('.personality_profile').fadeOut();
+				$('.strenghts').fadeIn();
+			}
+			else if ( position == "-830px" ) {
+				$('.strenghts').fadeOut();
+			}
+			else if ( position == "-1245px" ) {
+				$('.strenghts').fadeOut();
+			}
+			else {
+				$('.personality_profile').fadeIn();
+				$('.strenghts').fadeOut();
+			}
+	  });
+
+		$('.phonelinks li a.actived').removeClass('actived');
+		$(this).addClass('actived');
+
+  });
 
 }); /* Close Document Ready */

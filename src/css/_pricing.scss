@@ -5,7 +5,7 @@
   display: flex;
   align-items: center;
   min-height: 400px;
-  max-width: 95%;
+  max-width: 90%;
   margin: 0 auto;
   margin-bottom: $marg60;
   .blk-plan {
@@ -159,4 +159,24 @@
     background-color: $midlle_blue;
     display: inline-block;
   }
+}
+
+// =============================================================================
+// 01. Responsive
+// =============================================================================
+@media (max-width: 767px) {
+  .content-plans {
+    flex-direction: column;
+    margin-bottom: $marg10;
+    .blk-plan {
+      width: 100%;
+      margin-bottom: $marg20;
+    }
+  }
+  .phrase-pricing {
+    margin-top: 0;
+    margin-bottom: $marg25;
+    max-width: 100%;
+  }
+
 }
