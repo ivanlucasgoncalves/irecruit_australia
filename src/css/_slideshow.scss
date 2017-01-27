@@ -21,7 +21,8 @@ section#slider {
 			left: 0;
 			opacity: 0;
 			overflow: hidden;
-			transition: all 0.1s;
+			display: none;
+			-webkit-transform: translateZ(0);
 			.blur {
 				position: absolute;
 				width: 100%;
@@ -84,7 +85,7 @@ section#slider {
 				height: 100%;
 				top: 0;
 				left: 0;
-				transition: all 0.1s;
+				-webkit-transform: translateZ(0);
 			}
 			&:after{
 				content: '';

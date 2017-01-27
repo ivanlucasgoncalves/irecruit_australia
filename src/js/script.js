@@ -98,10 +98,10 @@ jQuery( document ).ready( function($) {
 
 	function animaSlider(qual){
 		window.botaoSlider = false;
-		$('section#slider .wrapper .item.ativo').animate({opacity: 0}, function(){
+		$('section#slider .wrapper .item.ativo').animate({opacity: 0}, 600, function(){
 			$(this).removeClass('ativo');
 		});
-		$('section#slider .wrapper .item:eq('+qual+')').show().animate({opacity: 1}, function(){
+		$('section#slider .wrapper .item:eq('+qual+')').show().animate({opacity: 1}, 600, function(){
 			$(this).addClass('ativo');
 			window.botaoSlider = true;
 		});
