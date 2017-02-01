@@ -1,11 +1,7 @@
 <?php
 /**
 ** The main template file **/
-get_header();
-$profileimg = get_theme_mod( 'profileimg', esc_url( get_template_directory_uri() . '/img/per_profile.jpg' ) ); // Phone - Img Profile
-//$summaryimg = get_theme_mod( 'summaryimg', esc_url( get_template_directory_uri() . '/img/per_summary.jpg' ) ); // Phone - Img Summary
-$insightsimg = get_theme_mod( 'insightsimg', esc_url( get_template_directory_uri() . '/img/insights.jpg' ) ); // Phone - Img Insights
-$strengthsimg = get_theme_mod( 'strengthsimg', esc_url( get_template_directory_uri() . '/img/strengths.jpg' ) ); // Phone - Img Strenghts ?>
+get_header(); ?>
 
 	<section id="slider">
 		<div class="wrapper">
@@ -108,69 +104,17 @@ $strengthsimg = get_theme_mod( 'strengthsimg', esc_url( get_template_directory_u
 				</div>
 			</div><!-- .laptop.structure -->
 			<div class="quality">
-				<h2>Ranked . Sorted . Relevant</h2>
-				<p class="textQuality">Automatically rank and sort your candidates using powerful and reliable software you can trust.</p>
-				<a href="javascript:void(0);" class="trialButton starttrial-link" title="Start the free trial">Start the free trial</a>
+				<h2><?php the_field('title_bottom', 'option'); ?></h2>
+				<p class="textQuality"><?php the_field('content_bottom', 'option'); ?></p>
+				<div class="trialButton starttrial-link"><?php the_field('trial_link', 'option'); ?></div>
 				<span>*No credit card required</span>
 			</div><!-- .text.bottom.quality -->
 		</section>
 		<div class="rotate-line"></div><!-- .line.rotate.bottom.drag-drop -->
 	</section><!-- .drag.and.drop -->
 
-	<section class="phone-section">
-		<div class="line-top"></div>
-		<div class="back-phone"></div>
-		<div class="phone-menu-container">
-			<h2>Behavioural Analysis</h2>
-			<p>Proven personality profiling and behavioural analysis for powerful insights on who your candidates are, not just what they can do.</p>
-			<h3>Explore:</h3>
-			<nav>
-				<ul class="phonelinks">
-					<li data-target="personality_profile"><a href="javascript:void(0)" title="Personality Profile">personality profile</a></li>
-					<li data-target="personality_summary"><a href="javascript:void(0)" title="Personality Summary">personality summary</a></li>
-					<li data-target="workplace"><a href="javascript:void(0)" title="Workplace Insights">workplace insights</a></li>
-					<li data-target="strenghts"><a href="javascript:void(0)" title="Strenghts">strenghts</a></li>
-				</ul>
-			</nav>
-		</div>
-		<div class="iphone-container">
-			<div class="marvel-device iphone6plus gold">
-			    <div class="top-bar"></div>
-			    <div class="sleep"></div>
-			    <div class="volume"></div>
-			    <div class="camera"></div>
-			    <div class="sensor"></div>
-			    <div class="speaker"></div>
-			    <div class="screen">
-			        <!-- Content goes here -->
-							<div id="phonessel">
-								<div class="wrapper_phone">
-									<div class="item" id="personality_profile"><img src="<?php echo esc_url( $profileimg ); ?>"></div>
-									<div class="item" id="personality_summary"><img src="<?php echo esc_url( $strengthsimg ); ?>"></div>
-									<div class="item" id="workplace"><img src="<?php echo esc_url( $insightsimg ); ?>"></div>
-									<div class="item" id="strenghts"><img src="<?php echo esc_url( $strengthsimg ); ?>"></div>
-								</div>
-							</div>
-			    </div>
-			    <div class="home"></div>
-			    <div class="bottom-bar"></div>
-			</div>
-			<div class="description personality_profile">
-				<div class="flag-dir"></div>
-				<h3>Workplace Insights</h3>
-				<p>What does your candidate think or expect from work environments, and how does he or she behaves on adverse situations.</p>
-			</div>
-			<div class="description strenghts">
-				<div class="flag-dir"></div>
-				<h3>Strenghts</h3>
-				<p>Complete analysis of talent's strenghts which would contribute improving the team's culture and performance.</p>
-			</div>
-		</div>
-		<div class="blk-button">
-			<a href="javascript:void(0);" class="starttrial-link" title="Get Started Now | Free trial, no credit card required :)">Get Started Now</a>
-			<span>Free trial, no credit card required :)</span>
-		</div>
-	</section>
+	<?php // Include the content video template.
+	get_template_part( 'template-parts/content', 'phone' ); ?>
 
 	<?php // Include the content video template.
 	get_template_part( 'template-parts/content', 'video' ); ?>

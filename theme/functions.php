@@ -153,6 +153,13 @@ if( function_exists('acf_add_options_page') ) {
 		'icon_url'		=> 'dashicons-format-video',
 		'position' => 58
 	));
+
+	acf_add_options_page(array(
+		'menu_title'	=> 'Behavioral Analy.',
+		'menu_slug' 	=> 'theme-behavioural-settings',
+		'icon_url'		=> 'dashicons-welcome-learn-more',
+		'position' => 58
+	));
 }
 
 /**

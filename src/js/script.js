@@ -1,7 +1,6 @@
 /**
 *	jQuery Document Ready
 */
-
 jQuery( document ).ready( function($) {
 
 	/** AddClass for every single img for avoiding mistakes **/
@@ -12,6 +11,16 @@ jQuery( document ).ready( function($) {
 
 	/** Transformicons **/
 	transformicons.add('.tcon');
+
+	/** Create onclick event after loading script from Hubspot **/
+	var ctaonclick = "var params=this.href.split('&').reduce(function(result, item) {result[item.split('=')[0]] = decodeURIComponent(item.split('=')[1]);return result;},{}); var qp='?hsCtaTracking='+params.placement_guid+'&__hstc='+params.__hstc+'&__hssc='+params.__hssc+'&__hsfp='+params.__hsfp; (window.history && window.history.pushState) ? window.history.pushState('ab-test','call-to-action',qp) : window.location.hash=qp; return false;";
+	var checkExist = setInterval(function() {
+		 if ($('.cta_button').length) {
+				$('.cta_button').attr( "onClick" , ctaonclick );
+				console.log("Exists!");
+				clearInterval(checkExist);
+		 }
+	}, 100); // check every 100ms
 
   /** Slide Menu **/
 	var menuRight = document.getElementById( 'cbp-spmenu-s2' ),
@@ -44,6 +53,7 @@ jQuery( document ).ready( function($) {
 		window.localStorage.clear();
   });
 
+	/** Blur Slide Image on Scroll **/
 	$(window).on('scroll', function () {
     var pixs = $(document).scrollTop()
     pixs = pixs / 50;
@@ -70,7 +80,7 @@ jQuery( document ).ready( function($) {
 			if (target.length) {
 				$('html,body').animate({
 					scrollTop: target.offset().top-20
-				}, 1000);
+				}, 500);
 				return false;
 			}
 		}
@@ -130,7 +140,7 @@ jQuery( document ).ready( function($) {
 		$('section#slider ul.bullets li:eq('+ qual + ')').addClass('ativo');
 
 		animaSlider(qual);
-	}, 5000);
+	}, 8000);
 
 	/** Wrap Line into Textarea **/
 	var textAreas = document.getElementsByTagName('textarea');
@@ -139,50 +149,54 @@ jQuery( document ).ready( function($) {
 	});
 
 	/** Modal Form **/
-	setTimeout(function(){
-    var data = {};
-  	//if submit button is clicked
-  	$('.form_step01 input[type="email"]').on('change', function() {
-  		//Get the data from all the fields
-  		data[ $(this).attr('id') ] = $(this).val();
-  		// Var JSON Data
-  		var jsonData = localStorage.setItem('formData', JSON.stringify(data));
-  		//return false;
-  	});
+	var checkExistForm = setInterval(function() {
+		 if ($('.hs-form').length) {
 
-    var plan = {};
-    $('.inside-div a').on('click', function () { // something with the class store clicked
-      plan[ $(this).attr('id') ] = $(this).data('value');
-      var json = localStorage.setItem('planData', JSON.stringify(plan));
-      if(localStorage.getItem('planData')) {
-        json = localStorage.getItem('planData');
-        var result = JSON.parse(json);
-        for (var key in result) {
-          $('.hs_plans .hs-input').val(result[key]);
-        }
-      }
-    });
+				console.log("Exists Form!");
+				clearInterval(checkExistForm);
 
-    // Trap for forms - I know it is not pretty but I should make it quickly
-    $('.modal-form .form_step01 input[type="submit"]').click(function() {
+				var data = {};
+		  	//if submit button is clicked
+		  	$('.form_step01 input[type="email"]').on('change', function() {
+		  		//Get the data from all the fields
+		  		data[ $(this).attr('id') ] = $(this).val();
+		  		// Var JSON Data
+		  		var jsonData = localStorage.setItem('formData', JSON.stringify(data));
+		  		//return false;
+		  	});
+		    var plan = {};
+		    $('.inside-div a').on('click', function () { // something with the class store clicked
+		      plan[ $(this).attr('id') ] = $(this).data('value');
+		      var json = localStorage.setItem('planData', JSON.stringify(plan));
+		      if(localStorage.getItem('planData')) {
+		        json = localStorage.getItem('planData');
+		        var result = JSON.parse(json);
+		        for (var key in result) {
+		          $('.hs_plans .hs-input').val(result[key]);
+		        }
+		      }
+		    });
+		    // Trap for forms - I know it is not pretty but I should make it quickly
+		    $('.modal-form .form_step01 input[type="submit"]').click(function() {
 
-      if(localStorage.getItem('formData')) {
-        jsonData = localStorage.getItem('formData');
-        var result = JSON.parse(jsonData);
-        for (var key in result) {
-          //Modal
-          $('.emailtest input').val(result[key]);
-          $('.hs_email .hs-input').val(result[key]);
-          $(".form_step02").fadeIn();
-        }
-      }
-    });
-    $('.modal-form .form_step02 input[type="submit"]').click(function() {
-      window.localStorage.clear();
-      $('.modal-form .thanks-message').css('display','block');
-      $('.modal-form .emailtest, .modal-form h4, .modal-form .first-p').hide();
-    });
-  }, 1100);
+		      if(localStorage.getItem('formData')) {
+		        jsonData = localStorage.getItem('formData');
+		        var result = JSON.parse(jsonData);
+		        for (var key in result) {
+		          //Modal
+		          $('.emailtest input').val(result[key]);
+		          $('.hs_email .hs-input').val(result[key]);
+		          $(".form_step02").fadeIn();
+		        }
+		      }
+		    });
+		    $('.modal-form .form_step02 input[type="submit"]').click(function() {
+		      window.localStorage.clear();
+		      $('.modal-form .thanks-message').css('display','block');
+		      $('.modal-form .emailtest, .modal-form h4, .modal-form .first-p').hide();
+		    });
+		 }
+	}, 100); // check every 100ms
 
 	/** Phone front page area **/
 	$('.phonelinks li a').first().addClass('actived'); // Add highlight to the first menu link

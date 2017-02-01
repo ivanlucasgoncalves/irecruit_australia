@@ -196,19 +196,22 @@
       font-size: $font16;
     }
     .trialButton {
-      box-shadow: 0px 0px 15px #cccccc;
-      padding: $pad10;
-      font-weight: $font500;
-      font-size: $font17;
-      margin-top: $marg20;
-      border-radius: 5px;
-      transition: all 0.1s ease-in-out;
-      color: $white;
-      background-color: $midlle_blue;
-      display: inline-block;
-      text-transform: uppercase;
-      &:hover, &:active {
+      a {
+        box-shadow: 0px 0px 15px #cccccc;
+        padding: $pad10;
+        font-weight: $font500;
+        font-size: $font17;
+        font-style: normal;
+        margin-top: $marg20;
+        border-radius: 5px;
         transition: all 0.1s ease-in-out;
+        color: $white;
+        background-color: $midlle_blue;
+        display: inline-block;
+        text-transform: uppercase;
+        &:hover, &:active {
+          transition: all 0.1s ease-in-out;
+        }
       }
     }
     span {
