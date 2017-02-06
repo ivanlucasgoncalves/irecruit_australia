@@ -33,7 +33,7 @@ $strengthsimg = get_theme_mod( 'strengthsimg', esc_url( get_template_directory_u
 		<?php endif; ?>
 	</div>
 	<div class="iphone-container">
-		<div class="marvel-device iphone6plus gold">
+		<div class="marvel-device iphone6plus black">
 				<div class="top-bar"></div>
 				<div class="sleep"></div>
 				<div class="volume"></div>

@@ -29,7 +29,8 @@ get_header(); ?>
 			</div><!--. content.customers.page .-->
 			<div class="customers-container">
 				<?php $customers = new WP_Query( array(
-					'post_type' => 'our_customers'	)); ?>
+					'post_type' => 'our_customers',
+					'posts_per_page' => 12,	)); ?>
 				<?php $i=1; // Counting articles
 					echo '<section class="line-customers">';
 					while ( $customers->have_posts() ) : $customers->the_post(); ?>
@@ -39,7 +40,8 @@ get_header(); ?>
 				<?php // if multiple of 4 close div and open a new div
 					if($i % 4 == 0) { echo '</section><section class="line-customers">'; }
 					$i++;
-					endwhile; ?>
+					endwhile;
+					if(!empty($customers)){	echo 'hide'; } ?>
 				<?php echo '</section>';
 					wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
 			</div>

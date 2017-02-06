@@ -59,6 +59,13 @@
     }
   }
 }
+.invisible {
+  opacity:0;
+}
+.visible,
+.full-visible {
+  opacity:1;
+}
 
 // =============================================================================
 // 01. Header
@@ -103,9 +110,13 @@ header#masthead {
             padding: $pad10;
             font-weight: $font500;
             border-radius: 5px;
-            transition: all 0.1s ease-in-out;
+            transition: all 0.2s ease-in-out;
             color: $white;
             background-color: $midlle_blue;
+            &:hover, &:active {
+              background-color: $blue;
+              transition: all 0.2s ease-in-out;
+            }
           }
         }
       }
@@ -228,7 +239,7 @@ footer {
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    border-top: 3px solid #F7F7F7;
+    border-top: 2px solid #F7F7F7;
     margin-top: $marg60;
     padding-top: $pad40;
     padding-bottom: $pad40;

@@ -92,7 +92,7 @@
           font-size: $font16;
           position: relative;
           color: $midlle_blue;
-          padding-left: $pad30;
+          padding-left: $pad35;
           margin: $marg20_0;
           &:before {
             width: 26px;
@@ -104,15 +104,20 @@
         }
         a {
           box-shadow: 0px 0px 15px #cccccc;
-          padding: 15px 25px;
+          padding: 14px 23px;
           font-weight: $font500;
-          font-size: $font16;
+          font-size: $font15;
           margin-top: $marg20;
           border-radius: 5px;
-          transition: all 0.1s ease-in-out;
+          transition: all 0.2s ease-in-out;
           color: $white;
           background-color: $midlle_blue;
           display: inline-block;
+          text-transform: uppercase;
+          &:hover, &:active {
+            transition: all 0.2s ease-in-out;
+            background-color: $blue;
+          }
         }
       }
     }

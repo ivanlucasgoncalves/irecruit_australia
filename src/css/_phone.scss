@@ -182,7 +182,45 @@ border-radius: 100%;
     border-radius: 6px;
     z-index: 3;
 }
-.marvel-device.iphone6plus.gold {
+
+.marvel-device.iphone6plus.black {
+  background: #464646;
+  -webkit-box-shadow: inset 0 0 3px 0 rgba(0, 0, 0, 0.7);
+  box-shadow: inset 0 0 3px 0 rgba(0, 0, 0, 0.7);
+}
+.marvel-device.iphone6plus.black:before {
+  background: #080808;
+}
+.marvel-device.iphone6plus.black:after {
+  -webkit-box-shadow: inset 0 0 3px 0 rgba(0, 0, 0, 0.1), inset 0 0 6px 3px #212121;
+  box-shadow: inset 0 0 3px 0 rgba(0, 0, 0, 0.1), inset 0 0 6px 3px #212121;
+}
+.marvel-device.iphone6plus.black .top-bar,
+.marvel-device.iphone6plus.black .bottom-bar {
+  background: #212121;
+}
+.marvel-device.iphone6plus.black .volume,
+.marvel-device.iphone6plus.black .sleep {
+  background: #464646;
+}
+.marvel-device.iphone6plus.black .camera {
+  background: #080808;
+}
+.marvel-device.iphone6plus.black .home {
+  background: #080808;
+  background: -moz-linear-gradient(-45deg, #080808 0%, #464646 50%, #080808 100%);
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, #080808), color-stop(50%, #464646), color-stop(100%, #080808));
+  background: -webkit-linear-gradient(-45deg, #080808 0%, #464646 50%, #080808 100%);
+  background: -o-linear-gradient(-45deg, #080808 0%, #464646 50%, #080808 100%);
+  background: -ms-linear-gradient(-45deg, #080808 0%, #464646 50%, #080808 100%);
+  background: linear-gradient(135deg, #080808 0%, #464646 50%, #080808 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#080808', endColorstr='#080808', GradientType=1);
+}
+.marvel-device.iphone6plus.black .home:before {
+  background: #080808;
+}
+
+/*.marvel-device.iphone6plus.gold {
   background: #e8d7c5;
 }
 .marvel-device.iphone6plus.gold .top-bar,
@@ -202,4 +240,4 @@ border-radius: 100%;
   background: -ms-linear-gradient(-45deg, #cebba9 0%, #e8d7c5 50%, #cebba9 100%);
   background: linear-gradient(135deg, #cebba9 0%, #e8d7c5 50%, #cebba9 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#cebba9', endColorstr='#cebba9', GradientType=1);
-}
+}*/

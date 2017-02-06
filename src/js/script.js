@@ -7,10 +7,24 @@ jQuery( document ).ready( function($) {
 	$("img").addClass("img-fluid");
 
 	/** For now add display none into hide customers container - I will change to make it better later. **/
-	jQuery('.lineCustomers:contains("hide")').remove();
+	jQuery('.lineCustomers:contains("hide"), .line-customers:contains("hide")').remove();
 
 	/** Transformicons **/
 	transformicons.add('.tcon');
+
+	/** Scroll Animations **/
+	jQuery('.content-artworks').addClass("invisible").viewportChecker({
+		classToAdd: 'visible animated bounceInLeft',
+		classToRemove : 'invisible',
+		removeClassAfterAnimation: true,
+		offset: 100
+	});
+	jQuery('.content-standards').addClass("invisible").viewportChecker({
+		classToAdd: 'visible animated bounceInRight',
+		classToRemove : 'invisible',
+		removeClassAfterAnimation: true,
+		offset: 100
+	});
 
 	/** Create onclick event after loading script from Hubspot **/
 	var ctaonclick = "var params=this.href.split('&').reduce(function(result, item) {result[item.split('=')[0]] = decodeURIComponent(item.split('=')[1]);return result;},{}); var qp='?hsCtaTracking='+params.placement_guid+'&__hstc='+params.__hstc+'&__hssc='+params.__hssc+'&__hsfp='+params.__hsfp; (window.history && window.history.pushState) ? window.history.pushState('ab-test','call-to-action',qp) : window.location.hash=qp; return false;";
@@ -233,5 +247,6 @@ jQuery( document ).ready( function($) {
 		$(this).addClass('actived');
 
   });
+
 
 }); /* Close Document Ready */

@@ -141,7 +141,7 @@ add_action('admin_head', 'custom_admin_head');
 if( function_exists('acf_add_options_page') ) {
 
 	acf_add_options_page(array(
-		'menu_title'	=> 'How it works',
+		'menu_title'	=> 'Take Full Control',
 		'menu_slug' 	=> 'theme-howitworks-settings',
 		'icon_url'		=> 'dashicons-list-view',
 		'position' => 57

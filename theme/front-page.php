@@ -103,12 +103,48 @@ get_header(); ?>
 					<div class="shadow"></div>
 				</div>
 			</div><!-- .laptop.structure -->
-			<div class="quality">
-				<h2><?php the_field('title_bottom', 'option'); ?></h2>
-				<p class="textQuality"><?php the_field('content_bottom', 'option'); ?></p>
-				<div class="trialButton starttrial-link"><?php the_field('trial_link', 'option'); ?></div>
+			<div class="howitworks-section">
+				<section class="sec-top">
+					<?php if( have_rows('how_it_works', 'option') ):
+						$count = 1; ?>
+						<?php	while ( have_rows('how_it_works', 'option') ) : the_row();
+						$image_works = get_sub_field('image_works');
+						$title_works = get_sub_field('title_works');
+						$content_works = get_sub_field('content_works'); ?>
+						<article class="art-<?php echo $count ?>">
+							<div class="content-artworks">
+								<img src="<?php echo $image_works; ?>" height="60px">
+								<h2><?php echo $title_works; ?></h2>
+								<?php echo $content_works; ?>
+							</div>
+						</article>
+						<?php
+						$count++;
+						endwhile; ?>
+					<?php endif; ?>
+				</section>
+				<section class="sec-bottom">
+					<?php if( have_rows('work_standards', 'option') ):
+						$count = 1; ?>
+						<?php	while ( have_rows('work_standards', 'option') ) : the_row();
+						$image_standards = get_sub_field('image_standards');
+						$description_standards = get_sub_field('description_standards'); ?>
+						<article class="content-standards stands-<?php echo $count ?>">
+							<img src="<?php echo $image_standards; ?>" height="60px">
+							<h2><?php echo $description_standards; ?></h2>
+						</article>
+						<?php
+						$count++;
+						endwhile; ?>
+					<?php endif; ?>
+				</section>
+			</div>
+			<!--<div class="quality">
+				<h2><?php //the_field('title_bottom', 'option'); ?></h2>
+				<p class="textQuality"><?php //the_field('content_bottom', 'option'); ?></p>
+				<div class="trialButton starttrial-link"><?php //the_field('trial_link', 'option'); ?></div>
 				<span>*No credit card required</span>
-			</div><!-- .text.bottom.quality -->
+			</div>--><!-- .text.bottom.quality -->
 		</section>
 		<div class="rotate-line"></div><!-- .line.rotate.bottom.drag-drop -->
 	</section><!-- .drag.and.drop -->

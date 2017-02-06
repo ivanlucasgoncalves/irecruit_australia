@@ -7,7 +7,8 @@
 	<div class="customersWrapper">
 		<div class="customersContainer">
 			<?php $customers = new WP_Query( array(
-				'post_type' => 'our_customers'	)); ?>
+				'post_type' => 'our_customers',
+				'posts_per_page' => 12,	)); ?>
 			<?php $i=1; // Counting articles
 				echo '<section class="lineCustomers">';
 				while ( $customers->have_posts() ) : $customers->the_post(); ?>
@@ -19,7 +20,8 @@
 				$i++;
 				endwhile;
 				if(!empty($customers)){	echo 'hide'; } ?>
-			<?php echo '</section>'; ?>
+			<?php echo '</section>';
+				wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
 		</div>
 		<div class="customersContent">
 			<div class="customersText">
