@@ -67,7 +67,8 @@ section#slider {
 					font-style: $fontitalic;
 				}
 			}
-			a {
+			a,
+			.link-hubspot {
 				position: absolute;
 				top: 0;
 				left: 0;
@@ -85,6 +86,7 @@ section#slider {
 				height: 100%;
 				top: 0;
 				left: 0;
+				z-index: 9;
 				-webkit-transform: translateZ(0);
 			}
 			&:after{
@@ -108,7 +110,7 @@ section#slider {
 		position: absolute;
 		bottom: 120px;
 		right: 10px;
-		z-index: 3;
+		z-index: 11;
 		margin: 0;
 		padding: 0;
 		li{
@@ -178,6 +180,7 @@ section#slider {
     margin: 0 auto;
     left: 0;
     right: 0;
+		z-index: 10;
     bottom: -64px;
     width: 40px;
 		pointer-events: none;

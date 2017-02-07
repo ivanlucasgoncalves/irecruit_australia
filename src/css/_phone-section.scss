@@ -1,6 +1,13 @@
 // =============================================================================
 // 01. Phone Section
 // =============================================================================
+.phone_mobile-section {
+  display: none;
+}
+.phone-section {
+  display: block;
+}
+
 .back-phone {
   transform: rotate(4deg) skew(4deg);
   -webkit-transform: rotate(4deg) skew(4deg);
@@ -267,4 +274,187 @@
 }
 .number_4 {
   top: 1245px;
+}
+
+
+// =============================================================================
+// 01. Phone Mobile
+// =============================================================================
+@media (max-width: 767px) {
+
+  .phone_mobile-section {
+    display: block;
+  }
+  .phone-section {
+    display: none;
+  }
+  .phone_mobile-section {
+    background-image: url(../img/patternBlackSection.png);
+    padding: $pad40_20;
+  }
+  .phone_mobile-content {
+    text-align: center;
+    h2 {
+      font-family: $whitney-sc;
+      font-size: $font28;
+      color: $white;
+      font-weight: $fontlighter;
+      text-transform: uppercase;
+      position: relative;
+      padding-bottom: $pad15;
+      padding-top: $pad50;
+      &:before {
+        width: 40px;
+        content: url(../img/titleicon-phone.svg);
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        margin: 0 auto;
+      }
+      &:after {
+        width: 20%;
+        height: 2px;
+        background: $midlle_blue;
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: 0 auto;
+      }
+    }
+    p {
+      color: $white;
+      font-size: $font16;
+      font-weight: $fontlighter;
+    }
+    h3 {
+      font-family: $whitney;
+      font-size: $font16;
+      color: $white;
+      font-weight: $fontlighter;
+      padding: $pad20_0;
+    }
+  }
+  .mobile-content {
+    .blk-mobile_text {
+      width: 85%;
+      margin: 0 auto;
+      padding-top: $pad15;
+      h3 {
+        font-family: $whitney-sc;
+        font-size: $font15;
+        color: $white;
+        font-weight: $fontlighter;
+        text-transform: uppercase;
+        border-left: 2px solid $midlle_blue;
+        padding: 5px 15px;
+        display: inline-block;
+        position: relative;
+        &:before {
+          content: "";
+          background: $midlle_blue;
+          transition: all .3s ease-in-out;
+          width: 0%;
+          height: 100%;
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+      }
+      p {
+        color: $white;
+        font-size: $font14;
+        font-weight: $fontlighter;
+      }
+    }
+  }
+  .slick-slider {
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -ms-touch-action: pan-y;
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .slick-list {
+    position: relative;
+    overflow: hidden;
+    display: block;
+    margin: 0;
+    padding: 0;
+    &:focus {
+      outline: none;
+    }
+  }
+  .slick-slider .slick-track,
+  .slick-slider .slick-list {
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  .slick-track {
+    position: relative;
+    left: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    transition: all .3s ease-in-out;
+    &:before,
+    &:after {
+      content: "";
+      display: table;
+    }
+
+    &:after {
+      clear: both;
+    }
+  }
+  .slick-current {
+    opacity: 1 !important;
+    text-align: center;
+    transition: all .3s ease-in-out;
+    .blk-mobile_text {
+      opacity: 1 !important;
+      transition: all .3s ease-in-out;
+    }
+  }
+  .slick-slide {
+    float: left;
+    height: 100%;
+    min-height: 1px;
+    opacity: 0.5;
+    outline: 0;
+    transition: all .3s ease-in-out;
+    .blk-mobile_text {
+      opacity: 0;
+      transition: all .3s ease-in-out;
+    }
+    [dir="rtl"] & {
+      float: right;
+    }
+    img {
+      display: block;
+    }
+    display: none;
+    .slick-initialized & {
+      display: block;
+    }
+    .slick-vertical & {
+      display: block;
+      height: auto;
+      border: 1px solid transparent;
+    }
+  }
+
 }

@@ -111,6 +111,10 @@ function scripts() {
 		wp_enqueue_script('livereload', 'http://'.getenv('DEV_IP').':35731/livereload.js?snipver=1', null, false, true);
 	}
 
+  wp_enqueue_script( 'library', 'https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js', array( 'jquery' ) );
+
+	wp_enqueue_script( 'interactjs', '//cdnjs.cloudflare.com/ajax/libs/interact.js/1.2.6/interact.min.js', array( 'jquery' ) );
+
 	wp_enqueue_script( 'html5', get_template_directory_uri() . '/js/html5.js', array(), '3.7.3' );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -155,7 +159,7 @@ if( function_exists('acf_add_options_page') ) {
 	));
 
 	acf_add_options_page(array(
-		'menu_title'	=> 'Behavioral Analy.',
+		'menu_title'	=> 'Candidate Profile',
 		'menu_slug' 	=> 'theme-behavioural-settings',
 		'icon_url'		=> 'dashicons-welcome-learn-more',
 		'position' => 58
@@ -259,15 +263,22 @@ class CategoriesWidgets extends WP_Widget {
     $title = empty($instance['title']) ? ' ' : apply_filters('widget_title', $instance['title']);
 		$image = get_field('widget_image', 'widget_' . $widget_id);
 		$text = esc_html($instance['text']);
+		$selectwidget = get_field('widget_select', 'widget_' . $widget_id);
+		$linkhubspot = get_field('widget_hubspotcta', 'widget_' . $widget_id);
 		$link = get_field('widget_link', 'widget_' . $widget_id);
 
-		echo "<a href='".esc_url($link)."' class='button' title='$title | $text'>";
+		echo "<div class='button'>";
+		if ($selectwidget) {
+			echo "<div class='link-hubspot'>".$linkhubspot."</div>";
+		} else {
+			echo "<a href='".esc_url($link)."' class='link-wp' title='$title | $text'>link</a>";
+		}
 		echo "<figure class='icon-button'><img src='".$image."' height='80px' alt='".esc_html($instance['title'])."' /></figure>";
 		echo "<div class='text-container'>";
 		echo $before_title . $title . $after_title;
 		echo "<p>".$text."</p>";
 		echo "</div>";
-		echo "</a>";
+		echo "</div>";
 
     echo $after_widget;
   }

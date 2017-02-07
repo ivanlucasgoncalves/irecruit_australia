@@ -19,7 +19,11 @@ get_header(); ?>
 							<h2><?php echo the_field( 'title', false, false ); ?></h2>
 							<?php echo the_field( 'content' ); ?>
 						</div>
-						<a href="<?php echo the_field( 'page_link' ); ?>" title="<?php echo the_field( 'title_link' ); ?>">link</a>
+						<?php if( get_field('select_slideshow') ): ?>
+							<div class="link-hubspot"><?php echo the_field( 'hubspot_cta' ); ?></div>
+						<?php else: ?><!-- .if-no-hubspot-cta -->
+								<a href="<?php echo the_field( 'page_link' ); ?>" title="<?php the_title(); ?>">link</a>
+						<?php endif; ?><!-- .if.there.is.page.link.or.hubspot.cta -->
 					</div>
 	      <?php endwhile;
 				wp_reset_query(); ?>

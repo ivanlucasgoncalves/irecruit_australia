@@ -77,3 +77,49 @@ $strengthsimg = get_theme_mod( 'strengthsimg', esc_url( get_template_directory_u
 	</div>
 
 </section><!-- .section.phone -->
+
+<section class="phone_mobile-section">
+	<div class="phone_mobile-content">
+		<?php if ( $title_behavioural = get_field('title_behavioural', 'option') ): ?>
+			<h2><?php echo $title_behavioural; ?></h2>
+		<?php endif; ?>
+		<?php if ( $content_behavioural = get_field('content_behavioural', 'option') ): ?>
+			<?php echo $content_behavioural; ?>
+		<?php endif; ?>
+		<h3>Explore:</h3>
+	</div>
+	<div class="center slider">
+		<!-- Content goes here -->
+		<?php if( have_rows('explore_options', 'option') ): ?>
+			<?php	while ( have_rows('explore_options', 'option') ) : the_row();
+				$title_explore_option = get_sub_field('title_explore_option');
+				$image_explore_option = get_sub_field('image_explore_option'); ?>
+				<div class="mobile-content">
+					<div class="marvel-device iphone6plus black">
+							<div class="top-bar"></div>
+							<div class="sleep"></div>
+							<div class="volume"></div>
+							<div class="camera"></div>
+							<div class="sensor"></div>
+							<div class="speaker"></div>
+							<div class="screen">
+									<!-- Content goes here -->
+									<div id="phonessel">
+										<div class="wrapper_phone">
+											<div class="item"><img src="<?php echo $image_explore_option; ?>" height="415px"></div>
+										</div>
+									</div>
+							</div>
+							<div class="home"></div>
+							<div class="bottom-bar"></div>
+					</div>
+					<div class="blk-mobile_text">
+						<h3><?php echo $title_explore_option; ?></h3>
+						<p>What does your candidate think or expect from work environments, and how does he or she behaves on adverse situations.</p>
+					</div>
+				</div>
+			<?php	endwhile; ?>
+		<?php endif; ?>
+	</div>
+
+</section><!-- .section.phone.mobile -->

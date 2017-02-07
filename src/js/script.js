@@ -9,6 +9,17 @@ jQuery( document ).ready( function($) {
 	/** For now add display none into hide customers container - I will change to make it better later. **/
 	jQuery('.lineCustomers:contains("hide"), .line-customers:contains("hide")').remove();
 
+	$(".center").slick({
+		dots: false,
+		centerMode: true,
+		centerPadding: '0',
+		slidesToShow: 1,
+		swipeToSlide: true,
+		draggable: false,
+		arrows: false,
+		infinite: false,
+	});
+
 	/** Transformicons **/
 	transformicons.add('.tcon');
 
