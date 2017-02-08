@@ -80,9 +80,17 @@ jQuery( document ).ready( function($) {
 
 	/** Blur Slide Image on Scroll **/
 	$(window).on('scroll', function () {
-    var pixs = $(document).scrollTop()
+		var scroll = $(this).scrollTop(); /** Shadow Header on Scroll **/
+    var pixs = $(document).scrollTop(); /** Blur Slide Image on Scroll **/
     pixs = pixs / 50;
-    $(".blur").css({"transform": "translate(0px,"+pixs+"px)","filter": "blur("+pixs+"px)" })
+    $(".blur").css({"transform": "translate(0px,"+pixs+"px)","filter": "blur("+pixs+"px)" });
+
+		if (scroll >= 10) { /** Shadow Header on Scroll **/
+      $("#masthead").addClass("shadow");
+    } else {
+      $("#masthead").removeClass("shadow");
+    }
+
 	});
 
 	/** Modal Video **/
@@ -104,7 +112,7 @@ jQuery( document ).ready( function($) {
 			target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
 			if (target.length) {
 				$('html,body').animate({
-					scrollTop: target.offset().top-20
+					scrollTop: target.offset().top-30
 				}, 500);
 				return false;
 			}

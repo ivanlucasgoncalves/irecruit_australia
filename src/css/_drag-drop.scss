@@ -6,7 +6,7 @@
   padding-top: $pad60;
   position: relative;
   .content-drag_drop {
-    width: 38%;
+    width: 42%;
     margin: 0 auto;
     text-align: center;
     h2 {
@@ -39,9 +39,9 @@
     top: 32%;
     z-index: -1;
     width: 100%;
-    height: 15%;
+    height: 17%;
     background: $midlle_blue;
-    clip-path: polygon(0 90%, 0 95%, 100% 30%);
+    clip-path: polygon(0 85%, 0 95%, 100% 30%);
 	}
 }
 .dragdrop_container {
@@ -322,7 +322,7 @@
     width: 100px;
   }
   .blk-applione {
-    top: 19%;
+    top: 20%;
     right: 240px;
     position: absolute;
     z-index: 99;
@@ -492,8 +492,8 @@
     .sec-top,
     .sec-bottom {
       display: flex;
-      padding-left: $pad40;
-      padding-right: $pad40;
+      /*padding-left: $pad40;
+      padding-right: $pad40;*/
     }
     .sec-top {
       justify-content: space-between;
@@ -543,18 +543,20 @@
     .sec-bottom {
       justify-content: center;
       padding-top: $pad70;
+      width: 90%;
+      margin: 0 auto;
       article {
-        width: 29%;
+        width: 31%;
         display: flex;
         align-items: center;
-        margin: 0 20px;
+        margin: $marg0_15;
         img {
           margin-right: $marg15;
         }
         h2 {
           font-family: $whitney-sc;
           text-transform: uppercase;
-          font-size: $font18;
+          font-size: $font17;
           font-weight: $font500;
           color: $color_p;
           line-height: 24px;

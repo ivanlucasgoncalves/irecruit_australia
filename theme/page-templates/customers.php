@@ -18,7 +18,6 @@ get_header(); ?>
     </article><!-- #post-## -->
 		<div class="customers-wrapper">
 			<div class="entry-customers">
-				<div class="rotate-line-internal"></div><!--. line into content page .-->
 				<figure>
 					<?php the_post_thumbnail(); ?>
 				</figure><!-- .figure.thumbnail -->
@@ -28,22 +27,25 @@ get_header(); ?>
 				</div><!-- .content.testimonials -->
 			</div><!--. content.customers.page .-->
 			<div class="customers-container">
-				<?php $customers = new WP_Query( array(
-					'post_type' => 'our_customers',
-					'posts_per_page' => 12,	)); ?>
-				<?php $i=1; // Counting articles
-					echo '<section class="line-customers">';
-					while ( $customers->have_posts() ) : $customers->the_post(); ?>
-					<figure class="customer">
-						<?php the_post_thumbnail(); ?>
-					</figure><!-- .figure.thumbnail -->
-				<?php // if multiple of 4 close div and open a new div
-					if($i % 4 == 0) { echo '</section><section class="line-customers">'; }
-					$i++;
-					endwhile;
-					if(!empty($customers)){	echo 'hide'; } ?>
-				<?php echo '</section>';
-					wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+				<div class="rotate-line-customers"></div><!--. line into content page .-->
+				<div class="center_maincontent">
+					<?php $customers = new WP_Query( array(
+						'post_type' => 'our_customers',
+						'posts_per_page' => 12,	)); ?>
+					<?php $i=1; // Counting articles
+						echo '<section class="line-customers">';
+						while ( $customers->have_posts() ) : $customers->the_post(); ?>
+						<figure class="customer">
+							<?php the_post_thumbnail(); ?>
+						</figure><!-- .figure.thumbnail -->
+					<?php // if multiple of 4 close div and open a new div
+						if($i % 4 == 0) { echo '</section><section class="line-customers">'; }
+						$i++;
+						endwhile;
+						if(!empty($customers)){	echo 'hide'; } ?>
+					<?php echo '</section>';
+						wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+				</div>
 			</div>
 		</div><!-- .section.customers.logos -->
 		<?php	$posts = get_field('client_testimonials');

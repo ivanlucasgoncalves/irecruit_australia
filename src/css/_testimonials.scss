@@ -2,10 +2,11 @@
 // Testimonials
 // =============================================================================
 .content-testimonials {
-  padding: $pad60_40_140;
+  /*padding: $pad60_40_140;*/
   margin-bottom: $marg90;
-  width: 90%;
+  max-width: 1480px;
   margin: auto;
+  padding: 60px 20px 140px 20px;
   h2.main_title {
     font-family: $whitney;
     padding-top: $pad20;

@@ -40,8 +40,15 @@
 #content {
   overflow: hidden;
   position: relative;
-  max-width: 1920px;
   margin: auto;
+}
+/*Centralizing the main content site*/
+.center_maincontent {
+  max-width: 1480px;
+  width: 100%;
+  margin: 0 auto;
+  padding: $pad0_20;
+  position: relative;
 }
 .site-main {
   padding-bottom: $pad90;
@@ -81,12 +88,14 @@ header#masthead {
   height: 75px;
   font-family: $whitney-sc;
   z-index: 9999;
-  max-width: 1920px;
+  /*max-width: 1920px;*/
   margin: auto;
   .site-header-main {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    /*max-width: 1920px;*/
+    margin: auto;
     .site-menutop-button {
       display: flex;
       align-items: center;
@@ -123,6 +132,9 @@ header#masthead {
     }
   }
 }
+.shadow {
+  box-shadow: 0px 0px 15px rgba(29,29,29,0.4);
+}
 
 // =============================================================================
 // 01. Drag and Drop
@@ -144,10 +156,13 @@ header#masthead {
 #primary {
   #main {
     article.page {
-      padding: $pad10_40;
+      /*padding: $pad10_40;*/
+      max-width: 1480px;
+      margin: auto;
+      padding: $pad0_20;
       .entry-header,
       .entry-content {
-        max-width: 1200px;
+        /*max-width: 1200px;*/
         width: 100%;
         margin: 0 auto;
         text-align: center;
@@ -234,7 +249,7 @@ header#masthead {
 footer {
   .info-nav-wrapper {
     width: 100%;
-    max-width: 1240px;
+    max-width: 1480px;
     padding: 0 20px;
     margin: 0 auto;
     display: flex;
@@ -304,7 +319,7 @@ footer {
     .three-buttons {
       height: auto;
       width: 100%;
-      max-width: 1240px;
+      max-width: 1480px;
       padding: 0 20px;
       margin: 0 auto;
       margin-top: -80px;
@@ -321,6 +336,7 @@ footer {
         cursor: pointer;
         background-color: #fcfcfc;
         overflow: hidden;
+        z-index: 9;
         .button {
           display: flex;
           align-items: center;
@@ -367,9 +383,8 @@ footer {
               font-weight: $fontbold;
               color: $midlle_blue;
               text-transform: uppercase;
-              margin-top: $marg30;
-              margin-bottom: $marg10;
-              font-size: $font16;
+              margin-top: $marg40;
+              font-size: $font17;
             }
             p {
               padding-right: $pad25;
@@ -602,7 +617,7 @@ footer {
       }
     }
   }
-  
+
   // =============================================================================
   // Customers
   // =============================================================================

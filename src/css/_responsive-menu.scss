@@ -23,6 +23,7 @@
 }
 .cbp-spmenu-push-toleft { /* Hidding menu top fixed when it is opened */
 	background: none !important;
+	box-shadow: none !important;
 	.site-branding,
 	.main_top,
 	.div-button::before {
@@ -119,9 +120,12 @@
 	left: 0;
 }
 .cbp-spmenu-push-toleft {
-	left: -240px !important;
-	right: inherit !important;
+	right: 240px !important;
+  left: inherit !important;
 	overflow: hidden;
+	.site-header-main {
+		max-width: inherit !important;
+	}
 }
 
 /* Transitions */
