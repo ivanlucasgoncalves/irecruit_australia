@@ -1,10 +1,6 @@
 <?php
 /**
-** The template used for displaying phone home page section **/
-$profileimg = get_theme_mod( 'profileimg', esc_url( get_template_directory_uri() . '/img/per_profile.jpg' ) ); // Phone - Img Profile
-//$summaryimg = get_theme_mod( 'summaryimg', esc_url( get_template_directory_uri() . '/img/per_summary.jpg' ) ); // Phone - Img Summary
-$insightsimg = get_theme_mod( 'insightsimg', esc_url( get_template_directory_uri() . '/img/insights.jpg' ) ); // Phone - Img Insights
-$strengthsimg = get_theme_mod( 'strengthsimg', esc_url( get_template_directory_uri() . '/img/strengths.jpg' ) ); // Phone - Img Strenghts ?>
+** The template used for displaying phone home page section **/ ?>
 
 <section class="phone-section">
 

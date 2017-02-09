@@ -1,7 +1,6 @@
 <?php
 /**
- * The template for displaying all single posts and attachments
- */
+ * The template for displaying all single posts and attachments */
 
 get_header(); ?>
 
@@ -41,8 +40,6 @@ get_header(); ?>
 		?>
 
 	</main><!-- .site-main -->
-
-	<?php get_sidebar( 'content-bottom' ); ?>
 
 </div><!-- .content-area -->
 

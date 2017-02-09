@@ -88,13 +88,11 @@ header#masthead {
   height: 75px;
   font-family: $whitney-sc;
   z-index: 9999;
-  /*max-width: 1920px;*/
   margin: auto;
   .site-header-main {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /*max-width: 1920px;*/
     margin: auto;
     .site-menutop-button {
       display: flex;
@@ -132,7 +130,7 @@ header#masthead {
     }
   }
 }
-.shadow {
+.shadow { /*Display shadow when the website is scrolling*/
   box-shadow: 0px 0px 15px rgba(29,29,29,0.4);
 }
 
@@ -156,13 +154,11 @@ header#masthead {
 #primary {
   #main {
     article.page {
-      /*padding: $pad10_40;*/
       max-width: 1480px;
       margin: auto;
       padding: $pad0_20;
       .entry-header,
       .entry-content {
-        /*max-width: 1200px;*/
         width: 100%;
         margin: 0 auto;
         text-align: center;
@@ -197,7 +193,7 @@ header#masthead {
           font-size: $font16;
         }
         p {
-          font-size: $font22;
+          font-size: $font20;
           color: $color_p;
         }
       }
@@ -241,7 +237,23 @@ header#masthead {
 // 01. Customer Content Footer Section
 // =============================================================================
 
-
+// =============================================================================
+// 01. Scroll to top
+// =============================================================================
+.scrolltop {
+  width: 40px;
+  display: block;
+  position: fixed;
+  bottom: 40px;
+  right: 20px;
+  z-index: 99;
+  transition: all 0.2s ease-in-out;
+  opacity: 0;
+}
+.show_scroll {
+  transition: all 0.2s ease-in-out;
+  opacity: 0.9;
+}
 
 // =============================================================================
 // 01. Footer

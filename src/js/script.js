@@ -91,6 +91,12 @@ jQuery( document ).ready( function($) {
       $("#masthead").removeClass("shadow");
     }
 
+		if (scroll >= 300) { /** Shadow Header on Scroll **/
+      $(".scrolltop").addClass("show_scroll animated pulse");
+    } else {
+      $(".scrolltop").removeClass("show_scroll animated pulse");
+    }
+
 	});
 
 	/** Modal Video **/
