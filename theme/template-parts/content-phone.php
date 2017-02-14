@@ -5,6 +5,9 @@
 <section class="phone-section">
 
 	<div class="line-top"></div>
+	<!--<svg viewBox=" 0 0 100 100" class="line-top">
+		<polygon points="100 98,0 88,100 94" />
+	</svg>--> <!-- .line.rotate.top -->
 	<div class="back-phone"></div>
 	<div class="center_maincontent">
 		<div class="phone-menu-container">
@@ -57,19 +60,32 @@
 					<div class="home"></div>
 					<div class="bottom-bar"></div>
 			</div>
-			<div class="description personality_profile">
-				<div class="flag-dir"></div>
-				<h3>Workplace Insights</h3>
-				<p>What does your candidate think or expect from work environments, and how does he or she behaves on adverse situations.</p>
-			</div>
-			<div class="description strenghts">
-				<div class="flag-dir"></div>
-				<h3>Strenghts</h3>
-				<p>Complete analysis of talent's strenghts which would contribute improving the team's culture and performance.</p>
-			</div>
-		</div>
+			<?php if( have_rows('explore_options', 'option') ):
+				$count = 1; ?>
+				<?php	while ( have_rows('explore_options', 'option') ) : the_row();
+					$title_explore_option = get_sub_field('title_explore_option'); ?>
+					<?php if( have_rows('description_flag', 'option') ): ?>
+						<?php	while ( have_rows('description_flag', 'option') ) : the_row();
+							$title_flag = get_sub_field('title_flag');
+							$content_flag = get_sub_field('content_flag'); ?>
+							<div class="description <?php echo strtolower(str_replace(' ', '', $title_explore_option));?>">
+								<div class="flag-dir"></div>
+								<h3><?php echo $title_flag; ?></h3>
+								<?php echo $content_flag; ?>
+							</div>
+						<?php	endwhile; ?>
+					<?php endif; ?>
+				<?php
+				$count++;
+				endwhile; ?>
+			<?php endif; ?>
+		</div><!-- .iphone.container -->
 		<div class="blk-button">
-			<a href="javascript:void(0);" class="starttrial-link" title="Get Started Now | Free trial, no credit card required :)">Get Started Now</a>
+			<?php if ( $get_started_link = get_field('get_started_link', 'option') ): ?>
+				<?php echo $hubspot_cta = get_field('hubspot_cta', 'option'); ?>
+			<?php else: ?>
+				<a href="<?php echo $page_link_from_wp = get_field('page_link_from_wp', 'option'); ?>" class="starttrial-link" title="Get Started Now | Free trial, no credit card required :)">Get Started Now</a>
+			<?php endif; ?>
 			<span>Free trial, no credit card required :)</span>
 		</div>
 	</div><!-- .center.main.content -->
@@ -113,8 +129,14 @@
 							<div class="bottom-bar"></div>
 					</div>
 					<div class="blk-mobile_text">
-						<h3><?php echo $title_explore_option; ?></h3>
-						<p>What does your candidate think or expect from work environments, and how does he or she behaves on adverse situations.</p>
+						<?php if( have_rows('description_flag', 'option') ): ?>
+							<?php	while ( have_rows('description_flag', 'option') ) : the_row();
+								$title_flag = get_sub_field('title_flag');
+								$content_flag = get_sub_field('content_flag'); ?>
+								<h3><?php echo $title_flag; ?></h3>
+								<?php echo $content_flag; ?>
+							<?php	endwhile; ?>
+						<?php endif; ?>
 					</div>
 				</div>
 			<?php	endwhile; ?>

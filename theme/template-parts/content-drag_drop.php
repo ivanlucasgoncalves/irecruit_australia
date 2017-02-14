@@ -1,8 +1,10 @@
 <?php
 /**
-** The template used for displaying drag and drop home page section **/ ?>
+** The template used for displaying drag and drop home page section **/
+$direction = get_theme_mod( 'direction', esc_url( get_template_directory_uri() . '/img/direction.svg' ) ); // Logo ?>
 
 <section id="darg_drop">
+
 	<div class="center_maincontent">
 		<article class="content-drag_drop">
 			<h2><?php the_field('title', 'option'); ?></h2>
@@ -78,7 +80,8 @@
 			<div class="howitworks-section">
 				<section class="sec-top">
 					<?php if( have_rows('how_it_works', 'option') ):
-						$count = 1; ?>
+						$count = 1;
+						$i = 0; ?>
 						<?php	while ( have_rows('how_it_works', 'option') ) : the_row();
 						$image_works = get_sub_field('image_works');
 						$title_works = get_sub_field('title_works');
@@ -90,8 +93,10 @@
 								<?php echo $content_works; ?>
 							</div>
 						</article>
-						<?php
-						$count++;
+						<?php // if multiple of 1 and lower than 2 open and close a new div
+							if( ( $i % 1 == 0 ) && ( $i < 2 ) ) { echo '<div class="set-direction"><img src="'.$direction.'" width="40px"></div>'; }
+							$i++;
+							$count++;
 						endwhile; ?>
 					<?php endif; ?>
 				</section>
@@ -105,20 +110,16 @@
 							<img src="<?php echo $image_standards; ?>" height="60px">
 							<h2><?php echo $description_standards; ?></h2>
 						</article>
-						<?php
-						$count++;
+						<?php	$count++;
 						endwhile; ?>
 					<?php endif; ?>
 				</section>
 			</div>
-			<!--<div class="quality">
-				<h2><?php //the_field('title_bottom', 'option'); ?></h2>
-				<p class="textQuality"><?php //the_field('content_bottom', 'option'); ?></p>
-				<div class="trialButton starttrial-link"><?php //the_field('trial_link', 'option'); ?></div>
-				<span>*No credit card required</span>
-			</div>--><!-- .text.bottom.quality -->
 		</section>
 	</div><!-- .center.main.content -->
 	<div class="rotate-line"></div><!-- .line.rotate.bottom.drag-drop -->
+	<!--<svg viewBox=" 0 0 100 100" class="rotate-line">
+		<polygon points="0 91,0 89,100 80" />
+	</svg> .line.rotate.drag.drop -->
 
 </section><!-- .drag.and.drop -->

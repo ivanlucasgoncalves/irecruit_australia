@@ -17,7 +17,7 @@
 	<?php if ( is_singular() && pings_open( get_queried_object() ) ) : ?>
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<?php endif; ?>
-	<?php wp_head(); ?>  
+	<?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
@@ -40,7 +40,7 @@
   <header id="masthead" class="site-header" role="banner">
 		<div class="site-header-main">
 			<div class="site-branding">
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" title="iRecruit | People who fit better, perform better."><img src="<?php echo esc_url( $img_logo ); ?>" alt="Logo iRecruit" width="140px"></a>
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" title="iRecruit | <?php bloginfo('description') ?>"><img src="<?php echo esc_url( $img_logo ); ?>" alt="Logo iRecruit" width="140px"> <span><?php bloginfo('description') ?></span></a>
 			</div><!-- .site-branding -->
       <div class="site-menutop-button">
         <?php if ( has_nav_menu( 'menu-top' ) ) : ?>

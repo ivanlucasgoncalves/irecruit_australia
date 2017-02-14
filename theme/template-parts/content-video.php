@@ -25,8 +25,8 @@
 		<?php if ( $title_video = get_field('title_video', 'option') ): ?>
 			<h2><?php echo $title_video; ?></h2>
 		<?php endif; ?>
-		<a href="javascript:void(0);" class="play_btn" title="Click to play | The most powerful Candidate Ranking Engine ever created.">play video</a>
 		<?php if ( $content_video = get_field('content_video', 'option') ): ?>
+			<a href="javascript:void(0);" class="play_btn" title="Click to play | <?php echo strip_tags($content_video); ?>">play video</a>		
 			<?php echo $content_video; ?>
 		<?php endif; ?>
 	</div>
@@ -37,7 +37,27 @@
 	<div class="modal-content">
 		<span class="close x_modal_video">x</span>
 		<div class="videoWrapper">
-			<iframe id="video" width="100%" height="100%" src="https://www.youtube.com/embed/Yo09H_wztkU?enablejsapi=1&rel=0&amp;controls=0&amp;showinfo=0&enablejsapi=1&version=3&playerapiid=ytplayer" frameborder="0" allowfullscreen=""></iframe>
+			<?php if ( $iframe = get_field('video', 'option') ): // get iframe HTML?>
+				<?php
+				// use preg_match to find iframe src
+				preg_match('/src="(.+?)"/', $iframe, $matches);
+				$src = $matches[1];
+				// add extra params to iframe src
+				$params = array(
+					'enablejsapi'    => 1,
+					'rel'    => 0,
+					'controls'    => 0,
+			    'hd'        => 1,
+			    'autohide'    => 1,
+					'showinfo'    => 0,
+				);
+				$new_src = add_query_arg($params, $src);
+				$iframe = str_replace($src, $new_src, $iframe);
+				// add extra attributes to iframe html
+				$attributes = 'id="video" frameborder="0"';
+				$iframe = str_replace('></iframe>', ' ' . $attributes . '></iframe>', $iframe);
+				echo $iframe; // echo $iframe ?>
+			<?php endif; ?>
 		</div>
 	</div>
 </div> <!-- .modal form trial. -->

@@ -94,6 +94,18 @@ header#masthead {
     justify-content: space-between;
     align-items: center;
     margin: auto;
+    .site-branding {
+      display: flex;
+      align-items: center;
+      span {
+        font-family: $whitney-sc;
+        text-transform: uppercase;
+        color: $quite_black;
+        font-weight: $fontlighter;
+        font-size: $font12;
+        margin-left: $marg10;
+      }
+    }
     .site-menutop-button {
       display: flex;
       align-items: center;
@@ -347,6 +359,7 @@ footer {
         position: relative;
         cursor: pointer;
         background-color: #fcfcfc;
+        border: 1px solid #e9e9e9;
         overflow: hidden;
         z-index: 9;
         .button {
@@ -411,6 +424,7 @@ footer {
             position: absolute;
             transition: all 0.2s ease-in-out;
             z-index: 1;
+            top: 0;
             left: -75px;
             content: '';
             background-color: #F4F4F4;

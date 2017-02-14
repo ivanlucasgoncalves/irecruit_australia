@@ -25,13 +25,13 @@ jQuery( document ).ready( function($) {
 
 	/** Scroll Animations **/
 	jQuery('.content-artworks').addClass("invisible").viewportChecker({
-		classToAdd: 'visible animated bounceInLeft',
+		classToAdd: 'visible animated fadeInUp',
 		classToRemove : 'invisible',
 		removeClassAfterAnimation: true,
 		offset: 100
 	});
 	jQuery('.content-standards').addClass("invisible").viewportChecker({
-		classToAdd: 'visible animated bounceInRight',
+		classToAdd: 'visible animated fadeInUp',
 		classToRemove : 'invisible',
 		removeClassAfterAnimation: true,
 		offset: 100
@@ -40,9 +40,9 @@ jQuery( document ).ready( function($) {
 	/** Create onclick event after loading script from Hubspot **/
 	var ctaonclick = "var params=this.href.split('&').reduce(function(result, item) {result[item.split('=')[0]] = decodeURIComponent(item.split('=')[1]);return result;},{}); var qp='?hsCtaTracking='+params.placement_guid+'&__hstc='+params.__hstc+'&__hssc='+params.__hssc+'&__hsfp='+params.__hsfp; (window.history && window.history.pushState) ? window.history.pushState('ab-test','call-to-action',qp) : window.location.hash=qp; return false;";
 	var checkExist = setInterval(function() {
-		 if ($('.cta_button').length) {
-				$('.cta_button').attr( "onClick" , ctaonclick );
-				console.log("Exists!");
+		 if ($('.starttrial-link .cta_button, .blk-button .cta_button').length) {
+				$('.starttrial-link .cta_button, .blk-button .cta_button').attr( "onClick" , ctaonclick );
+				//console.log("Exists!");
 				clearInterval(checkExist);
 		 }
 	}, 100); // check every 100ms
@@ -83,18 +83,12 @@ jQuery( document ).ready( function($) {
 		var scroll = $(this).scrollTop(); /** Shadow Header on Scroll **/
     var pixs = $(document).scrollTop(); /** Blur Slide Image on Scroll **/
     pixs = pixs / 50;
-    $(".blur").css({"transform": "translate(0px,"+pixs+"px)","filter": "blur("+pixs+"px)" });
+    $(".blur").css({"transform": "translate(0px,"+pixs+"px)","filter": "blur("+pixs+"px)", "background-position": "0px "+pixs+"px" });
 
 		if (scroll >= 10) { /** Shadow Header on Scroll **/
       $("#masthead").addClass("shadow");
     } else {
       $("#masthead").removeClass("shadow");
-    }
-
-		if (scroll >= 300) { /** Shadow Header on Scroll **/
-      $(".scrolltop").addClass("show_scroll animated pulse");
-    } else {
-      $(".scrolltop").removeClass("show_scroll animated pulse");
     }
 
 	});
@@ -191,7 +185,7 @@ jQuery( document ).ready( function($) {
 	var checkExistForm = setInterval(function() {
 		 if ($('.hs-form').length) {
 
-				console.log("Exists Form!");
+				//console.log("Exists Form!");
 				clearInterval(checkExistForm);
 
 				var data = {};
@@ -253,18 +247,20 @@ jQuery( document ).ready( function($) {
 			// Reaching position to appear the description for each element
 			var position = $(this).css('top');
 			if ( position == "-415px" ) {
-				$('.personality_profile').fadeOut();
-				$('.strenghts').fadeIn();
+				$('.strenghts, .workplaceinsights, .personalityprofile').fadeOut();
+				$('.personalitysummary').fadeIn();
 			}
 			else if ( position == "-830px" ) {
-				$('.strenghts').fadeOut();
+				$('.strenghts, .personalitysummary, .personalityprofile').fadeOut();
+				$('.workplaceinsights').fadeIn();
 			}
 			else if ( position == "-1245px" ) {
-				$('.strenghts').fadeOut();
+				$('.personalitysummary, .personalityprofile, .workplaceinsights').fadeOut();
+				$('.strenghts').fadeIn();
 			}
 			else {
-				$('.personality_profile').fadeIn();
-				$('.strenghts').fadeOut();
+				$('.personalityprofile').fadeIn();
+				$('.strenghts, .personalitysummary, .workplaceinsights').fadeOut();
 			}
 	  });
 

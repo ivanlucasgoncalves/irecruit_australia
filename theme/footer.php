@@ -20,7 +20,6 @@ $scrolltop = get_theme_mod( 'scrolltop', esc_url( get_template_directory_uri() .
 			</footer>
 			</div><!-- .site-inner -->
 		</div><!-- .site -->
-		<a href="#mainsite" class="scrolltop" title="Scroll to top"><img src="<?php echo $scrolltop ?>" width="40px"></a><!-- .scroll.to.top -->
 		<?php wp_footer(); ?>
 	</div><!-- .main site -->
 </body>

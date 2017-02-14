@@ -7,8 +7,31 @@ section#slider {
 	width: 100%;
 	height: auto;
 	color: $white;
-	padding: 0 40px 10px 40px;
 	margin-bottom: $marg100;
+	.back-slider {
+		-webkit-transform: rotate(4deg) skew(4deg);
+    position: absolute;
+    width: 105%;
+    height: 100%;
+    left: -10px;
+    top: 0;
+		&:before {
+			content: "";
+	    background-image: url(../img/patternBlackSection.png);
+	    position: absolute;
+	    width: 100%;
+	    height: 100%;
+	    top: 0;
+	    right: 0;
+	    z-index: -1;
+		}
+	}
+	.center_mainslider {
+		max-width: 1520px;
+		margin: auto;
+		position: relative;
+		padding: 0 40px 10px 40px;
+	}
 	.wrapper{
 		position: relative;
 		width: 100%;
@@ -31,7 +54,8 @@ section#slider {
 				left: 0;
 				background-size: cover;
 				background-repeat: no-repeat;
-				background-position: center;
+				background-position: top center;
+				background-attachment: fixed;
 				display: block;
 			}
 			.data{
@@ -181,7 +205,7 @@ section#slider {
     left: 0;
     right: 0;
 		z-index: 10;
-    bottom: -64px;
+    bottom: -72px;
     width: 40px;
 		pointer-events: none;
 		&:before {
@@ -207,11 +231,49 @@ section#slider {
     margin: 0 auto;
     left: 0;
     right: 0;
-    bottom: -100px;
+    bottom: -108px;
     width: 100%;
 		height: 320px;
 		background: $midlle_black;
 		opacity: 0.13;
-		clip-path: polygon(100% 95%, 0 80%, 100% 98%);
+		clip-path: polygon(100% 93%, 0 80%, 100% 98%);
 	}
+	/*.rotate-line {
+		position: absolute;
+		margin: 0 auto;
+		left: 0;
+		right: 0;
+		bottom: -140px;
+		width: 100%;
+		polygon {
+		  fill: $midlle_black;
+			opacity: 0.13;
+		}
+	}*/
+}
+
+//Responsive
+@mixin for-phone-only {
+  @media (max-width: 599px) { @content; }
+}
+@mixin for-tablet-portrait-up {
+  @media (min-width: 600px) { @content; }
+}
+@mixin for-tablet-landscape-up {
+  @media (min-width: 900px) { @content; }
+}
+@mixin for-desktop-up {
+  @media (min-width: 1200px) { @content; }
+}
+@mixin for-big-desktop-up {
+  @media (min-width: 1800px) { @content; }
+}
+
+// usage
+.my-box {
+  padding: 10px;
+
+  @include for-desktop-up {
+    padding: 20px;
+  }
 }

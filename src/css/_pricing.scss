@@ -178,6 +178,9 @@
     .blk-plan {
       width: 100%;
       margin-bottom: $marg20;
+      &.recommended {
+        width: 100%;
+      }
     }
   }
   .phrase-pricing {
