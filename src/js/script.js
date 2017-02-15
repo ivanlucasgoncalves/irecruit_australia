@@ -12,7 +12,7 @@ jQuery( document ).ready( function($) {
 	$(".center").slick({
 		dots: false,
 		centerMode: true,
-		centerPadding: '0',
+		centerPadding: '40px',
 		slidesToShow: 1,
 		swipeToSlide: true,
 		draggable: false,
@@ -82,13 +82,15 @@ jQuery( document ).ready( function($) {
 	$(window).on('scroll', function () {
 		var scroll = $(this).scrollTop(); /** Shadow Header on Scroll **/
     var pixs = $(document).scrollTop(); /** Blur Slide Image on Scroll **/
+		var pos = $(document).scrollTop(); /** Blur Slide Image on Scroll **/
     pixs = pixs / 50;
-    $(".blur").css({"transform": "translate(0px,"+pixs+"px)","filter": "blur("+pixs+"px)", "background-position": "0px "+pixs+"px" });
+		pos = pos / 40;
+    $(".blur").css({"transform": "translate(0px,"+pixs+"px)","filter": "blur("+pixs+"px)", "background-position": "0px "+pos+"px" });
 
 		if (scroll >= 10) { /** Shadow Header on Scroll **/
-      $("#masthead").addClass("shadow");
+      $(".addshadow").addClass("shadow");
     } else {
-      $("#masthead").removeClass("shadow");
+      $(".addshadow").removeClass("shadow");
     }
 
 	});

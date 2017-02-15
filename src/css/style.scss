@@ -78,7 +78,6 @@
 // 01. Header
 // =============================================================================
 header#masthead {
-  padding: 10px 20px 10px 40px;
   background: $white;
   position: fixed;
   top: 0;
@@ -89,52 +88,58 @@ header#masthead {
   font-family: $whitney-sc;
   z-index: 9999;
   margin: auto;
-  .site-header-main {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: auto;
-    .site-branding {
+  .addshadow {
+    padding: 10px 20px 10px 40px;
+    transition: all 0.4s ease-in-out;
+    .site-header-main {
       display: flex;
+      justify-content: space-between;
       align-items: center;
-      span {
-        font-family: $whitney-sc;
-        text-transform: uppercase;
-        color: $quite_black;
-        font-weight: $fontlighter;
-        font-size: $font12;
-        margin-left: $marg10;
-      }
-    }
-    .site-menutop-button {
-      display: flex;
-      align-items: center;
-      position: relative;
-      .main_top {
-        ul {
-          padding: 0;
-          margin: 0;
-          li {
-            display: inline-flex;
-            align-items: center;
-            a {
-              text-transform: uppercase;
-              color: $midlle_black;
-              margin-left: $marg20;
-              font-size: $font14;
-            }
+      margin: auto;
+      .site-branding {
+        display: flex;
+        align-items: center;
+        a {
+          span {
+            font-family: $whitney-sc;
+            text-transform: uppercase;
+            color: $quite_black;
+            font-weight: $fontlighter;
+            font-size: $font12;
+            margin-left: $marg10;
           }
-          .starttrial-link a {
-            box-shadow: 0px 0px 15px #cccccc;
-            padding: $pad10;
-            font-weight: $font500;
-            border-radius: 5px;
-            transition: all 0.2s ease-in-out;
-            color: $white;
-            background-color: $midlle_blue;
-            &:hover, &:active {
-              background-color: $blue;
+        }
+      }
+      .site-menutop-button {
+        display: flex;
+        align-items: center;
+        position: relative;
+        .main_top {
+          ul {
+            padding: 0;
+            margin: 0;
+            li {
+              display: inline-flex;
+              align-items: center;
+              a {
+                text-transform: uppercase;
+                color: $midlle_black;
+                margin-left: $marg20;
+                font-size: $font14;
+              }
+            }
+            .starttrial-link a {
+              box-shadow: 0px 0px 15px #cccccc;
+              padding: $pad10;
+              font-weight: $font500;
+              border-radius: 5px;
               transition: all 0.2s ease-in-out;
+              color: $white;
+              background-color: $midlle_blue;
+              &:hover, &:active {
+                background-color: $blue;
+                transition: all 0.2s ease-in-out;
+              }
             }
           }
         }
@@ -144,6 +149,7 @@ header#masthead {
 }
 .shadow { /*Display shadow when the website is scrolling*/
   box-shadow: 0px 0px 15px rgba(29,29,29,0.4);
+  transition: all 0.4s ease-in-out;
 }
 
 // =============================================================================
@@ -449,6 +455,54 @@ footer {
 // =============================================================================
 // Responsive
 // =============================================================================
+@media (max-width: $for-phone-only) {
+  body {
+    font-size: $font13;
+  }
+  #mainsite {
+    padding-top: 65px;
+  }
+  header#masthead {
+    height: 65px;
+    .addshadow {
+      padding: 10px 10px;
+      .site-header-main {
+        .site-branding {
+          a {
+            img {
+              width: 115px;
+            }
+            span {
+              font-size: $font10;
+              margin-left: 5px;
+            }
+          }
+        }
+        .site-menutop-button{
+        .div-button {
+          margin-left: 5px;
+          &:before {
+            height: 45px;
+          }
+        }
+        .main_top {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+@media (min-width: $for-tablet-portrait-up) { }
+@media (min-width: $for-tablet-portrait-only-min) and (max-width: $for-tablet-portrait-only-max)  { }
+@media (min-width: $for-tablet-landscape-up) { }
+@media (min-width: $for-tablet-landscape-only-min) and (max-width: $for-tablet-landscape-only-max) { }
+@media (min-width: $for-desktop-up) { }
+@media (min-width: $for-desktop-only-min) and (max-width: $for-desktop-only-max) { }
+@media (min-width: $for-big-desktop-up) { }
+
+
+
 @media only screen and (max-width: 992px) {
   // =============================================================================
   // Modal Form
@@ -502,110 +556,9 @@ footer {
       }
     }
   }
-  // =============================================================================
-  // Slideshow
-  // =============================================================================
-  section#slider {
-    padding: 0;
-    .wrapper {
-      .item {
-        .data {
-          padding: $pad60_0;
-          width: 90%;
-          h2 {
-            font-size: $font26;
-          }
-          h3 {
-            font-size: $font16;
-          }
-          p{
-            font-size: $font14;
-          }
-        }
-      }
-    }
-    ul.bullets {
-      bottom: 5px;
-      li {
-        width: 16px;
-        height: 12px;
-        margin: 5px 0;
-        span {
-  				width: 4px;
-  				height: 12px;
-  			}
-  			&.ativo {
-  				span {
-  					width: 16px;
-  				}
-  			}
-      }
-    }
-    .arrow {
-      bottom: -59px;
-      &:after {
-        height: 70px;
-      }
-    }
-    .rotate-line {
-      bottom: -80px;
-      height: 60%;
-    }
-    .lines-left,
-    .lines-right {
-      display: none;
-    }
-  }
-  // =============================================================================
-  // 01. Header
-  // =============================================================================
-  header#masthead {
-    padding: 10px 20px;
-      .site-header-main {
-        .site-menutop-button{
-        .main_top {
-          display: none;
-        }
-      }
-    }
-  }
-  // =============================================================================
-  // Drag and Drop
-  // =============================================================================
-  #darg_drop {
-    margin-bottom: $marg20;
-    padding-top: $pad20;
-    .content-drag_drop {
-      width: 90%;
-      h2 {
-        font-size: 24px;
-      }
-      p {
-        font-size: 15px;
-      }
-    }
-    .dragdrop_container {
-      padding-top: 0;
-      padding-bottom: $pad60;
-      width: 90%;
-      .quality {
-        h2 {
-          font-size: 1.8em;
-          letter-spacing: -1px;
-        }
-        .textQuality {
-          font-size: 15px;
-        }
-      }
-      .draggable,
-      .laptop-container {
-        display: none;
-      }
-    }
-    .rotate-line {
-      display: none;
-    }
-  }
+
+
+
   // =============================================================================
   // 01. Internal Pages
   // =============================================================================
@@ -644,35 +597,7 @@ footer {
     }
   }
 
-  // =============================================================================
-  // Customers
-  // =============================================================================
-  .customersWrapper {
-    .customersContainer {
-      .lineCustomers {
-        .customer {
-          width: 36%;
-          height: auto;
-        }
-        .customer:nth-of-type(odd) {
-          width: 42%;
-          height: auto;
-        }
-        .customer:nth-of-type(3),
-        .customer:nth-of-type(4){
-          display: none;
-        }
-      }
-    }
-    .customersContent{
-      top: 170px;
-      .customersText {
-        .better{
-          padding: $pad0_20;
-        }
-      }
-    }
-  }
+  
   // =============================================================================
   // 01. Footer
   // =============================================================================
@@ -711,8 +636,6 @@ footer {
       }
     }
   }
-
-
 }
 
 @media (min-width: 900px) {

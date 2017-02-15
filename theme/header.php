@@ -38,26 +38,28 @@
 		</nav><!-- .main-navigation -->
 	<?php endif; ?><!--/.end responsive-menu-->
   <header id="masthead" class="site-header" role="banner">
-		<div class="site-header-main">
-			<div class="site-branding">
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" title="iRecruit | <?php bloginfo('description') ?>"><img src="<?php echo esc_url( $img_logo ); ?>" alt="Logo iRecruit" width="140px"> <span><?php bloginfo('description') ?></span></a>
-			</div><!-- .site-branding -->
-      <div class="site-menutop-button">
-        <?php if ( has_nav_menu( 'menu-top' ) ) : ?>
-      		<nav class="main_top" role="navigation" aria-label="<?php esc_attr_e( 'Menu Top' ); ?>">
-      			<?php	wp_nav_menu( array(
-    					'theme_location' => 'menu-top'
-    				 ));	?>
-      		</nav><!-- .main-navigation -->
-      	<?php endif; ?><!--/.end menu-top -->
-        <div class="div-button">
-          <button id="showRightPush" class="tcon tcon-menu--xcross" aria-label="toggle menu">
-            <span class="tcon-menu__lines" aria-hidden="true"></span>
-            <span class="tcon-visuallyhidden">Show Menu</span>
-          </button><!-- .button.main.menu -->
-        </div>
-      </div><!-- .site-blk navigation.button-main-nav -->
-		</div><!-- .site-header-main -->
+    <div class="addshadow">
+      <div class="site-header-main">
+        <div class="site-branding">
+          <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" title="iRecruit | <?php bloginfo('description') ?>"><img src="<?php echo esc_url( $img_logo ); ?>" alt="Logo iRecruit" width="140px"> <span><?php bloginfo('description') ?></span></a>
+        </div><!-- .site-branding -->
+        <div class="site-menutop-button">
+          <?php if ( has_nav_menu( 'menu-top' ) ) : ?>
+            <nav class="main_top" role="navigation" aria-label="<?php esc_attr_e( 'Menu Top' ); ?>">
+              <?php	wp_nav_menu( array(
+                'theme_location' => 'menu-top'
+               ));	?>
+            </nav><!-- .main-navigation -->
+          <?php endif; ?><!--/.end menu-top -->
+          <div class="div-button">
+            <button id="showRightPush" class="tcon tcon-menu--xcross" aria-label="toggle menu">
+              <span class="tcon-menu__lines" aria-hidden="true"></span>
+              <span class="tcon-visuallyhidden">Show Menu</span>
+            </button><!-- .button.main.menu -->
+          </div>
+        </div><!-- .site-blk navigation.button-main-nav -->
+      </div><!-- .site-header-main -->
+    </div>
 	</header><!-- .site-header -->
   <div id="mainsite"><!-- .main site -->
   <div id="myModal" class="modal">

@@ -103,6 +103,7 @@ $marg100:             100px;
 $marg160:             160px;
 
 //Font Size
+$font10:              10px;
 $font11:              11px;
 $font12:              12px;
 $font13:              13px;
@@ -141,3 +142,16 @@ $font700:             700;
 $fontlighter:         lighter;
 $fontbold:            bold;
 $fontitalic:          italic;
+
+// Responsive
+$for-phone-only: 599px;
+$for-tablet-portrait-up: 600px;
+$for-tablet-portrait-only-min: 600px;
+$for-tablet-portrait-only-max: 899px;
+$for-tablet-landscape-up: 900px;
+$for-tablet-landscape-only-min: 900px;
+$for-tablet-landscape-only-max: 1199px;
+$for-desktop-up: 1200px;
+$for-desktop-only-min: 1200px;
+$for-desktop-only-max: 1799px;
+$for-big-desktop-up: 1800px;

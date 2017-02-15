@@ -54,7 +54,7 @@ section#slider {
 				left: 0;
 				background-size: cover;
 				background-repeat: no-repeat;
-				background-position: top center;
+				background-position: 0px 0px;
 				background-attachment: fixed;
 				display: block;
 			}
@@ -252,28 +252,66 @@ section#slider {
 	}*/
 }
 
-//Responsive
-@mixin for-phone-only {
-  @media (max-width: 599px) { @content; }
+// =============================================================================
+// Responsive
+// =============================================================================
+@media (max-width: $for-phone-only) {
+	section#slider {
+		margin-bottom: 0;
+		.center_mainslider {
+			padding: 0;
+			.wrapper {
+				.item {
+					.blur {
+						background-attachment: inherit;
+					}
+					.data {
+						padding: $pad40_0;
+						width: 90%;
+						h2 {
+							font-size: $font25;
+						}
+						h3 {
+							font-size: $font12;
+						}
+						p{
+							font-size: $font12;
+						}
+					}
+				}
+			}
+			ul.bullets {
+				bottom: 5px;
+				li {
+					width: 16px;
+					height: 12px;
+					margin: 5px 0;
+					span {
+						width: 4px;
+						height: 12px;
+					}
+					&.ativo {
+						span {
+							width: 16px;
+						}
+					}
+				}
+			}
+			.arrow,
+			.lines-left,
+			.lines-right {
+				display: none;
+			}
+		}
+		.rotate-line {
+			display: none;
+		}
+	}
 }
-@mixin for-tablet-portrait-up {
-  @media (min-width: 600px) { @content; }
-}
-@mixin for-tablet-landscape-up {
-  @media (min-width: 900px) { @content; }
-}
-@mixin for-desktop-up {
-  @media (min-width: 1200px) { @content; }
-}
-@mixin for-big-desktop-up {
-  @media (min-width: 1800px) { @content; }
-}
-
-// usage
-.my-box {
-  padding: 10px;
-
-  @include for-desktop-up {
-    padding: 20px;
-  }
-}
+@media (min-width: $for-tablet-portrait-up) { }
+@media (min-width: $for-tablet-portrait-only-min) and (max-width: $for-tablet-portrait-only-max)  { }
+@media (min-width: $for-tablet-landscape-up) { }
+@media (min-width: $for-tablet-landscape-only-min) and (max-width: $for-tablet-landscape-only-max) { }
+@media (min-width: $for-desktop-up) { }
+@media (min-width: $for-desktop-only-min) and (max-width: $for-desktop-only-max) { }
+@media (min-width: $for-big-desktop-up) { }

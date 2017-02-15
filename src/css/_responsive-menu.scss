@@ -136,7 +136,33 @@
 	transition: all 0.3s ease;
 }
 
-/* Example media queries */
+// =============================================================================
+// Responsive
+// =============================================================================
+@media (max-width: $for-phone-only) {
+  .tcon-menu--xcross {
+		height: 45px;
+	}
+	.tcon-menu--xcross {
+		width: 42px;
+		padding: 0 0 0 10px;
+	}
+	.cbp-spmenu {
+		.logo-menu {
+			padding: 19px 20px;
+		}
+	}
+}
+@media (min-width: $for-tablet-portrait-up) { }
+@media (min-width: $for-tablet-portrait-only-min) and (max-width: $for-tablet-portrait-only-max)  { }
+@media (min-width: $for-tablet-landscape-up) { }
+@media (min-width: $for-tablet-landscape-only-min) and (max-width: $for-tablet-landscape-only-max) { }
+@media (min-width: $for-desktop-up) { }
+@media (min-width: $for-desktop-only-min) and (max-width: $for-desktop-only-max) { }
+@media (min-width: $for-big-desktop-up) { }
+
+
+
 
 @media screen and (max-width: 55.1875em){
 

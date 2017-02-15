@@ -307,10 +307,9 @@
 
 
 // =============================================================================
-// 01. Phone Mobile
+// Responsive
 // =============================================================================
-@media (max-width: 767px) {
-
+@media (max-width: $for-phone-only) {
   .phone_mobile-section {
     display: block;
   }
@@ -325,7 +324,7 @@
     text-align: center;
     h2 {
       font-family: $whitney-sc;
-      font-size: $font28;
+      font-size: $font22;
       color: $white;
       font-weight: $fontlighter;
       text-transform: uppercase;
@@ -355,7 +354,6 @@
     }
     p {
       color: $white;
-      font-size: $font16;
       font-weight: $fontlighter;
     }
     h3 {
@@ -368,8 +366,6 @@
   }
   .mobile-content {
     .blk-mobile_text {
-      width: 85%;
-      margin: 0 auto;
       padding-top: $pad15;
       h3 {
         font-family: $whitney-sc;
@@ -395,7 +391,6 @@
       }
       p {
         color: $white;
-        font-size: $font14;
         font-weight: $fontlighter;
       }
     }
@@ -437,7 +432,7 @@
     left: 0;
     top: 0;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     transition: all .3s ease-in-out;
     &:before,
     &:after {
@@ -459,7 +454,7 @@
     }
   }
   .slick-slide {
-    float: left;
+    text-align: center;
     height: 100%;
     min-height: 1px;
     opacity: 0.5;
@@ -485,5 +480,11 @@
       border: 1px solid transparent;
     }
   }
-
 }
+@media (min-width: $for-tablet-portrait-up) { }
+@media (min-width: $for-tablet-portrait-only-min) and (max-width: $for-tablet-portrait-only-max)  { }
+@media (min-width: $for-tablet-landscape-up) { }
+@media (min-width: $for-tablet-landscape-only-min) and (max-width: $for-tablet-landscape-only-max) { }
+@media (min-width: $for-desktop-up) { }
+@media (min-width: $for-desktop-only-min) and (max-width: $for-desktop-only-max) { }
+@media (min-width: $for-big-desktop-up) { }
