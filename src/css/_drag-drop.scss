@@ -520,7 +520,7 @@
     .content-drag_drop {
       width: 100%;
       h2 {
-        font-size: $font22;
+        font-size: $font26;
       }
     }
     .dragdrop_container {
@@ -621,87 +621,3 @@
 @media (min-width: $for-desktop-up) { }
 @media (min-width: $for-desktop-only-min) and (max-width: $for-desktop-only-max) { }
 @media (min-width: $for-big-desktop-up) { }
-
-
-
-/*@media (max-width: 767px) {
-
- .dragdrop_container {
-   .howitworks-section {
-     margin-top: $marg90;
-     .sec-top,
-     .sec-bottom {
-       display: block;
-       padding-left: 0;
-       padding-right: 0;
-     }
-     .sec-top {
-       justify-content: inherit;
-       padding-top: $pad40;
-       padding-bottom: $pad70;
-       border-bottom: 2px solid $superlight_grey;
-       article {
-         width: 100%;
-         text-align: center;
-         color: $midlle_black;
-         position: relative;
-         .content-artworks {
-           max-width: 400px;
-           margin: 0 auto;
-         }
-         h2 {
-           font-family: $whitney-sc;
-           text-transform: uppercase;
-           margin: $marg25_0;
-           font-size: $font20;
-           font-weight: $font500;
-         }
-         p {
-           margin: 0;
-         }
-       }
-       article.art-2 {
-         width: 100%;
-         &:before {
-           content: url(../img/direction.svg);
-           text-align: center;
-           position: absolute;
-           left: 20px;
-           bottom: 28%;
-           width: 43px;
-         }
-         &:after {
-           content: url(../img/direction.svg);
-           text-align: center;
-           position: absolute;
-           right: 15px;
-           bottom: 28%;
-           width: 43px;
-         }
-       }
-     }
-     .sec-bottom {
-       justify-content: center;
-       padding-top: $pad70;
-       article {
-         width: 100%;
-         display: block;
-         align-items: center;
-         margin: 0 20px;
-         img {
-           margin-right: $marg15;
-         }
-         h2 {
-           font-family: $whitney-sc;
-           text-transform: uppercase;
-           font-size: $font18;
-           font-weight: $font500;
-           color: $color_p;
-           line-height: 24px;
-         }
-       }
-     }
-   }
- }
-
-}*/

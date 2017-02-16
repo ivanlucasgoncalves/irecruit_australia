@@ -62,33 +62,39 @@
     </div>
 	</header><!-- .site-header -->
   <div id="mainsite"><!-- .main site -->
-  <div id="myModal" class="modal">
-  	<div class="modal-content">
-  		<span class="close">x</span>
-  		<img src="<?php echo esc_url( $img_logo_white ); ?>" alt="Logo iRecruit" width="140px">
-  		<div class="modal-form">
-  			<h4>TRY IRECRUIT FOR FREE</h4>
-  			<p class="first-p">Get free access to all iRecruit’s features:</p>
-  			<?php // Include the page content template.
-  			get_template_part( 'template-parts/content', 'trialform' ); ?>
-  		</div>
-  		<h3><span>talent</span>rank<sup>™</sup></h3>
-      <div class="icons-container">
-    		<?php if( have_rows('info_icons', 'option') ):
-    			$count = 1; ?>
-    			<?php	while ( have_rows('info_icons', 'option') ) : the_row();
-    				$icon = get_sub_field('icon');
-    				$info = get_sub_field('info'); ?>
-    			<div class="feature block-<?php echo $count; ?>">
-    				<div class="blk-align">
-    					<img src="<?php echo $icon; ?>" height="55px"/>
-    					<p class="text-feature"><?php echo $info; ?></p>
-    				</div>
-    			</div>
-    			<?php $count++;
-    			endwhile; ?>
-    		<?php endif; ?>
-    	</div>
-  	</div>
-  </div> <!-- .modal form trial. -->
+    
+  <div class="cd-popup" role="alert">
+    <div class="cd-popup-container">
+      <div id="myModal" class="modal">
+        <div class="modal-content">
+          <a href="#0" class="cd-popup-close img-replace close">x</a>
+          <img src="<?php echo esc_url( $img_logo_white ); ?>" alt="Logo iRecruit" width="140px">
+          <div class="modal-form">
+            <h4>TRY IRECRUIT FOR FREE</h4>
+            <p class="first-p">Get free access to all iRecruit’s features:</p>
+            <?php // Include the page content template.
+            get_template_part( 'template-parts/content', 'trialform' ); ?>
+          </div>
+          <h3><span>talent</span>rank<sup>™</sup></h3>
+          <div class="icons-container">
+            <?php if( have_rows('info_icons', 'option') ):
+              $count = 1; ?>
+              <?php	while ( have_rows('info_icons', 'option') ) : the_row();
+                $icon = get_sub_field('icon');
+                $info = get_sub_field('info'); ?>
+              <div class="feature block-<?php echo $count; ?>">
+                <div class="blk-align">
+                  <img src="<?php echo $icon; ?>" height="55px"/>
+                  <p class="text-feature"><?php echo $info; ?></p>
+                </div>
+              </div>
+              <?php $count++;
+              endwhile; ?>
+            <?php endif; ?>
+          </div>
+        </div>
+      </div> <!-- .modal form trial. -->
+    </div> <!-- cd-popup-container -->
+  </div> <!-- cd-popup -->
+
 	<div id="content" class="site-content">

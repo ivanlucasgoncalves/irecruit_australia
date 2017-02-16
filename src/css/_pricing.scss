@@ -169,12 +169,13 @@
 }
 
 // =============================================================================
-// 01. Responsive
+// Responsive
 // =============================================================================
-@media (max-width: 767px) {
+@media (max-width: $for-phone-only) {
   .content-plans {
     flex-direction: column;
     margin-bottom: $marg10;
+    margin-top: $marg30;
     .blk-plan {
       width: 100%;
       margin-bottom: $marg20;
@@ -185,8 +186,17 @@
   }
   .phrase-pricing {
     margin-top: 0;
-    margin-bottom: $marg25;
+    margin-bottom: 0;
     max-width: 100%;
+    h3 {
+      font-size: $font19;
+    }
   }
-
 }
+@media (min-width: $for-tablet-portrait-up) { }
+@media (min-width: $for-tablet-portrait-only-min) and (max-width: $for-tablet-portrait-only-max)  { }
+@media (min-width: $for-tablet-landscape-up) { }
+@media (min-width: $for-tablet-landscape-only-min) and (max-width: $for-tablet-landscape-only-max) { }
+@media (min-width: $for-desktop-up) { }
+@media (min-width: $for-desktop-only-min) and (max-width: $for-desktop-only-max) { }
+@media (min-width: $for-big-desktop-up) { }

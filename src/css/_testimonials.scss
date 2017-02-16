@@ -128,18 +128,45 @@
 // =============================================================================
 // Responsive
 // =============================================================================
-@media (max-width: 767px) {
+@media (max-width: $for-phone-only) {
   .content-testimonials {
     padding: 0;
+    h2.main_title {
+      padding: 20px 20px 0 20px;
+      font-size: $font28;
+    }
     article {
       flex-direction: column;
+      padding: $pad20;
       figure {
         width: 100%;
+        img {
+          width: 100%;
+          height: 50vh;
+          object-fit: cover;
+          object-position: 0 0;
+        }
       }
       .blk-testimonials {
-        width: 95%;
-        padding: $pad25;
+        width: 100%;
+        padding: 0;
+        h3 {
+          padding-bottom: 0;
+          margin-top: $marg10;
+        }
+        .blk-find-out {
+          h5 {
+            font-size: $font14;
+          }
+        }
       }
     }
   }
 }
+@media (min-width: $for-tablet-portrait-up) { }
+@media (min-width: $for-tablet-portrait-only-min) and (max-width: $for-tablet-portrait-only-max)  { }
+@media (min-width: $for-tablet-landscape-up) { }
+@media (min-width: $for-tablet-landscape-only-min) and (max-width: $for-tablet-landscape-only-max) { }
+@media (min-width: $for-desktop-up) { }
+@media (min-width: $for-desktop-only-min) and (max-width: $for-desktop-only-max) { }
+@media (min-width: $for-big-desktop-up) { }

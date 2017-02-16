@@ -30,7 +30,6 @@
 @import "customers";
 @import "video-section";
 
-
 // =============================================================================
 // 01. General Style
 // =============================================================================
@@ -256,24 +255,6 @@ header#masthead {
 // =============================================================================
 
 // =============================================================================
-// 01. Scroll to top
-// =============================================================================
-.scrolltop {
-  width: 40px;
-  display: block;
-  position: fixed;
-  bottom: 40px;
-  right: 20px;
-  z-index: 99;
-  transition: all 0.2s ease-in-out;
-  opacity: 0;
-}
-.show_scroll {
-  transition: all 0.2s ease-in-out;
-  opacity: 0.9;
-}
-
-// =============================================================================
 // 01. Footer
 // =============================================================================
 footer {
@@ -410,16 +391,23 @@ footer {
             box-sizing: border-box;
             z-index: 9;
             font-weight: $fontlighter;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
             h2 {
               font-weight: $fontbold;
               color: $midlle_blue;
               text-transform: uppercase;
-              margin-top: $marg40;
               font-size: $font17;
+              display: block;
+              width: 100%;
             }
             p {
-              padding-right: $pad25;
+              padding-right: $pad20;
               color: $quite_black;
+              display: block;
+              width: 100%;
+              margin: 10px 0 0 0;
             }
           }
           &:before {
@@ -456,6 +444,9 @@ footer {
 // Responsive
 // =============================================================================
 @media (max-width: $for-phone-only) {
+  // =============================================================================
+  // General Style
+  // =============================================================================
   body {
     font-size: $font13;
   }
@@ -487,6 +478,99 @@ footer {
         }
         .main_top {
             display: none;
+          }
+        }
+      }
+    }
+  }
+  // =============================================================================
+  // Internal Pages
+  // =============================================================================
+  #primary {
+    .site-main {
+      padding-bottom: $pad20;
+    }
+    #main {
+      article.page {
+        padding: 10px 20px;
+        .entry-header,
+        .entry-content {
+          margin-bottom: 0;
+          h1 {
+            font-size: $font30;
+          }
+          h1, h2, h3, h4, h5, h6 {
+            margin-bottom: $marg10;
+          }
+          h2 {
+            font-size: $font25;
+          }
+          h3 {
+            font-size: $font24;
+          }
+          h4 {
+            font-size: $font20;
+          }
+          h5 {
+            font-size: $font16;
+          }
+          h6 {
+            font-size: $font14;
+          }
+          p {
+            font-size: $font16;
+          }
+        }
+      }
+      .rotate-line-internal {
+        display: none;
+      }
+    }
+  }
+  // =============================================================================
+  // Footer
+  // =============================================================================
+  footer {
+    .info-nav-wrapper {
+      flex-direction: column-reverse;
+      padding: $pad20;
+      margin-top: $marg10;
+      #info-site,
+      #content-bottom-menus {
+        width: 100%;
+        nav {
+          h4 {
+            font-size: $font14;
+          }
+        }
+      }
+      #info-site {
+        text-align: center;
+        margin-top: $marg20;
+        &:before {
+          right: 0;
+          margin: 0 auto;
+        }
+      }
+    }
+    .common-footer-wrapper {
+      .three-buttons {
+        flex-direction: column;
+        margin-top: -40px;
+        .widget_categorieswidgets {
+          width: 100%;
+          margin-bottom: $marg20;
+          .button {
+            .text-container {
+              h2 {
+                font-size: $font15;
+              }
+            }
+            .icon-button {
+              img {
+                height: 70px;
+              }
+            }
           }
         }
       }
@@ -557,93 +641,5 @@ footer {
     }
   }
 
-
-
-  // =============================================================================
-  // 01. Internal Pages
-  // =============================================================================
-  #primary {
-    #main {
-      article.page {
-        padding: 10px 25px;
-        .entry-header,
-        .entry-content {
-          margin-bottom: $marg30;
-          h1 {
-            font-size: $font28;
-          }
-          h2, h3, h4, h5, h6 {
-          }
-          h2 {
-            font-size: $font30;
-          }
-          h3 {
-            font-size: $font24;
-          }
-          h4 {
-            font-size: $font20;
-          }
-          h5 {
-            font-size: $font16;
-          }
-          h6 {
-            font-size: $font14;
-          }
-          p {
-            font-size: $font20;
-          }
-        }
-      }
-    }
-  }
-
-  
-  // =============================================================================
-  // 01. Footer
-  // =============================================================================
-  footer {
-    .info-nav-wrapper {
-      flex-direction: column-reverse;
-      padding: $pad20;
-      margin-top: $marg10;
-      #info-site,
-      #content-bottom-menus {
-        width: 100%;
-      }
-      #info-site {
-        text-align: center;
-        margin-top: $marg20;
-        &:before {
-          right: 0;
-          margin: 0 auto;
-        }
-      }
-    }
-    .common-footer-wrapper {
-      .three-buttons {
-        flex-direction: column;
-        .widget_categorieswidgets {
-          width: 100%;
-          margin-bottom: $marg20;
-          .button {
-            .icon-button {
-              img {
-                height: 70px;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-@media (min-width: 900px) {
-
-}
-@media (min-width: 600px) and (max-width: 899px) {
-
-}
-@media (min-width: 300px) and (max-width: 599px) {
 
 }

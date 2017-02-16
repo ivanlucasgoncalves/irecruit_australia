@@ -56,6 +56,7 @@ section#slider {
 				background-repeat: no-repeat;
 				background-position: 0px 0px;
 				background-attachment: fixed;
+				transition:background-position 0.2s ease;
 				display: block;
 			}
 			.data{
@@ -264,6 +265,7 @@ section#slider {
 				.item {
 					.blur {
 						background-attachment: inherit;
+						background-position: center center !important;
 					}
 					.data {
 						padding: $pad40_0;

@@ -103,3 +103,32 @@
     }
   }
 }
+
+// =============================================================================
+// Responsive
+// =============================================================================
+@media (max-width: $for-phone-only) {
+  .info-contact {
+    display: block;
+    margin-top: $marg20;
+    margin-bottom: $marg40;
+    .blk-info {
+      width: 100%;
+      margin-top: $marg30;
+      p {
+        font-size: $font16;
+      }
+    }
+  }
+  .content-form {
+    padding-top: $marg40;
+    margin-bottom: $marg10;
+  }
+}
+@media (min-width: $for-tablet-portrait-up) { }
+@media (min-width: $for-tablet-portrait-only-min) and (max-width: $for-tablet-portrait-only-max)  { }
+@media (min-width: $for-tablet-landscape-up) { }
+@media (min-width: $for-tablet-landscape-only-min) and (max-width: $for-tablet-landscape-only-max) { }
+@media (min-width: $for-desktop-up) { }
+@media (min-width: $for-desktop-only-min) and (max-width: $for-desktop-only-max) { }
+@media (min-width: $for-big-desktop-up) { }
