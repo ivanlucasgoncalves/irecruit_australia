@@ -164,6 +164,13 @@ if( function_exists('acf_add_options_page') ) {
 		'icon_url'		=> 'dashicons-welcome-learn-more',
 		'position' => 58
 	));
+
+	acf_add_options_page(array(
+		'menu_title'	=> 'Description Area',
+		'menu_slug' 	=> 'theme-description-area',
+		'parent_slug'	=> 'edit.php?post_type=our_customers',
+		'position'	=> false,
+	));
 }
 
 /**

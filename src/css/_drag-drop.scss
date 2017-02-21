@@ -271,13 +271,13 @@
   }
   .blk-applione {
     top: 20%;
-    right: 210px;
+    right: 120px;
     position: absolute;
     z-index: 99;
   }
   .blk-applitwo {
     top: 28%;
-    left: 180px;
+    left: 120px;
     position: absolute;
     z-index: 99;
   }
@@ -461,7 +461,7 @@
           font-family: $whitney-sc;
           text-transform: uppercase;
           margin: $marg25_0;
-          font-size: $font20;
+          font-size: $font19;
           font-weight: $font500;
         }
         p {
@@ -487,7 +487,7 @@
     .sec-bottom {
       justify-content: center;
       padding-top: $pad70;
-      width: 90%;
+      width: 92%;
       margin: 0 auto;
       article {
         width: 31%;
@@ -500,7 +500,7 @@
         h2 {
           font-family: $whitney-sc;
           text-transform: uppercase;
-          font-size: $font17;
+          font-size: $font16;
           font-weight: $font500;
           color: $color_p;
           line-height: 24px;
@@ -520,7 +520,7 @@
     .content-drag_drop {
       width: 100%;
       h2 {
-        font-size: $font26;
+        font-size: $font24;
       }
     }
     .dragdrop_container {
@@ -529,6 +529,7 @@
       width: 100%;
       margin: 0 auto;
       .draggable,
+      .blk-drag,
       .laptop-container {
         display: none;
       }
@@ -564,7 +565,7 @@
             font-family: $whitney-sc;
             text-transform: uppercase;
             margin: $marg25_0;
-            font-size: $font20;
+            font-size: $font18;
             font-weight: $font500;
           }
           p {
@@ -619,5 +620,29 @@
 @media (min-width: $for-tablet-landscape-up) { }
 @media (min-width: $for-tablet-landscape-only-min) and (max-width: $for-tablet-landscape-only-max) { }
 @media (min-width: $for-desktop-up) { }
-@media (min-width: $for-desktop-only-min) and (max-width: $for-desktop-only-max) { }
-@media (min-width: $for-big-desktop-up) { }
+@media (min-width: $for-desktop-only-min) and (max-width: $for-desktop-only-max) {
+  .dragdrop_container {
+    .howitworks-section {
+      .sec-bottom {
+        article {
+          h2 {
+            font-size: $font15;
+          }
+        }
+      }
+    }
+  }
+}
+@media (min-width: $for-big-desktop-up) {
+  .dragdrop_container {
+    .howitworks-section {
+      .sec-bottom {
+        article {
+          h2 {
+            font-size: $font17;
+          }
+        }
+      }
+    }
+  }
+}

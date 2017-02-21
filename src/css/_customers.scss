@@ -14,7 +14,7 @@
     position: absolute;
     box-sizing: border-box;
     margin-left: 0;
-    top: 180px;
+    top: 160px;
     left: 0;
     z-index: 9;
     text-align: center;
@@ -31,47 +31,46 @@
       padding: $pad0_20;
   	  margin: 0 auto;
   	  color: $midlle_blue;
-  	  font-weight: lighter;
-  	  font-size: 1.5em;
-  	  line-height: 2em;
   		.hundredPlus {
   		  height: auto;
   		  width: 100%;
   		  font-weight: $font600;
-  		  font-size: 3.4em;
-  		  letter-spacing: -1px;
+  		  font-size: $font78;
+  		  letter-spacing: -3px;
         display: block;
-        margin-bottom: 3px;
-  			.better {
-  			  font-size: $font20;
-  			  margin-top: 15px;
-  			  margin-bottom: 15px;
-  			  color: #444;
-  			}
   		}
+      .secondarytitle {
+        font-weight: $fontlighter;
+        font-size: $font21;
+        display: block;
+      }
+      .better {
+        p {
+          font-size: $font20;
+          margin-top: $marg15;
+          margin-bottom: $marg15;
+          color: $midlle_black;
+          font-weight: $fontlighter;
+        }
+      }
   		.customersButton {
-  		  padding: $pad12;
-  		  font-weight: $font500;
-  		  font-size: $font17;
-  		  font-family: $whitney-sc;
-  		  text-transform: uppercase;
-  		  border-radius: 5px;
-  		  transition: all 0.2s ease-in-out;
-  		  color: $white;
-  		  background-color: $midlle_blue;
-  		  display: inline-block;
-  		  line-height: 0.9em;
-        &:hover, &:active {
-          background-color: $blue;
-          transition: all 0.2s ease-in-out;
+        a {
+          padding: $pad12;
+    		  font-weight: $font500;
+    		  font-size: $font16;
+    		  font-family: $whitney-sc;
+    		  text-transform: uppercase;
+    		  border-radius: 5px;
+    		  transition: all 0.2s ease-in-out;
+    		  color: $white;
+    		  background-color: $midlle_blue;
+    		  display: inline-block;
+          &:hover, &:active {
+            background-color: $blue;
+            transition: all 0.2s ease-in-out;
+          }
         }
   		}
-      .better {
-        font-size: $font20;
-        margin-top: 15px;
-        margin-bottom: 15px;
-        color: #444;
-      }
   		&:after {
   			content: " ";
   		  display: block;
@@ -220,7 +219,6 @@
           }
         }
         p {
-          line-height: 32px;
           color: $color_p;
         }
       }
@@ -242,20 +240,28 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        .customer {
+        a.customer {
           width: 9%;
           height: auto;
           padding: $pad30_0;
+          transition: all 0.2s ease-in-out;
           img {
             max-width: 100%;
             height: auto;
             margin: 0 auto;
             filter: grayscale(100%);
             opacity: 0.8;
+            transition: all 0.2s ease-in-out;
           }
           img[src$=".svg"] {
             width: 100%;
             height: auto;
+          }
+          &:hover {
+            img {
+              filter: grayscale(0%);
+              transition: all 0.2s ease-in-out;
+            }
           }
         }
         .customer:nth-of-type(odd) {
@@ -315,8 +321,10 @@
       top: 170px;
       .customersText {
         .better{
-          padding: $pad0_20;
-          font-size: $font15;
+          p {
+            padding: $pad0_20;
+            font-size: $font15;
+          }
         }
       }
     }
@@ -348,7 +356,7 @@
             width: 100%;
             height: 50vh;
             object-fit: cover;
-            object-position: 0 0;
+            object-position: 50% 50%;
           }
         }
         .blk-customers {

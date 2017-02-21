@@ -214,7 +214,7 @@
     top: 0;
   }
   .content-video {
-    padding: 50px 0;
+    padding: $pad50_0;
     .iconsContainer{
       flex-direction: column;
       .feature {
@@ -230,8 +230,8 @@
         }
       }
       .block-2 {
-        padding: 60px 0;
-        margin: 10px 0;
+        padding: 60px 0 55px 0;
+        margin: $marg10_0;
         &:before {
           font-size: 2.8em;
           right: 0;

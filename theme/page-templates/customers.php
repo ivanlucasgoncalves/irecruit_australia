@@ -35,9 +35,11 @@ get_header(); ?>
 					<?php $i=1; // Counting articles
 						echo '<section class="line-customers">';
 						while ( $customers->have_posts() ) : $customers->the_post(); ?>
-						<figure class="customer">
-							<?php the_post_thumbnail(); ?>
-						</figure><!-- .figure.thumbnail -->
+							<a href="<?php the_field('link_to_customers'); ?>" class="customer" title="<?php the_title(); ?>">
+								<figure>
+									<?php the_post_thumbnail(); ?>
+								</figure><!-- .figure.thumbnail -->
+							</a><!-- .link.customer -->
 					<?php // if multiple of 4 close div and open a new div
 						if($i % 4 == 0) { echo '</section><section class="line-customers">'; }
 						$i++;

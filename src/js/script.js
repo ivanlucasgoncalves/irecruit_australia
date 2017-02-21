@@ -121,8 +121,8 @@ jQuery( document ).ready( function($) {
     var pixs = $(document).scrollTop(); /** Blur Slide Image on Scroll **/
 		var pos = $(document).scrollTop(); /** Blur Slide Image on Scroll **/
     pixs = pixs / 60;
-		pos = pos / 160;
-    $(".blur").css({"transform": "translate(0px,"+pixs+"px)","filter": "blur("+pixs+"px)", "background-position": "0px "+pos+"px" });
+		pos = pos / 20;
+    $(".blur").css({"transform": "translate(0px,"+pixs+"px)","filter": "blur("+pixs+"px)", "background-position": "center "+pos+"px" });
 
 		if (scroll >= 10) { /** Shadow Header on Scroll **/
       $(".addshadow").addClass("shadow");
@@ -161,7 +161,7 @@ jQuery( document ).ready( function($) {
 	var limite = $('#slider .wrapper .item').length;
 	window.botaoSlider = true
 
-	$('section#slider .wrapper .item').each(function(index, el) { //Height
+	$('section#slider .wrapper .item, section#slider .wrapper .item .blur').each(function(index, el) { //Height
 		var tamanho = $(this).outerHeight();
 		if ( tamanho > maior ){ maior = tamanho }
 	}).css('height', maior);

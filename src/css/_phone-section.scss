@@ -57,14 +57,14 @@
   padding: 160px 0 200px 0;
   position: relative;
   .phone-menu-container {
-    max-width: 440px;
+    max-width: 380px;
     width: 100%;
     position: absolute;
     left: 20px;
     top: 20px;
     h2 {
       font-family: $whitney-sc;
-      font-size: $font26;
+      font-size: $font25;
       color: $white;
       font-weight: $fontlighter;
       text-transform: uppercase;
@@ -108,7 +108,7 @@
           position: relative;
           a {
             font-family: $whitney-sc;
-            font-size: $font16;
+            font-size: $font15;
             color: $white;
             font-weight: $fontlighter;
             text-transform: uppercase;
@@ -170,7 +170,7 @@
       z-index: 2;
       h3 {
         font-family: $whitney-sc;
-        font-size: $font18;
+        font-size: $font17;
         color: $white;
         font-weight: $fontlighter;
         text-transform: uppercase;
@@ -179,7 +179,6 @@
       }
       p {
         color: $white;
-        font-size: $font14;
         font-weight: $fontlighter;
         margin: 0;
       }
@@ -245,7 +244,7 @@
       box-shadow: 2px 2px 50px $dark_black;
       padding: $pad10;
       font-weight: $font500;
-      font-size: $font17;
+      font-size: $font16;
       font-family: $whitney-sc;
       font-style: normal;
       text-transform: uppercase;
@@ -408,6 +407,9 @@
     -ms-touch-action: pan-y;
     touch-action: pan-y;
     -webkit-tap-highlight-color: transparent;
+    max-width: 600px;
+    margin: 0 auto;
+    width: 100%;
   }
   .slick-list {
     position: relative;
@@ -483,8 +485,12 @@
 }
 @media (min-width: $for-tablet-portrait-up) { }
 @media (min-width: $for-tablet-portrait-only-min) and (max-width: $for-tablet-portrait-only-max)  { }
-@media (min-width: $for-tablet-landscape-up) { }
-@media (min-width: $for-tablet-landscape-only-min) and (max-width: $for-tablet-landscape-only-max) { }
+@media (min-width: $for-tablet-landscape-up) {
+
+}
+@media (min-width: $for-tablet-landscape-only-min) and (max-width: $for-tablet-landscape-only-max) {
+
+}
 @media (min-width: $for-desktop-up) { }
 @media (min-width: $for-desktop-only-min) and (max-width: $for-desktop-only-max) { }
 @media (min-width: $for-big-desktop-up) { }

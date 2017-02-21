@@ -283,3 +283,52 @@
   margin: 10px 0;
   font-family: 'Whitney SSm Small Caps A','Whitney SSm Small Caps B';
 }
+
+@media (max-width: $for-phone-only) {
+  .modal{
+    .modal-content {
+      width: 100%;
+      .modal-form {
+        width: 100%;
+        padding: $pad20_25;
+      }
+      .icons-container {
+        .feature {
+          width: 30%;
+          font-size: 10px;
+          .text-feature {
+            width: 80%;
+            font-size: 11px;
+            line-height: 18px;
+          }
+          img {
+            height: 43px;
+          }
+        }
+      }
+    }
+  }
+}
+@media (min-width: $for-tablet-portrait-up) { }
+@media (min-width: $for-tablet-portrait-only-min) and (max-width: $for-tablet-portrait-only-max)  {
+  .modal{
+    .modal-content {
+      .modal-form {
+        width: 100%;
+      }
+      .icons-container {
+        .block-2 {
+          width: 40% !important;
+        }
+        .feature {
+          width: 33%;
+        }
+      }
+    }
+  }
+}
+@media (min-width: $for-tablet-landscape-up) { }
+@media (min-width: $for-tablet-landscape-only-min) and (max-width: $for-tablet-landscape-only-max) { }
+@media (min-width: $for-desktop-up) { }
+@media (min-width: $for-desktop-only-min) and (max-width: $for-desktop-only-max) { }
+@media (min-width: $for-big-desktop-up) { }
