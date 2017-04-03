@@ -1,7 +1,8 @@
 <?php
 /**
 ** The template used for displaying drag and drop home page section **/
-$direction = get_theme_mod( 'direction', esc_url( get_template_directory_uri() . '/img/direction.svg' ) ); // Logo ?>
+$direction = get_theme_mod( 'direction', esc_url( get_template_directory_uri() . '/img/direction.svg' ) ); // Logo
+$profile = get_theme_mod( 'profile', esc_url( get_template_directory_uri() . '/img/profile.jpg' ) ); // Logo ?>
 
 <section id="darg_drop">
 
@@ -42,29 +43,62 @@ $direction = get_theme_mod( 'direction', esc_url( get_template_directory_uri() .
 								<p>Drag and Drop the Applicants here</p>
 							</div>
 							<div class="candidate candidate1">
-							<div class="profilePic"></div>
-							<p class="candidateName">John Claude</p>
-							<p class="matchText">Match rate:</p>
-							<div class="matchRate">
-								<div class="centre">95%</div>
+								<div class="profilePic">
+									<img src="<?php echo $profile ?>">
+								</div>
+								<div class="candidateName">
+									<h4>Sarah Wright</h4>
+									<ul>
+										<li>88% Personality Match</li>
+										<li>Availability</li>
+										<li>RSA License</li>
+									</ul>
+								</div>
+								<div class="match">
+									<div class="matchRate">
+										<div class="centre">96%</div>
+									</div>
+									<p class="matchText">Match</p>
+								</div>
 							</div>
-						</div>
-						<div class="candidate candidate2">
-							<div class="profilePic"></div>
-							<p class="candidateName">Van Damme</p>
-							<p class="matchText">Match rate:</p>
-							<div class="matchRate">
-								<div class="centre">88%</div>
+							<div class="candidate candidate2">
+								<div class="profilePic">
+									<img src="<?php echo $profile ?>">
+								</div>
+								<div class="candidateName">
+									<h4>Sarah Wright</h4>
+									<ul>
+										<li>88% Personality Match</li>
+										<li>Availability</li>
+										<li>RSA License</li>
+									</ul>
+								</div>
+								<div class="match">
+									<div class="matchRate">
+										<div class="centre">94%</div>
+									</div>
+									<p class="matchText">Match</p>
+								</div>
 							</div>
-						</div>
-						<div class="candidate candidate3">
-							<div class="profilePic"></div>
-							<p class="candidateName">Peter Parker</p>
-							<p class="matchText">Match rate:</p>
-							<div class="matchRate">
-								<div class="centre">77%</div>
+							<div class="candidate candidate3">
+								<div class="profilePic">
+									<img src="<?php echo $profile ?>">
+								</div>
+								<div class="candidateName">
+									<h4>Sarah Wright</h4>
+									<ul>
+										<li>88% Personality Match</li>
+										<li>Availability</li>
+										<li>RSA License</li>
+									</ul>
+								</div>
+								<div class="match">
+									<div class="matchRate">
+										<div class="centre">91%</div>
+									</div>
+									<p class="matchText">Match</p>
+								</div>
 							</div>
-						</div>
 						</div>
 				 </div>
 				</div>

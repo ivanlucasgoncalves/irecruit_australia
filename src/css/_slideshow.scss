@@ -89,6 +89,7 @@ section#slider {
 					font-family: $whitney;
 					font-weight: $fontlighter;
 					font-style: $fontitalic;
+					line-height: 18px
 				}
 			}
 			a,
@@ -271,13 +272,13 @@ section#slider {
 						padding: $pad60_0;
 						width: 90%;
 						h2 {
-							font-size: $font22;
+							font-size: $font23;
 						}
 						h3 {
 							font-size: $font12;
 						}
 						p{
-							font-size: $font11;
+							font-size: $font12;
 						}
 					}
 				}

@@ -121,10 +121,10 @@ jQuery( document ).ready( function($) {
     var pixs = $(document).scrollTop(); /** Blur Slide Image on Scroll **/
 		var pos = $(document).scrollTop(); /** Blur Slide Image on Scroll **/
     pixs = pixs / 60;
-		pos = pos / 20;
+		pos = pos / 120;
     $(".blur").css({"transform": "translate(0px,"+pixs+"px)","filter": "blur("+pixs+"px)", "background-position": "center "+pos+"px" });
 
-		if (scroll >= 10) { /** Shadow Header on Scroll **/
+		if (scroll >= 5) { /** Shadow Header on Scroll **/
       $(".addshadow").addClass("shadow");
     } else {
       $(".addshadow").removeClass("shadow");

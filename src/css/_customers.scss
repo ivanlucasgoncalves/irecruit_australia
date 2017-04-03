@@ -320,10 +320,22 @@
     .customersContent{
       top: 170px;
       .customersText {
+        h2 {
+          .hundredPlus {
+            font-size: $font64;
+          }
+          .secondarytitle  {
+            font-size: $font18;
+          }
+        }
         .better{
           p {
-            padding: $pad0_20;
             font-size: $font15;
+          }
+        }
+        .customersButton {
+          a {
+            font-size: $font14;
           }
         }
       }

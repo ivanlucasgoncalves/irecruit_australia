@@ -6,7 +6,7 @@
   "author": {
     "name": "Ivan Lucas"
   },
-  "repository": "https://github.com/iRecruitAustralia/new_project_website.git",
+  "repository": "https://github.com/ivanlucasgoncalves/irecruit_australia.git",
   "main": "Gruntfile.js",
   "dependencies": {
     "grunt": "*"
