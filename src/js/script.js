@@ -118,11 +118,11 @@ jQuery( document ).ready( function($) {
 	/** Blur Slide Image on Scroll **/
 	$(window).on('scroll', function () {
 		var scroll = $(this).scrollTop(); /** Shadow Header on Scroll **/
-    var pixs = $(document).scrollTop(); /** Blur Slide Image on Scroll **/
-		var pos = $(document).scrollTop(); /** Blur Slide Image on Scroll **/
-    pixs = pixs / 60;
-		pos = pos / 120;
-    $(".blur").css({"transform": "translate(0px,"+pixs+"px)","filter": "blur("+pixs+"px)", "background-position": "center "+pos+"px" });
+    //var pixs = $(document).scrollTop(); /** Blur Slide Image on Scroll **/
+		//var pos = $(document).scrollTop(); /** Blur Slide Image on Scroll **/
+    //pixs = pixs / 60;
+		//pos = pos / 120;
+    //$(".blur").css({"transform": "translate(0px,"+pixs+"px)","filter": "blur("+pixs+"px)", "background-position": "center "+pos+"px" });
 
 		if (scroll >= 5) { /** Shadow Header on Scroll **/
       $(".addshadow").addClass("shadow");
